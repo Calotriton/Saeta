@@ -21,7 +21,7 @@ The JSON follows the requested structure and adds three keys:
 
 | Material | Difficulty | Time per dozen | Key specifics |
 |---|---|---|---|
-| Wood | 2 | 3–4 h + 1–2 days drying | Inspect for knots and grain runout. Weight-sort within ±10 gr and spine-sort in 5 lb bands. Straighten by hand or with heat. Taper the nock end (~11°, short blade), seal and crest, then glue the nock across the grain and fletch. Cut to length, taper the point end (~5°, long blade) and glue on the point. |
+| Wood | 2 | 3–4 h + 1–2 days drying | Inspect for knots and grain runout. Weight-sort within ±10 gr and spine-sort in 5 lb bands. Straighten by hand or with heat. Cut to length, mark the grain, taper the nock end (~11°, short blade) and the point end (~5°, long blade), seal and crest, glue the nock across the grain, glue on the point, and fletch last before the final finish. |
 | Bamboo | 3 | 6–10 h over several days | Season the canes. Heat-straighten the internodes first, then the nodes. File the nodes flush but keep the skin. Cut so a node sits 1–3 cm in front of the nock. Make a self nock bound with thread, or fit hardwood plugs for taper points and nocks. Thread binding is almost mandatory. |
 | Carbon (incl. wood-look and footed) | 1 | 1.5–2 h + glue cure | Cut with an abrasive arrow saw only, then square and clean. Dry-fit the parts. For hot melt, use the low-temperature kind and heat the point, never the tube; epoxy is the alternative. Footing, outserts and half-outs are optional. Do not scuff wood-look finishes. |
 | Fiberglass | 1 | 1.5–2 h | Solid shafts take parallel glue-on points and over nocks. Tubular shafts take inserts and press-fit nocks. Glass dust needs a mask, glasses and gloves. Fiberglass splinters on side impacts. |

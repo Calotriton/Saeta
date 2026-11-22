@@ -230,7 +230,7 @@
       { id: 'fluflu', name: { es: 'Flu-flu', en: 'Flu-flu' }, desc: { es: 'Plumas enormes que frenan la flecha: tiro a aves de papel y blancos aéreos.', en: 'Huge feathers that slow the arrow: aerial targets.' } },
       { id: 'tradvane', tradOnly: true, name: { es: 'AAE Trad', en: 'AAE Trad' }, desc: { es: 'Perfil tipo pluma de AAE.', en: 'AAE feather-like profile.' } },
     ],
-    /** AAE Trad Vanes (Plastifletch): flexible vanes made for shelf shooting. All 0.5" high. Sources: 3Rivers, Lancaster. */
+    /** AAE Trad Vanes (Plastifletch): flexible vanes made for shelf shooting. All 0.5" high. AAE recommends Max Bond; users report Fletch-Tite Platinum / gel CA also work. Sources: 3Rivers, Lancaster, Rokslide, Tradbow. */
     tradVanes: [
       { id: 'trad26', name: 'AAE Trad 26', len: 2.7, gr: 3.8 },
       { id: 'trad40', name: 'AAE Trad 40', len: 3.9, gr: 5.3 },
