@@ -1,0 +1,7 @@
+# Club manual: reference material, not for public distribution
+Documentos/
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/

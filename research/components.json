@@ -1,0 +1,1064 @@
+{
+  "meta": {
+    "version": "1.0",
+    "date": "2026-11-22",
+    "units": {
+      "grain": "1 grain (gr) = 0.0648 g; 15.43 gr = 1 g",
+      "gpi": "grains per inch (granos por pulgada) of bare shaft",
+      "spineWood": "lbs: AMO/ATA wood standard, 2 lb weight on 26\" span; a 45-50# group ~ 0.575-0.520\" deflection",
+      "spineCarbonAlu": "static spine = deflection in thousandths of an inch with 1.94 lb weight on 28\" span (500 = 0.500\")"
+    },
+    "flags": {
+      "approx": "value is a typical/estimated range, not a manufacturer spec",
+      "uncertain": "value could not be verified against a manufacturer source; check before publishing"
+    },
+    "notes": {
+      "es": "Los valores marcados como approx/uncertain son orientativos. Verifica siempre con la tabla del fabricante.",
+      "en": "Values flagged approx/uncertain are guidance only. Always verify against the manufacturer's chart."
+    }
+  },
+
+  "shafts": {
+    "wood": {
+      "name": { "es": "Madera", "en": "Wood" },
+      "desc": {
+        "es": "El astil clásico. Cada astil es único: hay que agruparlos por spine (en libras) y por peso. Se trabaja con conificador para colocar puntas y culatines pegados, o se talla un culatín directamente en la madera.",
+        "en": "The classic shaft. Every shaft is unique, so they are sorted by spine (in pounds) and by weight. Points and nocks are glued onto tapers cut with a taper tool, or a self-nock is cut into the wood."
+      },
+      "pros": [
+        { "es": "Aspecto y tacto tradicional; obligatorio en algunas categorías (longbow, arco histórico).", "en": "Traditional look and feel; required in some classes (longbow, historical bow)." },
+        { "es": "Peso alto y buena inercia: vuelo estable y silencioso desde arcos tradicionales.", "en": "Good mass and momentum: stable, quiet flight from traditional bows." },
+        { "es": "Se puede personalizar todo: tinte, coronado, anillado, injertos.", "en": "Fully customisable: stain, crown dip, cresting, footing." },
+        { "es": "Materia prima barata y fácil de trabajar con herramientas sencillas.", "en": "Cheap raw material, workable with simple tools." }
+      ],
+      "cons": [
+        { "es": "Se rompe o se astilla con más facilidad que el carbono o el aluminio.", "en": "Breaks or splinters more easily than carbon or aluminium." },
+        { "es": "Sensible a la humedad: puede torcerse; hay que sellarla y enderezarla de vez en cuando.", "en": "Moisture-sensitive: can warp; must be sealed and occasionally straightened." },
+        { "es": "Spine y peso varían de un astil a otro: hay que seleccionar y emparejar.", "en": "Spine and weight vary shaft to shaft: they must be sorted and matched." },
+        { "es": "Un astil roto puede ser peligroso: revisa siempre grietas antes de tirar (flexiona el astil).", "en": "A cracked shaft can be dangerous: always flex-check for cracks before shooting." }
+      ],
+      "spineUnit": "lbs",
+      "spineGroups": ["20-25", "25-30", "30-35", "35-40", "40-45", "45-50", "50-55", "55-60", "60-65", "65-70", "70-75", "75-80", "80-85"],
+      "spineNotes": {
+        "es": "Los astiles de madera se venden en grupos de 5 libras (p. ej. 40-45#). Punto de partida habitual: spine ≈ potencia real del arco a tu apertura, con punta de 125 gr y astil de 28\". Por cada pulgada de más sobre 28\" suma ~5 lb de spine; por cada 25 gr de punta por encima de 125 gr suma ~5 lb (regla aproximada). Los arcos de corte central toleran más; los arcos sin ventana (self bow, arcos a caballo) son más exigentes.",
+        "en": "Wood shafts are sold in 5-lb spine groups (e.g. 40-45#). Usual starting point: spine ≈ actual draw weight at your draw length, with a 125 gr point and a 28\" shaft. Add ~5 lb spine per inch of shaft over 28\" and ~5 lb per extra 25 gr of point weight above 125 gr (rule of thumb). Centre-shot bows are more forgiving; bows that are not cut past centre (self bows, horse bows) are more demanding.",
+        "approx": true
+      },
+      "profiles": [
+        { "id": "parallel", "name": { "es": "Paralelo (cilíndrico)", "en": "Parallel" }, "desc": { "es": "Mismo diámetro en todo el astil. El más común y fácil.", "en": "Same diameter along the shaft. Most common and easiest." } },
+        { "id": "tapered", "name": { "es": "Cónico (tapered)", "en": "Tapered" }, "desc": { "es": "Se estrecha hacia el culatín (p. ej. 11/32 → 5/16 en los últimos 9-12\"). Recupera antes la flexión y suele agrupar mejor; usa culatín del diámetro final (normalmente 5/16).", "en": "Narrows toward the nock (e.g. 11/32 → 5/16 over the last 9-12\"). Recovers faster from paradox; use a nock for the final diameter (usually 5/16)." } },
+        { "id": "barrelled", "name": { "es": "Abarrilado (barrelled)", "en": "Barrelled" }, "desc": { "es": "Más grueso en el centro y más fino en ambos extremos. Típico en flechas históricas y de arco a caballo; reduce peso manteniendo rigidez.", "en": "Thickest in the middle, thinner at both ends. Typical in historical and horse-bow arrows; saves weight while keeping stiffness." } },
+        { "id": "breasted", "name": { "es": "Pechado (breasted/chested)", "en": "Breasted / chested" }, "desc": { "es": "Más grueso en el tercio delantero/trasero y fino hacia el culatín (como las flechas de guerra inglesas). Avanzado.", "en": "Thicker toward one third and slimmer toward the nock, as in English war arrows. Advanced." } }
+      ],
+      "diameters": [
+        { "id": "9/32", "inch": 0.281, "mm": 7.1, "weightFactor": 0.67, "spineRangeLbs": "15-30", "notes": { "es": "Flechas infantiles y arcos muy suaves.", "en": "Children's arrows and very light bows." }, "approx": true },
+        { "id": "5/16", "inch": 0.3125, "mm": 7.9, "weightFactor": 0.83, "spineRangeLbs": "20-45", "notes": { "es": "Arcos ligeros (hasta ~40 lb), juveniles y arcos a caballo ligeros. Flecha ligera y rápida.", "en": "Light bows (up to ~40 lb), youth and light horse bows. Light, fast arrow." }, "approx": true },
+        { "id": "21/64", "inch": 0.328, "mm": 8.3, "weightFactor": 0.91, "spineRangeLbs": "30-55", "notes": { "es": "Diámetro intermedio, menos habitual. Usa puntas/culatines de 21/64 o lija hasta 5/16 en la cola.", "en": "Intermediate, less common size. Use 21/64 components or taper the nock end to 5/16." }, "uncertain": true },
+        { "id": "11/32", "inch": 0.344, "mm": 8.7, "weightFactor": 1.0, "spineRangeLbs": "35-70", "notes": { "es": "El diámetro estándar para arcos tradicionales de 35-65 lb. Mayor oferta de puntas y culatines.", "en": "The standard diameter for 35-65 lb traditional bows. Widest choice of points and nocks." }, "approx": true },
+        { "id": "23/64", "inch": 0.359, "mm": 9.1, "weightFactor": 1.09, "spineRangeLbs": "50-85", "notes": { "es": "Arcos potentes y flechas pesadas (caza, warbow ligero). Puntas de 23/64; culatines de 23/64 o de 11/32 dejando ver algo del cono.", "en": "Heavy bows and heavy arrows (hunting, light warbows). 23/64 points; 23/64 nocks or 11/32 nocks with a little taper showing." }, "approx": true },
+        { "id": "3/8", "inch": 0.375, "mm": 9.5, "weightFactor": 1.19, "spineRangeLbs": "70-120+", "notes": { "es": "Warbows y recreación medieval (flechas de guerra). Se suele estrechar a 5/16-11/32 en el culatín; puntas forjadas de cubo (tubo) a medida.", "en": "Warbows and medieval re-enactment (war arrows). Usually tapered to 5/16-11/32 at the nock; socketed forged heads fitted to the shaft." }, "approx": true }
+      ],
+      "typicalShaftWeight32in": {
+        "desc": { "es": "Peso orientativo de un astil de cedro sin componentes, 32\".", "en": "Indicative bare Port Orford cedar shaft weight, 32\"." },
+        "5/16": [270, 380],
+        "11/32": [330, 480],
+        "23/64": [380, 560],
+        "approx": true
+      },
+      "options": [
+        {
+          "id": "cedar",
+          "name": { "es": "Cedro de Port Orford", "en": "Port Orford cedar" },
+          "latin": "Chamaecyparis lawsoniana",
+          "desc": { "es": "La madera de flecha por excelencia: recta, ligera, homogénea y aromática. Recupera bien de la flexión. Cara y cada vez más escasa. Algo quebradiza tras la punta si da en madera o piedra.", "en": "The reference arrow wood: straight-grained, light, uniform and aromatic. Recovers well from flexing. Expensive and increasingly scarce. Can break behind the point when hitting wood or stone." },
+          "grainsPerInch": [10, 13.5],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [430, 500],
+          "durability": 2,
+          "price": 3,
+          "weight": 1,
+          "color": "#D8B88C",
+          "use": ["target", "3d", "field", "hunting"],
+          "approx": true
+        },
+        {
+          "id": "sitka-spruce",
+          "name": { "es": "Abeto Sitka / pícea", "en": "Sitka spruce / spruce" },
+          "latin": "Picea sitchensis (also European spruce, Picea abies)",
+          "desc": { "es": "Muy ligera y resistente para su peso, grano fino. En Europa se vende mucho abeto/pícea alemán (Fichte). Buena alternativa al cedro para flechas rápidas de 3D.", "en": "Very light and strong for its weight, fine grain. In Europe, German spruce (Fichte) is widely sold. A good alternative to cedar for fast 3D arrows." },
+          "grainsPerInch": [9.5, 12],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [400, 470],
+          "durability": 2,
+          "price": 2,
+          "weight": 1,
+          "color": "#E8D5AE",
+          "use": ["target", "3d", "field"],
+          "approx": true
+        },
+        {
+          "id": "pine",
+          "name": { "es": "Pino (nórdico / escandinavo)", "en": "Pine (Nordic / Scandinavian)" },
+          "latin": "Pinus sylvestris",
+          "desc": { "es": "Muy usado en Europa (p. ej. Superschaft, Bearpaw). Algo más pesado y rígido que el cedro, buen precio y buena disponibilidad. Puede tener resina.", "en": "Widely used in Europe (e.g. Superschaft, Bearpaw). Slightly heavier and stiffer than cedar, good price and availability. May contain resin." },
+          "grainsPerInch": [11, 14.5],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [490, 560],
+          "durability": 2,
+          "price": 2,
+          "weight": 2,
+          "color": "#E0BE88",
+          "use": ["target", "3d", "field", "hunting"],
+          "approx": true
+        },
+        {
+          "id": "douglas-fir",
+          "name": { "es": "Abeto Douglas (pino Oregón)", "en": "Douglas fir" },
+          "latin": "Pseudotsuga menziesii",
+          "desc": { "es": "Más denso y rígido que el cedro, robusto. Bueno para arcos potentes y flechas de caza pesadas. Veta muy marcada.", "en": "Denser and stiffer than cedar, robust. Good for heavier bows and heavy hunting arrows. Pronounced grain." },
+          "grainsPerInch": [12, 14.5],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [500, 560],
+          "durability": 2,
+          "price": 2,
+          "weight": 2,
+          "color": "#D29E68",
+          "use": ["3d", "field", "hunting"],
+          "approx": true
+        },
+        {
+          "id": "larch",
+          "name": { "es": "Alerce", "en": "Larch" },
+          "latin": "Larix decidua",
+          "desc": { "es": "Conífera europea resinosa, dura y resistente a la humedad. Algo pesada; menos común como astil comercial.", "en": "Resinous European conifer, hard and moisture-resistant. Somewhat heavy; less common as a commercial shaft." },
+          "grainsPerInch": [12.5, 15],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [550, 620],
+          "durability": 3,
+          "price": 2,
+          "weight": 2,
+          "color": "#C98F5C",
+          "use": ["3d", "field", "hunting"],
+          "approx": true,
+          "uncertain": true
+        },
+        {
+          "id": "ash",
+          "name": { "es": "Fresno", "en": "Ash" },
+          "latin": "Fraxinus excelsior",
+          "desc": { "es": "Madera dura, muy tenaz y pesada. Clásica en flechas de guerra medievales y para arcos potentes. Aguanta mucho castigo.", "en": "Hardwood, very tough and heavy. Classic for medieval war arrows and heavy bows. Takes a lot of abuse." },
+          "grainsPerInch": [15, 18],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [650, 720],
+          "durability": 3,
+          "price": 2,
+          "weight": 3,
+          "color": "#E3CFA6",
+          "use": ["field", "hunting", "historical", "warbow"],
+          "approx": true
+        },
+        {
+          "id": "birch",
+          "name": { "es": "Abedul", "en": "Birch" },
+          "latin": "Betula spp.",
+          "desc": { "es": "Dura, pesada y barata; muy usada en flechas económicas y de recreación. La calidad varía mucho (vigila la veta desviada).", "en": "Hard, heavy and cheap; common in budget and re-enactment arrows. Quality varies a lot (watch for grain run-out)." },
+          "grainsPerInch": [14, 17],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [620, 690],
+          "durability": 3,
+          "price": 1,
+          "weight": 3,
+          "color": "#E9D7B6",
+          "use": ["field", "historical", "beginner"],
+          "approx": true
+        },
+        {
+          "id": "poplar",
+          "name": { "es": "Álamo / chopo", "en": "Poplar / aspen" },
+          "latin": "Populus spp.",
+          "desc": { "es": "Ligera y barata, pero blanda y menos resistente. La mayoría de las flechas del Mary Rose (1545) eran de álamo: muy válida para recreación histórica.", "en": "Light and cheap but soft and less durable. Most Mary Rose (1545) arrows were poplar: a good choice for historical re-enactment." },
+          "grainsPerInch": [10, 12.5],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [420, 500],
+          "durability": 1,
+          "price": 1,
+          "weight": 1,
+          "color": "#E8DEC2",
+          "use": ["beginner", "historical"],
+          "approx": true
+        },
+        {
+          "id": "beech",
+          "name": { "es": "Haya", "en": "Beech" },
+          "latin": "Fagus sylvatica",
+          "desc": { "es": "Pesada y barata; se usa en flechas de recreación y de iniciación. Se deforma con la humedad si no está bien sellada.", "en": "Heavy and cheap; used for re-enactment and beginner arrows. Warps with moisture if not well sealed." },
+          "grainsPerInch": [16, 18.5],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [680, 750],
+          "durability": 2,
+          "price": 1,
+          "weight": 3,
+          "color": "#D6AE86",
+          "use": ["beginner", "historical"],
+          "approx": true
+        },
+        {
+          "id": "hickory",
+          "name": { "es": "Nogal americano (hickory)", "en": "Hickory" },
+          "latin": "Carya spp.",
+          "desc": { "es": "La más pesada y resistente: casi irrompible, pero muy pesada y pierde velocidad. Muy usada como madera de injerto (footing).", "en": "The heaviest and toughest: nearly unbreakable but very heavy and slow. Often used as footing wood." },
+          "grainsPerInch": [18, 21],
+          "grainsPerInchRef": "11/32",
+          "densityKgM3": [780, 850],
+          "durability": 3,
+          "price": 2,
+          "weight": 3,
+          "color": "#C8A47B",
+          "use": ["hunting", "footing", "heavy-bow"],
+          "approx": true
+        }
+      ]
+    },
+
+    "bamboo": {
+      "name": { "es": "Bambú y caña", "en": "Bamboo and cane" },
+      "desc": {
+        "es": "Astiles naturales huecos con nudos. Muy resistentes y elegantes, propios de la tradición asiática (kyudo, arco coreano) y primitiva. Hay que enderezarlos con calor, seleccionarlos por spine y peso uno a uno y reforzar los extremos (tapón de madera dura o cortar junto a un nudo).",
+        "en": "Natural hollow shafts with nodes. Very tough and elegant, typical of Asian (kyudo, Korean archery) and primitive traditions. They are heat-straightened, sorted one by one by spine and weight, and the ends are reinforced (hardwood plug or cut next to a node)."
+      },
+      "pros": [
+        { "es": "Muy duradero: aguanta flexión e impactos mejor que el cedro.", "en": "Very durable: survives flexing and impacts better than cedar." },
+        { "es": "Recupera rápido de la flexión; aspecto único.", "en": "Fast recovery from flexing; unique look." }
+      ],
+      "cons": [
+        { "es": "Diámetro y spine irregulares; mucha selección manual.", "en": "Irregular diameter and spine; a lot of hand sorting." },
+        { "es": "Hay que taponar extremos huecos para puntas y culatines.", "en": "Hollow ends must be plugged for points and nocks." },
+        { "es": "La caña tonkin es relativamente pesada; difícil encontrar diámetros gruesos para arcos potentes.", "en": "Tonkin cane is relatively heavy; thick diameters for heavy bows are hard to find." }
+      ],
+      "spineUnit": "lbs",
+      "options": [
+        { "id": "tonkin", "name": { "es": "Caña Tonkin", "en": "Tonkin cane" }, "latin": "Pseudosasa amabilis", "desc": { "es": "Paredes gruesas, rígida y pesada; el bambú de flecha más común en el comercio.", "en": "Thick walls, stiff and heavy; the most common commercial arrow bamboo." }, "grainsPerInch": [12, 16], "durability": 3, "price": 2, "color": "#D6C07C", "approx": true },
+        { "id": "yadake", "name": { "es": "Bambú de flecha japonés (yadake)", "en": "Arrow bamboo (yadake)" }, "latin": "Pseudosasa japonica", "desc": { "es": "Bambú tradicional de las flechas japonesas (ya) de kyudo. Fino y ligero.", "en": "Traditional bamboo for Japanese kyudo arrows (ya). Slim and light." }, "grainsPerInch": [10, 14], "durability": 3, "price": 3, "color": "#CDB977", "approx": true, "uncertain": true },
+        { "id": "river-cane", "name": { "es": "Caña (Arundo donax / caña de río)", "en": "Cane (Arundo donax / river cane)" }, "latin": "Arundo donax; Arundinaria gigantea", "desc": { "es": "Caña ligera para flechas primitivas; normalmente necesita un antefuste (foreshaft) de madera dura en la parte delantera. La caña común (Arundo donax) abunda en España.", "en": "Light cane for primitive arrows; usually needs a hardwood foreshaft at the front. Giant cane (Arundo donax) is common in Spain." }, "grainsPerInch": [7, 11], "durability": 2, "price": 1, "color": "#D9C68E", "approx": true, "uncertain": true }
+      ],
+      "diameters": [
+        { "id": "natural", "mm": [7, 10], "notes": { "es": "Diámetro natural variable (aprox. 5/16 a 3/8), con conicidad propia. Mide cada astil en el extremo para elegir punta y culatín.", "en": "Variable natural diameter (approx. 5/16 to 3/8), naturally tapered. Measure each shaft end to pick the point and nock size." }, "approx": true }
+      ]
+    },
+
+    "carbon": {
+      "name": { "es": "Carbono", "en": "Carbon" },
+      "desc": {
+        "es": "Astiles tubulares de fibra de carbono: muy rectos, homogéneos y duraderos. Para tradicional existen modelos con acabado imitación madera y spines más blandos. Las puntas y culatines van por dentro (o por fuera) del tubo, así que todo depende del diámetro interior (ID).",
+        "en": "Tubular carbon-fibre shafts: very straight, consistent and durable. Traditional-oriented models offer wood-grain finishes and weaker spines. Points and nocks fit inside (or over) the tube, so everything depends on the inside diameter (ID)."
+      },
+      "pros": [
+        { "es": "Muy duraderos y consistentes (spine y peso idénticos en la docena).", "en": "Very durable and consistent (identical spine and weight across the dozen)." },
+        { "es": "No se tuercen; perfectos para empezar sin preocuparse por emparejar astiles.", "en": "Do not warp; ideal for beginners who don't want to sort shafts." },
+        { "es": "Sistema modular: puntas roscadas intercambiables para ajustar peso.", "en": "Modular system: interchangeable screw-in points to tune weight." }
+      ],
+      "cons": [
+        { "es": "Prohibido en algunas categorías tradicionales (longbow/histórico) que exigen madera.", "en": "Not allowed in some traditional classes (longbow/historical) that require wood." },
+        { "es": "Más ligeros: a igualdad de arco, más ruido y vibración; algunos arqueros añaden peso delante.", "en": "Lighter: more noise and hand shock from the same bow; many archers add front weight." },
+        { "es": "Un carbono dañado puede astillarse en la mano: revísalo (prueba de flexión y crujidos).", "en": "Damaged carbon can splinter into the hand: inspect it (flex and listen for cracking)." },
+        { "es": "Componentes específicos de cada diámetro interior; no todos son intercambiables.", "en": "Components are specific to each inside diameter; not all are interchangeable." }
+      ],
+      "spineUnit": "deflection",
+      "spineValues": [1000, 900, 800, 700, 600, 500, 400, 350, 340, 300, 250],
+      "spineGuideTrad": {
+        "desc": { "es": "Orientación muy aproximada para arco tradicional, astil ~28-29\" y punta 100-125 gr. Consulta siempre la tabla del fabricante.", "en": "Very rough guidance for traditional bows, ~28-29\" shaft, 100-125 gr point. Always check the maker's chart." },
+        "table": [
+          { "drawLbs": "20-25", "spine": [1000, 900] },
+          { "drawLbs": "25-30", "spine": [900, 800] },
+          { "drawLbs": "30-35", "spine": [800, 700] },
+          { "drawLbs": "35-40", "spine": [700, 600] },
+          { "drawLbs": "40-45", "spine": [600, 500] },
+          { "drawLbs": "45-50", "spine": [500, 400] },
+          { "drawLbs": "50-55", "spine": [400, 340] },
+          { "drawLbs": "55-65", "spine": [340, 300] }
+        ],
+        "approx": true
+      },
+      "gpiRange": [5.4, 12],
+      "ids": [
+        {
+          "id": ".166",
+          "mm": 4.2,
+          "alias": { "es": "Micro / ultramicro (Easton \"4 mm\", G)", "en": "Micro / ultra-micro (Easton \"4mm\", G)" },
+          "pointSystem": { "es": "Puntas encolables interiores de 4 mm (tanged/one-piece), inserciones .166 con rosca 8-32 según marca, outserts exteriores (p. ej. Black Eagle Instinct).", "en": "4mm glue-in one-piece/tanged points, .166 inserts with 8-32 thread depending on brand, or external outserts (e.g. Black Eagle Instinct)." },
+          "nockSystem": { "es": "Culatines a presión G / N (Easton), GTO (Gold Tip), culatines propios de la marca; pin nock con casquillo pin.", "en": "Press-fit G / N (Easton), GTO (Gold Tip) or brand nocks; pin nock with pin bushing." },
+          "examples": ["Black Eagle Instinct (.165)", "Easton 4mm FMJ / Axis 4mm", "Gold Tip Hunter/Pierce .166 models"],
+          "notes": { "es": "Astil fino: menos resistencia al viento y gran penetración; los componentes son pequeños y algo más delicados.", "en": "Thin shaft: less wind drift and great penetration; components are small and somewhat more delicate." }
+        },
+        {
+          "id": ".204",
+          "mm": 5.2,
+          "alias": { "es": "Diámetro reducido (Easton \"5 mm\", X)", "en": "Small diameter (Easton \"5mm\", X)" },
+          "pointSystem": { "es": "Inserciones HIT (Easton X HIT, 16 gr) o half-outs/outserts; puntas roscadas 8-32.", "en": "HIT inserts (Easton X HIT, 16 gr) or half-outs/outserts; 8-32 screw-in points." },
+          "nockSystem": { "es": "Culatín X (Easton), Accu-Tough .204 (Gold Tip), culatines \"5.2\" europeos.", "en": "X nock (Easton), Accu-Tough .204 (Gold Tip), European \"5.2\" nocks." },
+          "examples": ["Easton 5mm Axis Traditional (discontinued)", "Gold Tip Traditional Classic XT", "Black Eagle Rampage"]
+        },
+        {
+          "id": ".234",
+          "mm": 5.9,
+          "alias": { "es": "Easton \"6 mm\" (H)", "en": "Easton \"6mm\" (H)" },
+          "pointSystem": { "es": "Inserciones propias del modelo (p. ej. Easton Sonic). Poco común en tradicional.", "en": "Model-specific inserts (e.g. Easton Sonic). Uncommon for traditional." },
+          "nockSystem": { "es": "Culatín H / HE (Easton).", "en": "H / HE nock (Easton)." },
+          "examples": ["Easton Sonic 6.0"],
+          "uncertain": true
+        },
+        {
+          "id": ".244",
+          "mm": 6.2,
+          "alias": { "es": "Estándar (\"6.2 mm\"; Easton \"6.5 mm\", S/Super)", "en": "Standard (\"6.2mm\"; Easton \"6.5mm\", S/Super)" },
+          "pointSystem": { "es": "Inserción de aluminio .244/6.2 con rosca 8-32 (p. ej. Easton RPS 13 gr) + punta roscada; o punta encolable interior 6.2 (one-piece). Inserciones de latón para más peso delante.", "en": "Aluminium .244/6.2 insert with 8-32 thread (e.g. Easton RPS 13 gr) + screw-in point; or 6.2 glue-in one-piece point. Brass inserts for more front weight." },
+          "nockSystem": { "es": "Culatín S / Super Nock / 3D Super Nock (Easton), culatines \"6.2\" (Skylon, Bearpaw, Cross-X, Beiter con adaptador), compatibles con muchos culatines luminosos con casquillo S.", "en": "S / Super Nock / 3D Super Nock (Easton), \"6.2\" nocks (Skylon, Bearpaw, Cross-X, Beiter with adapter); many lighted nocks with S bushing." },
+          "examples": ["Easton Carbon Legacy (.246)", "Black Eagle Vintage (.2445)", "Skylon Bentwood", "Bearpaw Penthalon Traditional", "Cross-X Gladiator"]
+        },
+        {
+          "id": ".246",
+          "mm": 6.25,
+          "alias": { "es": "Estándar Gold Tip (GT)", "en": "Gold Tip standard (GT)" },
+          "pointSystem": { "es": "Inserciones Gold Tip .246 (8-32) o inserciones .244 (ajuste algo más holgado, pegar bien).", "en": "Gold Tip .246 inserts (8-32) or .244 inserts (slightly looser fit; glue well)." },
+          "nockSystem": { "es": "Culatín GT (Gold Tip). Un culatín S en .246 puede quedar flojo: usa el del fabricante.", "en": "GT nock (Gold Tip). An S nock in a .246 shaft may be loose: use the maker's nock." },
+          "examples": ["Gold Tip Traditional XT", "Easton Carbon Legacy lists .246"],
+          "notes": { "es": ".244 y .246 se consideran el mismo \"estándar\" y muchos componentes valen para ambos, pero comprueba el ajuste del culatín.", "en": ".244 and .246 are treated as the same \"standard\" family and many parts cross over, but check nock fit." }
+        },
+        {
+          "id": "3.2mm",
+          "mm": 3.2,
+          "alias": { "es": "Ultrafino de diana (sistema pin)", "en": "Ultra-thin target (pin system)" },
+          "pointSystem": { "es": "Puntas de diana específicas de diámetro interior pequeño o sistemas de diana de alta gama. Casi nunca en tradicional.", "en": "Small-ID target points or high-end target systems. Almost never used in traditional." },
+          "nockSystem": { "es": "Pin nock con casquillo pin.", "en": "Pin nock with pin bushing." },
+          "examples": [],
+          "uncertain": true
+        }
+      ],
+      "metricNamingNote": {
+        "es": "Easton llama a sus familias 4, 5, 6 y 6.5 mm (G, X, H, S). Son nombres nominales; el ID real en pulgadas es .166, .204, .234 y .244/.246. Las tiendas europeas usan 4.2, 5.2 y 6.2 mm para el ID real.",
+        "en": "Easton names its families 4, 5, 6 and 6.5mm (G, X, H, S). These are nominal names; the real ID in inches is .166, .204, .234 and .244/.246. European shops use 4.2, 5.2 and 6.2mm for the real ID."
+      },
+      "options": [
+        {
+          "id": "easton-carbon-legacy",
+          "name": { "es": "Easton Carbon Legacy", "en": "Easton Carbon Legacy" },
+          "brand": "Easton",
+          "idInch": 0.246,
+          "finish": "woodgrain",
+          "color": "#8A5A32",
+          "desc": { "es": "Carbono con acabado imitación madera realista, cola blanca sumergida. Inserción RPS de aluminio de 13 gr y 3D Super Nock incluidos.", "en": "Carbon with realistic wood-grain finish and white dipped end. 13 gr aluminium RPS insert and 3D Super Nock included." },
+          "spines": [
+            { "spine": 700, "gpi": 7.1, "od": 0.289, "pointOd": "19/64" },
+            { "spine": 600, "gpi": 7.5, "od": 0.291, "pointOd": "19/64" },
+            { "spine": 500, "gpi": 8.3, "od": 0.296, "pointOd": "19/64" },
+            { "spine": 400, "gpi": 9.3, "od": 0.301, "pointOd": "19/64" },
+            { "spine": 340, "gpi": 10.1, "od": 0.307, "pointOd": "5/16" }
+          ],
+          "nock": "S (3D Super Nock)",
+          "insert": "RPS aluminium 13 gr",
+          "source": "https://eastonarchery.com/arrows_/carbon-legacy/"
+        },
+        {
+          "id": "easton-axis-traditional-5mm",
+          "name": { "es": "Easton 5mm Axis Traditional (descatalogado)", "en": "Easton 5mm Axis Traditional (discontinued)" },
+          "brand": "Easton",
+          "idInch": 0.204,
+          "finish": "woodgrain",
+          "color": "#7A4E2D",
+          "desc": { "es": "Carbono de diámetro reducido con aspecto madera. Inserción X HIT 8-32 (16 gr) y culatín X. Descatalogado, aún en stock en algunas tiendas.", "en": "Small-diameter carbon with wood look. X HIT 8-32 insert (16 gr) and X nock. Discontinued, still in stock at some shops." },
+          "spines": [
+            { "spine": 700, "gpi": 6.8, "od": 0.245 },
+            { "spine": 600, "gpi": 7.9, "od": 0.253 },
+            { "spine": 500, "gpi": 8.9, "od": 0.261 },
+            { "spine": 400, "gpi": 9.8, "od": 0.267 },
+            { "spine": 340, "gpi": 10.3, "od": 0.270 }
+          ],
+          "nock": "X",
+          "insert": "X HIT 16 gr (brass HIT optional)",
+          "discontinued": true,
+          "source": "https://eastonarchery.com/target/5mm-axis-traditional/"
+        },
+        {
+          "id": "goldtip-traditional-xt",
+          "name": { "es": "Gold Tip Traditional XT", "en": "Gold Tip Traditional XT" },
+          "brand": "Gold Tip",
+          "idInch": 0.246,
+          "finish": "woodgrain/brown",
+          "color": "#6B4A2E",
+          "desc": { "es": "Carbono de diámetro estándar para arco tradicional. Culatín GT.", "en": "Standard-diameter carbon for traditional bows. GT nock." },
+          "spines": [
+            { "spine": 600, "gpi": 7.8 },
+            { "spine": 500, "gpi": 8.6 },
+            { "spine": 400, "gpi": 9.3 },
+            { "spine": 340, "gpi": 10.5 }
+          ],
+          "nock": "GT",
+          "source": "https://lancasterarchery.com/products/gold-tip-traditional-xt-arrow-shaft-43010"
+        },
+        {
+          "id": "goldtip-traditional-classic-xt",
+          "name": { "es": "Gold Tip Traditional Classic XT", "en": "Gold Tip Traditional Classic XT" },
+          "brand": "Gold Tip",
+          "idInch": 0.204,
+          "finish": "woodgrain",
+          "color": "#7B5434",
+          "desc": { "es": "Carbono de .204 más pesado con half-outs de acero inoxidable y collarín. Culatín Accu-Tough .204.", "en": "Heavier .204 carbon with stainless half-outs and collars. Accu-Tough .204 nock." },
+          "spines": [
+            { "spine": 600, "gpi": 9.1 },
+            { "spine": 500, "gpi": 10.2 },
+            { "spine": 400, "gpi": 11.3 },
+            { "spine": 340, "gpi": 12.0 }
+          ],
+          "nock": "Accu-Tough .204",
+          "insert": "stainless half-out (included per Lancaster)",
+          "source": "https://lancasterarchery.com/products/gold-tip-traditional-classic-xt-arrow-shaft",
+          "notes": { "es": "Las tiendas dan valores de GPI distintos; los de la versión no-Classic son más bajos. Verifica.", "en": "Retailers disagree on GPI; the non-Classic version is lighter. Verify." },
+          "uncertain": true
+        },
+        {
+          "id": "black-eagle-vintage",
+          "name": { "es": "Black Eagle Vintage", "en": "Black Eagle Vintage" },
+          "brand": "Black Eagle",
+          "idInch": 0.2445,
+          "finish": "woodgrain",
+          "color": "#7E5634",
+          "desc": { "es": "Carbono estándar para tradicional, recto ±.005\", emparejado en spine y peso.", "en": "Standard carbon for traditional, ±.005\" straightness, spine and weight matched." },
+          "spines": [
+            { "spine": 600, "gpi": 7.9, "od": 0.293 },
+            { "spine": 500, "gpi": 8.5, "od": 0.297 },
+            { "spine": 400, "gpi": 9.2, "od": 0.301 },
+            { "spine": 350, "gpi": 9.8, "od": 0.303 }
+          ],
+          "nock": "S/.244 standard",
+          "source": "https://3riversarchery.com/black-eagle-vintage-shafts.html"
+        },
+        {
+          "id": "black-eagle-instinct",
+          "name": { "es": "Black Eagle Instinct Traditional", "en": "Black Eagle Instinct Traditional" },
+          "brand": "Black Eagle",
+          "idInch": 0.165,
+          "finish": "woodgrain (Duracoat)",
+          "color": "#80573A",
+          "desc": { "es": "Microdiámetro con acabado madera. Outsert de acero inoxidable que añade ~100 gr delante y ~3/4\" de longitud.", "en": "Micro-diameter with wood finish. Stainless outsert adds ~100 gr up front and ~3/4\" of length." },
+          "spines": [
+            { "spine": 600, "gpi": 7.9, "od": 0.231 },
+            { "spine": 500, "gpi": 8.8, "od": 0.236 },
+            { "spine": 400, "gpi": 9.4, "od": 0.240 },
+            { "spine": 350, "gpi": 10.6, "od": 0.248 }
+          ],
+          "nock": "Black Eagle .165 nock",
+          "insert": "stainless outsert ~100 gr",
+          "source": "https://3riversarchery.com/black-eagle-instinct-shafts.html"
+        },
+        {
+          "id": "skylon-bentwood",
+          "name": { "es": "Skylon Bentwood", "en": "Skylon Bentwood" },
+          "brand": "Skylon",
+          "idInch": 0.244,
+          "finish": "woodlook",
+          "color": "#8C6239",
+          "desc": { "es": "Carbono 24T de 6,2 mm con aspecto madera, pensado para tradicional y 3D. Culatín S (0.245) e inserción para puntas de 5/16.", "en": "6.2mm 24T carbon with wood look, aimed at traditional and 3D. S nock (0.245) and insert for 5/16 points." },
+          "spines": [
+            { "spine": 300, "gpi": 9.68, "odMm": 7.70 },
+            { "spine": 350, "gpi": 7.89, "odMm": 7.43 },
+            { "spine": 400, "gpi": 7.73, "odMm": 7.40 },
+            { "spine": 500, "gpi": 7.25, "odMm": 7.36 },
+            { "spine": 600, "gpi": 5.87, "odMm": 7.17 },
+            { "spine": 700, "gpi": 5.70, "odMm": 7.10 },
+            { "spine": 800, "gpi": 5.40, "odMm": 7.00 }
+          ],
+          "nock": "S 6.2",
+          "source": "https://www.bogentandler.at/en/skylon-bentwood--0.005-carbon-arrow-6.2-with-feathers"
+        },
+        {
+          "id": "bearpaw-penthalon-trad-extreme",
+          "name": { "es": "Bearpaw Penthalon Traditional Extreme", "en": "Bearpaw Penthalon Traditional Extreme" },
+          "brand": "Bearpaw",
+          "idInch": 0.244,
+          "finish": "real ash veneer",
+          "color": "#D9C29A",
+          "desc": { "es": "Carbono con una fina chapa de fresno auténtico: se puede barnizar, coronar y anillar como la madera.", "en": "Carbon with a thin real ash veneer: can be lacquered, crown-dipped and crested like wood." },
+          "spines": [
+            { "spine": 600, "gpi": 9.9 },
+            { "spine": 500, "gpi": 10.1 },
+            { "spine": 400, "gpi": 10.7 },
+            { "spine": 350, "gpi": null },
+            { "spine": 300, "gpi": null }
+          ],
+          "nock": "6.2",
+          "source": "https://www.bearpaw-products.com/products/10461-penthalon-traditional-extreme",
+          "uncertain": true
+        },
+        {
+          "id": "bearpaw-penthalon-trad-black",
+          "name": { "es": "Bearpaw Penthalon Traditional Black", "en": "Bearpaw Penthalon Traditional Black" },
+          "brand": "Bearpaw",
+          "idInch": 0.245,
+          "finish": "black",
+          "color": "#2A2A2A",
+          "desc": { "es": "Carbono negro de 6,2 mm para tradicional. Bearpaw también ofrece versiones con aspecto bambú y madera (Timberstick, Slim Line Timber).", "en": "Black 6.2mm carbon for traditional. Bearpaw also sells bamboo- and wood-look versions (Timberstick, Slim Line Timber)." },
+          "spines": [
+            { "spine": 500, "gpi": 7.8, "odMm": null },
+            { "spine": 400, "gpi": 9.2, "odMm": 7.51 },
+            { "spine": 350, "gpi": 9.7, "odMm": 7.59 }
+          ],
+          "nock": "6.2",
+          "source": "https://www.bogentandler.at/en/penthalon-traditional-black-carbon-shaft"
+        },
+        {
+          "id": "carbon-express-heritage",
+          "name": { "es": "Carbon Express Heritage", "en": "Carbon Express Heritage" },
+          "brand": "Carbon Express",
+          "idInch": null,
+          "finish": "cedar look",
+          "color": "#B9875A",
+          "desc": { "es": "Carbono con aspecto cedro. Tamaños 150/250/350 (no son deflexión: 150 ≈ .49\", 250 ≈ .39-.40\", 350 ≈ .32-.35\"). Parece descatalogado.", "en": "Cedar-look carbon. Sizes 150/250/350 (not deflection: 150 ≈ .49\", 250 ≈ .39-.40\", 350 ≈ .32-.35\"). Appears discontinued." },
+          "spines": [
+            { "spine": "150", "deflection": 0.49, "gpi": 10.1 },
+            { "spine": "250", "deflection": 0.40, "gpi": 10.9 },
+            { "spine": "350", "deflection": 0.33, "gpi": 11.45 }
+          ],
+          "discontinued": true,
+          "uncertain": true,
+          "source": "https://www.opticsplanet.com/carbon-express-heritage-arrows.html"
+        },
+        {
+          "id": "cross-x-gladiator",
+          "name": { "es": "Cross-X Gladiator", "en": "Cross-X Gladiator" },
+          "brand": "Cross-X (Bignami)",
+          "idInch": 0.244,
+          "finish": "black",
+          "color": "#222222",
+          "desc": { "es": "Carbono polivalente 6,2 mm (3D, campo, diana), apto para arco tradicional. Spines 350-800.", "en": "General-purpose 6.2mm carbon (3D, field, target), suitable for traditional bows. Spines 350-800." },
+          "spines": [
+            { "spine": 400, "gpi": 8.1 },
+            { "spine": 800, "gpi": 5.75 }
+          ],
+          "nock": "6.2",
+          "source": "https://www.bogentandler.at/en/cross-x-gladiator-carbon-shaft",
+          "notes": { "es": "Solo se verificaron los extremos de la tabla.", "en": "Only the ends of the table were verified." }
+        }
+      ],
+      "frontWeightOptions": [
+        { "id": "brass-insert", "name": { "es": "Inserción de latón", "en": "Brass insert" }, "desc": { "es": "Sustituye a la de aluminio y añade peso delante (p. ej. Easton HIT de latón; versiones de 50-100 gr según modelo).", "en": "Replaces the aluminium insert and adds front weight (e.g. Easton brass HIT; 50-100 gr versions depending on model)." }, "approx": true },
+        { "id": "half-out", "name": { "es": "Half-out", "en": "Half-out" }, "desc": { "es": "Mitad dentro y mitad por fuera del tubo: refuerza la punta del astil y añade peso. Típico en .204 y .166.", "en": "Half inside, half over the tube: reinforces the shaft front and adds weight. Typical for .204 and .166." } },
+        { "id": "outsert", "name": { "es": "Outsert", "en": "Outsert" }, "desc": { "es": "Casquillo que va por fuera del tubo; protege el borde del carbono. Ej.: Black Eagle Instinct (~100 gr inox).", "en": "Sleeve fitted over the tube; protects the carbon edge. E.g. Black Eagle Instinct (~100 gr stainless)." } },
+        { "id": "weight-tube", "name": { "es": "Tubo/varilla de peso interior", "en": "Internal weight tube/rod" }, "desc": { "es": "Peso que se mete dentro del astil detrás de la inserción para subir FOC o peso total.", "en": "Weight inserted inside the shaft behind the insert to raise FOC or total weight." } },
+        { "id": "footing-sleeve", "name": { "es": "Injerto/funda exterior (footing)", "en": "Footing sleeve" }, "desc": { "es": "Funda de carbono o aluminio en los primeros centímetros del astil: más resistencia y peso delante.", "en": "Carbon or aluminium sleeve over the first inches of the shaft: more strength and front weight." } }
+      ]
+    },
+
+    "fiberglass": {
+      "name": { "es": "Fibra de vidrio", "en": "Fiberglass" },
+      "desc": {
+        "es": "Astiles baratos y resistentes, sobre todo para niños, iniciación, campamentos y arcos de juguete o muy suaves. Pueden ser tubo hueco (normalmente 5/16\" de diámetro exterior) o varilla maciza (aprox. 5-7 mm).",
+        "en": "Cheap, tough shafts, mainly for children, beginners, camps and very light bows. They come as hollow tubes (usually 5/16\" OD) or solid rods (approx. 5-7mm)."
+      },
+      "pros": [
+        { "es": "Muy baratos y difíciles de romper por flexión.", "en": "Very cheap and hard to break by bending." },
+        { "es": "No se tuercen: ideales para grupos y niños.", "en": "Do not warp: ideal for groups and children." }
+      ],
+      "cons": [
+        { "es": "Pesados y lentos; spine limitado (casi siempre para arcos de menos de ~30-35 lb).", "en": "Heavy and slow; limited spine (almost always for bows under ~30-35 lb)." },
+        { "es": "Al romperse sueltan fibras de vidrio que se clavan en la piel: retira las flechas dañadas.", "en": "When broken they release glass splinters that pierce skin: discard damaged arrows." },
+        { "es": "Poca oferta de componentes; normalmente se compran ya montadas.", "en": "Few components; usually bought ready-made." }
+      ],
+      "spineUnit": "bowLbs",
+      "options": [
+        { "id": "glass-tube", "name": { "es": "Tubo de fibra de vidrio", "en": "Fiberglass tube" }, "desc": { "es": "Hueco, 5/16\" exterior (también 1/4\" o 9/32\"). Culatín a presión interior o cónico pegado; punta a presión/encolada o casquillo de punta.", "en": "Hollow, 5/16\" OD (also 1/4\" or 9/32\"). Press-fit or taper nock; press-fit/glue-in point or point sleeve." }, "grainsPerInch": [9, 14], "bowLbs": [10, 35], "durability": 3, "price": 1, "color": "#F2F2EE", "approx": true },
+        { "id": "glass-solid", "name": { "es": "Varilla maciza", "en": "Solid rod" }, "desc": { "es": "Muy pesada (puede superar 15-20 gr/pulgada) y prácticamente irrompible. Arcos infantiles, juegos y algunos arcos a caballo baratos. Puntas y culatines que encajan por fuera.", "en": "Very heavy (can exceed 15-20 gr/inch) and practically unbreakable. Kids' bows, games and some cheap horse bows. Points and nocks slip over the rod." }, "grainsPerInch": [14, 22], "bowLbs": [10, 30], "durability": 3, "price": 1, "color": "#E9E4D4", "approx": true }
+      ],
+      "points": { "es": "Puntas de diana a presión o encoladas, puntas de goma para niños.", "en": "Press-fit or glued target points; rubber blunts for kids." },
+      "nocks": { "es": "Culatines a presión para tubo o culatines exteriores (overnock) para varilla.", "en": "Press-fit nocks for tubes or over-nocks for solid rods." }
+    },
+
+    "aluminium": {
+      "name": { "es": "Aluminio", "en": "Aluminium" },
+      "desc": {
+        "es": "Tubos de aleación (Easton XX75: 7075) muy rectos y uniformes, más baratos que el buen carbono. Se doblan en vez de romperse (a veces se pueden enderezar). Hoy tienen poca presencia en tradicional, pero siguen siendo una buena opción económica y para escuelas.",
+        "en": "Alloy tubes (Easton XX75: 7075) that are very straight and uniform and cheaper than good carbon. They bend instead of breaking (sometimes they can be straightened). Less common in traditional archery today but still a good budget/school option."
+      },
+      "pros": [
+        { "es": "Muy uniformes en peso y spine; amplia gama de tamaños.", "en": "Very uniform weight and spine; wide size range." },
+        { "es": "Más pesados que el carbono del mismo spine: buen vuelo desde arcos tradicionales.", "en": "Heavier than carbon of the same spine: good flight from traditional bows." }
+      ],
+      "cons": [
+        { "es": "Se doblan; una flecha doblada pierde precisión.", "en": "They bend; a bent arrow loses accuracy." },
+        { "es": "Más diámetro exterior y algo más de ruido; prohibidos en clases que exigen madera.", "en": "Larger OD and a bit noisier; not allowed in wood-only classes." }
+      ],
+      "sizeCode": {
+        "es": "Código de 4 cifras: las 2 primeras = diámetro exterior en 64avos de pulgada; las 2 últimas = espesor de pared en milésimas. Ej.: 1916 = 19/64\" (0,297\") y pared de 0,016\"; 2016 = 20/64\" (0,312\").",
+        "en": "4-digit code: first 2 digits = outside diameter in 64ths of an inch; last 2 = wall thickness in thousandths. E.g. 1916 = 19/64\" (0.297\") with 0.016\" wall; 2016 = 20/64\" (0.312\")."
+      },
+      "spineUnit": "deflection",
+      "options": [
+        {
+          "id": "easton-jazz",
+          "name": { "es": "Easton XX75 Jazz", "en": "Easton XX75 Jazz" },
+          "desc": { "es": "Aluminio 7075 económico, negro, ±.005\". Muy usado en escuelas. Casquillo (bushing) instalado; culatín 4 mm (G/F) salvo 2016 (6,5 mm, Super). 1214 usa culatín G directo.", "en": "Budget 7075 aluminium, black, ±.005\". Common in schools. Bushing installed; 4mm (G/F) nock except 2016 (6.5mm, Super). 1214 uses direct-fit G nock." },
+          "color": "#1F1F1F",
+          "sizes": [
+            { "size": "2016", "deflection": 0.567, "gpi": 10.6, "od": 0.312, "nock": "6.5mm Super", "insertGr": 20, "screwInPoint": "5/16" },
+            { "size": "1916", "deflection": 0.627, "gpi": 10.0, "od": 0.297, "nock": "4mm G/F", "insertGr": 16, "screwInPoint": "5/16" },
+            { "size": "1816", "deflection": 0.759, "gpi": 9.3, "od": 0.281, "nock": "4mm G/F", "insertGr": 12, "screwInPoint": "9/32" },
+            { "size": "1716", "deflection": 0.882, "gpi": 9.0, "od": 0.266, "nock": "4mm G/F", "insertGr": 10, "screwInPoint": "17/64" },
+            { "size": "1616", "deflection": 1.082, "gpi": 8.4, "od": 0.250, "nock": "4mm G/F", "insertGr": null },
+            { "size": "1516", "deflection": 1.405, "gpi": 7.3, "od": 0.234, "nock": "4mm G/F", "insertGr": null },
+            { "size": "1416", "deflection": 1.685, "gpi": 7.2, "od": 0.219, "nock": "4mm G/F", "insertGr": null },
+            { "size": "1214", "deflection": 2.501, "gpi": 5.9, "od": 0.197, "nock": "G direct", "insertGr": null }
+          ],
+          "source": "https://eastonarchery.com/arrows_/xx75-jazz/"
+        },
+        {
+          "id": "easton-platinum-plus",
+          "name": { "es": "Easton XX75 Platinum Plus", "en": "Easton XX75 Platinum Plus" },
+          "desc": { "es": "Aluminio 7075-T9 de mayor calidad (±.002\"). Casquillo UNI Super o G instalado. Inserción RPS y puntas roscadas en los tamaños grandes; puntas bala/NIBB encolables en todos.", "en": "Higher-grade 7075-T9 aluminium (±.002\"). Super or G UNI bushing installed. RPS insert and screw-in points in the larger sizes; glue-in bullet/NIBB points in all." },
+          "color": "#9AA3AD",
+          "sizes": [
+            { "size": "2213", "deflection": 0.464, "gpi": 9.8, "od": 0.344, "insertGr": 52, "screwInPoint": "11/32" },
+            { "size": "2114", "deflection": 0.513, "gpi": 9.9, "od": 0.328, "insertGr": 52, "screwInPoint": "11/32" },
+            { "size": "2016", "deflection": 0.537, "gpi": 10.6, "od": 0.312, "insertGr": 40, "screwInPoint": "11/32" },
+            { "size": "2013", "deflection": 0.616, "gpi": 9.0, "od": 0.313, "insertGr": null },
+            { "size": "1916", "deflection": 0.627, "gpi": 10.0, "od": 0.297, "insertGr": 30, "screwInPoint": "11/32" },
+            { "size": "1913", "deflection": 0.738, "gpi": 8.3, "od": 0.298, "insertGr": 30, "screwInPoint": "11/32" },
+            { "size": "1816", "deflection": 0.759, "gpi": 9.3, "od": 0.281, "insertGr": 25, "screwInPoint": "5/16" },
+            { "size": "1716", "deflection": 0.882, "gpi": 9.0, "od": 0.266, "insertGr": null },
+            { "size": "1616", "deflection": 1.082, "gpi": 8.4, "od": 0.250, "insertGr": null },
+            { "size": "1516", "deflection": 1.405, "gpi": 7.3, "od": 0.234, "insertGr": null },
+            { "size": "1416", "deflection": 1.685, "gpi": 7.2, "od": 0.219, "insertGr": null }
+          ],
+          "source": "https://eastonarchery.com/arrows_/xx75-platinum-plus/"
+        },
+        {
+          "id": "aluminium-swaged",
+          "name": { "es": "Aluminio con cono estampado (swaged, antiguo)", "en": "Swaged-end aluminium (older)" },
+          "desc": { "es": "Modelos antiguos o de segunda mano con el extremo del tubo conformado en cono para pegar un culatín cónico convencional (p. ej. 5/16 o 9/32). Hoy casi todos llevan casquillo UNI.", "en": "Older or second-hand shafts with the tube end swaged into a cone for a conventional glue-on nock (e.g. 5/16 or 9/32). Most current shafts use a UNI bushing." },
+          "color": "#8E8E8E",
+          "uncertain": true
+        }
+      ],
+      "nockSystems": [
+        { "id": "super-uni", "name": { "es": "Casquillo Super UNI (6,5 mm)", "en": "Super UNI bushing (6.5mm)" }, "nocks": ["Super Nock", "3D Super Nock", "Microlite Super"], "weightGrains": [7, 15] },
+        { "id": "g-uni", "name": { "es": "Casquillo G UNI (4 mm)", "en": "G UNI bushing (4mm)" }, "nocks": ["G", "F"], "weightGrains": [5, 17] },
+        { "id": "swaged", "name": { "es": "Cono estampado", "en": "Swaged taper" }, "nocks": ["conventional glue-on taper nock"], "uncertain": true }
+      ],
+      "pointSystems": [
+        { "id": "rps", "name": { "es": "Inserción RPS + punta roscada 8-32", "en": "RPS insert + 8-32 screw-in point" }, "desc": { "es": "Inserción de aluminio del tamaño exacto del astil (p. ej. 2016), pegada con cola termofusible. Peso de la inserción 10-52 gr según tamaño.", "en": "Aluminium insert sized to the exact shaft (e.g. 2016), set with hot-melt glue. Insert weight 10-52 gr depending on size." } },
+        { "id": "glue-in", "name": { "es": "Punta encolable (bala/NIBB)", "en": "Glue-in point (bullet/NIBB)" }, "desc": { "es": "Punta de una pieza del tamaño del astil, pegada con termofusible. 45-110 gr según tamaño.", "en": "One-piece point sized to the shaft, set with hot-melt. 45-110 gr depending on size." } }
+      ]
+    }
+  },
+
+  "points": [
+    {
+      "id": "glue-on-field",
+      "name": { "es": "Punta de campo para pegar (cónica 5°)", "en": "Glue-on field point (5° taper)" },
+      "desc": { "es": "La punta estándar para madera y bambú. Se pega sobre un cono de 5° hecho con conificador, con cola termofusible o epoxi. Su diámetro debe coincidir con el del astil.", "en": "The standard point for wood and bamboo. Glued onto a 5° taper made with a taper tool, using hot-melt or epoxy. Its diameter must match the shaft." },
+      "materials": ["wood", "bamboo"],
+      "mount": "glue-on-taper",
+      "diameters": ["5/16", "11/32", "23/64"],
+      "weightsByDiameter": { "5/16": [70, 85, 100, 125], "11/32": [100, 125, 145, 160, 190, 200, 225], "23/64": [125, 145, 160, 190, 200, 225] },
+      "weights": [70, 85, 100, 125, 145, 160, 190, 200, 225],
+      "use": ["target", "3d", "field", "practice"],
+      "shape": "field",
+      "approx": true
+    },
+    {
+      "id": "glue-on-bullet",
+      "name": { "es": "Punta ojival/bala para pegar", "en": "Glue-on bullet point" },
+      "desc": { "es": "Punta ojival; penetra en la diana y se extrae con facilidad. Muy usada en diana y 3D.", "en": "Ogive-shaped point; penetrates and pulls easily. Common for target and 3D." },
+      "materials": ["wood", "bamboo"],
+      "mount": "glue-on-taper",
+      "diameters": ["5/16", "11/32", "23/64"],
+      "weights": [70, 100, 125, 145],
+      "use": ["target", "3d"],
+      "shape": "bullet",
+      "approx": true
+    },
+    {
+      "id": "glue-on-3d",
+      "name": { "es": "Punta 3D (con hombro/escalón)", "en": "3D point (shouldered)" },
+      "desc": { "es": "Punta con perfil diseñado para entrar y salir de las dianas de espuma 3D sin dañarlas ni quedarse dentro.", "en": "Point profiled to enter and leave 3D foam targets without tearing them or pulling off inside." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium"],
+      "mount": "glue-on-taper|screw-in",
+      "diameters": ["5/16", "11/32", "8-32"],
+      "weights": [100, 125, 145],
+      "use": ["3d"],
+      "shape": "field",
+      "approx": true
+    },
+    {
+      "id": "taper-screw-adapter",
+      "name": { "es": "Adaptador cónico roscado (para madera)", "en": "Screw-in taper adapter (for wood)" },
+      "desc": { "es": "Casquillo cónico (5°) que se pega a la madera y lleva rosca hembra 8-32. Permite usar cualquier punta roscada en flechas de madera y cambiarlas (campo/caza/judo). Su peso se suma al de la punta.", "en": "5° taper sleeve glued onto wood with an 8-32 female thread. Lets you use any screw-in point on wooden arrows and swap them (field/broadhead/judo). Its weight adds to the point weight." },
+      "materials": ["wood", "bamboo"],
+      "mount": "glue-on-taper",
+      "diameters": ["5/16", "11/32", "23/64"],
+      "weights": [20, 25, 30, 35],
+      "use": ["accessory"],
+      "shape": "adapter",
+      "approx": true,
+      "uncertain": true
+    },
+    {
+      "id": "screw-in-field",
+      "name": { "es": "Punta de campo roscada 8-32", "en": "Screw-in field point (8-32)" },
+      "desc": { "es": "Se enrosca en la inserción (carbono/aluminio) o en el adaptador cónico (madera). Sistema modular: cambia el peso sin pegar. Elige el diámetro exterior de la punta igual al del astil (p. ej. 19/64, 5/16, 11/32).", "en": "Screws into the insert (carbon/aluminium) or the taper adapter (wood). Modular: change weight without gluing. Pick the point OD that matches the shaft OD (e.g. 19/64, 5/16, 11/32)." },
+      "materials": ["carbon", "aluminium", "wood", "bamboo"],
+      "mount": "screw-in",
+      "thread": "8-32",
+      "diameters": ["9/32", "19/64", "5/16", "11/32", "23/64"],
+      "weights": [75, 85, 100, 125, 145, 160, 190, 200, 250, 300],
+      "use": ["target", "3d", "field", "practice"],
+      "shape": "field"
+    },
+    {
+      "id": "glue-in-onepiece",
+      "name": { "es": "Punta encolable interior (una pieza)", "en": "Glue-in one-piece point" },
+      "desc": { "es": "Punta con espiga que se pega directamente dentro del tubo, sin inserción. Para carbono se elige por ID (4.2/.166, 5.2/.204, 6.2/.244); en aluminio por tamaño (bala/NIBB). Más ligera y simple, pero no intercambiable.", "en": "Point with a shank glued straight into the tube, no insert. For carbon it is chosen by ID (4.2/.166, 5.2/.204, 6.2/.244); for aluminium by size (bullet/NIBB). Lighter and simpler, but not interchangeable." },
+      "materials": ["carbon", "aluminium"],
+      "mount": "glue-in",
+      "ids": [".166", ".204", ".244", ".246"],
+      "weights": [45, 60, 80, 100, 120],
+      "use": ["target", "3d", "field"],
+      "shape": "bullet|field",
+      "approx": true
+    },
+    {
+      "id": "target-point",
+      "name": { "es": "Punta de diana (target)", "en": "Target point" },
+      "desc": { "es": "Punta de perfil cónico-recto para dianas de paja o espuma. En madera, existe en versión para pegar; en carbono/aluminio, roscada o encolable.", "en": "Straight-conical point for straw or foam butts. For wood as glue-on; for carbon/aluminium as screw-in or glue-in." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium", "fiberglass"],
+      "mount": "glue-on-taper|screw-in|glue-in",
+      "weights": [60, 70, 80, 100, 120],
+      "use": ["target"],
+      "shape": "bullet",
+      "approx": true
+    },
+    {
+      "id": "steel-blunt",
+      "name": { "es": "Punta roma de acero", "en": "Steel blunt" },
+      "desc": { "es": "Punta plana o de cabeza redondeada para tiro de recorrido (stump shooting) y caza menor donde sea legal. No sirve para dianas 3D.", "en": "Flat or round-headed point for stump shooting and small game where legal. Not for 3D targets." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium"],
+      "mount": "glue-on-taper|screw-in",
+      "weights": [100, 125, 145, 160],
+      "use": ["roving", "small-game"],
+      "shape": "blunt",
+      "approx": true
+    },
+    {
+      "id": "rubber-blunt",
+      "name": { "es": "Punta roma de goma", "en": "Rubber blunt" },
+      "desc": { "es": "Capuchón de goma que se coloca sobre una punta de campo o directamente sobre el astil. Para tiro de recorrido, niños y juegos. NO es segura para tirar a personas.", "en": "Rubber cap slipped over a field point or straight onto the shaft. For roving, kids and games. NOT safe for shooting at people." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium", "fiberglass"],
+      "mount": "slip-on",
+      "weights": [20, 30, 40],
+      "use": ["roving", "kids"],
+      "shape": "rubber",
+      "approx": true
+    },
+    {
+      "id": "judo",
+      "name": { "es": "Punta judo", "en": "Judo point" },
+      "desc": { "es": "Punta con brazos de muelle que enganchan la hierba y evitan que la flecha se pierda. Ideal para tiro de recorrido.", "en": "Point with spring arms that catch in grass so the arrow doesn't skid and get lost. Ideal for roving." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium"],
+      "mount": "screw-in|glue-on-taper",
+      "weights": [100, 125],
+      "use": ["roving", "small-game"],
+      "shape": "judo",
+      "approx": true
+    },
+    {
+      "id": "broadhead",
+      "name": { "es": "Punta de caza (cuchillas / broadhead)", "en": "Broadhead" },
+      "desc": { "es": "Punta con cuchillas (2, 3 o más), roscada o para pegar en cono. Solo para caza donde esté autorizada. Exige afinar la flecha (vuela distinto que una punta de campo). Prohibida en campos de tiro 3D y diana.", "en": "Bladed point (2, 3 or more blades), screw-in or glue-on taper. Only for hunting where permitted. The arrow must be tuned (it flies differently from a field point). Banned on 3D and target ranges." },
+      "materials": ["wood", "bamboo", "carbon", "aluminium"],
+      "mount": "screw-in|glue-on-taper",
+      "weights": [100, 125, 145, 160, 175, 190, 200, 250, 300],
+      "use": ["hunting"],
+      "shape": "broadhead",
+      "legal": {
+        "es": "La caza con arco es ilegal en muchos países europeos (p. ej. Alemania, Reino Unido, Países Bajos, Bélgica, Irlanda) y está regulada en otros (p. ej. España, Francia, Portugal, Dinamarca), con requisitos de licencia, potencia mínima y ancho mínimo de cuchilla. En España la caza es competencia de cada comunidad autónoma: consulta la normativa local.",
+        "en": "Bowhunting is illegal in many European countries (e.g. Germany, UK, Netherlands, Belgium, Ireland) and regulated in others (e.g. Spain, France, Portugal, Denmark), with licence, minimum draw weight and minimum blade width rules. In Spain hunting is regulated by each autonomous community: check local law.",
+        "uncertain": true
+      }
+    },
+    {
+      "id": "bodkin",
+      "name": { "es": "Punta bodkin forjada (medieval)", "en": "Forged bodkin (medieval)" },
+      "desc": { "es": "Punta histórica de hierro forjado con cubo (tubo) que se encaja sobre el astil cónico. Tipos largos/cortos (tipologías tipo 7, 8, 10...). Para recreación histórica y tiro a dianas de paja. Muchos campos de 3D la prohíben porque destroza la espuma.", "en": "Historical forged-iron head with a socket fitted onto the tapered shaft. Long/short types (e.g. type 7, 8, 10 typologies). For historical re-enactment and straw targets. Many 3D ranges ban it because it destroys foam." },
+      "materials": ["wood"],
+      "mount": "socket",
+      "diameters": ["5/16", "11/32", "23/64", "3/8", "custom"],
+      "weights": [50, 75, 100, 125, 150, 200, 250],
+      "use": ["historical", "warbow"],
+      "shape": "bodkin",
+      "approx": true
+    },
+    {
+      "id": "medieval-broadhead",
+      "name": { "es": "Punta histórica con aletas (forjada)", "en": "Forged historical broadhead / barbed" },
+      "desc": { "es": "Réplicas de puntas de guerra o caza medievales con cubo. Solo exhibición o recreación; no para dianas de espuma.", "en": "Replicas of medieval war or hunting heads with socket. Display or re-enactment only; not for foam targets." },
+      "materials": ["wood"],
+      "mount": "socket",
+      "weights": [80, 120, 160, 200, 250],
+      "use": ["historical"],
+      "shape": "broadhead",
+      "approx": true
+    },
+    {
+      "id": "primitive",
+      "name": { "es": "Punta de sílex, hueso o asta", "en": "Stone, bone or antler point" },
+      "desc": { "es": "Para flechas primitivas y arqueología experimental. Se atan con tendón/hilo y resina en una ranura del astil.", "en": "For primitive arrows and experimental archaeology. Hafted into a slot with sinew/thread and pitch." },
+      "materials": ["wood", "bamboo"],
+      "mount": "hafted",
+      "weights": [],
+      "use": ["historical", "primitive"],
+      "shape": "primitive"
+    },
+    {
+      "id": "larp-foam",
+      "name": { "es": "Cabeza de espuma (LARP / archery tag)", "en": "Foam head (LARP / archery tag)" },
+      "desc": { "es": "Cabeza ancha de espuma para rol en vivo y combate simulado, montada sobre astiles específicos y con arcos de baja potencia (normalmente ≤ 30 lb). Usa solo flechas certificadas por el organizador; no conviertas flechas normales.", "en": "Wide foam head for live-action role play and simulated combat, on dedicated shafts and with low-poundage bows (typically ≤ 30 lb). Use only arrows certified by the organiser; do not convert normal arrows." },
+      "materials": ["fiberglass", "carbon"],
+      "mount": "dedicated",
+      "weights": [],
+      "use": ["larp"],
+      "shape": "rubber",
+      "uncertain": true
+    },
+    {
+      "id": "whistle",
+      "name": { "es": "Punta silbadora", "en": "Whistling point" },
+      "desc": { "es": "Punta hueca con orificios que silba en vuelo (inspirada en la kabura-ya japonesa y las flechas de señal de las estepas). Ceremonial o de exhibición; suele montarse con punta roma.", "en": "Hollow point with holes that whistles in flight (inspired by Japanese kabura-ya and steppe signal arrows). Ceremonial or display; usually blunt." },
+      "materials": ["wood", "bamboo", "carbon"],
+      "mount": "glue-on-taper|screw-in|slip-on",
+      "weights": [30, 60, 100],
+      "use": ["display", "horsebow"],
+      "shape": "whistle",
+      "uncertain": true
+    }
+  ],
+
+  "nocks": [
+    {
+      "id": "self-nock",
+      "name": { "es": "Culatín tallado (self nock)", "en": "Self nock" },
+      "desc": { "es": "Ranura cortada directamente en la madera. Muy tradicional e histórico. Debe reforzarse con una lámina de asta, hueso, fibra o madera dura insertada en perpendicular a la ranura, y/o un atado de hilo justo por debajo, para que la cuerda no raje el astil.", "en": "Slot cut directly into the wood. Very traditional and historical. It should be reinforced with a horn, bone, fibre or hardwood sliver inserted across the slot, and/or a thread binding just below, so the string can't split the shaft." },
+      "materials": ["wood", "bamboo"],
+      "fit": "any wooden diameter",
+      "weightGrains": [0, 5],
+      "pros": [{ "es": "Aspecto histórico; sin peso añadido.", "en": "Historical look; no added weight." }],
+      "cons": [{ "es": "Requiere habilidad; se desgasta y puede rajarse sin refuerzo.", "en": "Needs skill; wears and may split without reinforcement." }]
+    },
+    {
+      "id": "taper-glue-on",
+      "name": { "es": "Culatín cónico para pegar (11°)", "en": "Glue-on taper nock (11°)" },
+      "desc": { "es": "Culatín de plástico que se pega sobre un cono de 11° (el otro lado del conificador). Modelos: Bohning Classic, Bohning T-Nock, Bearpaw Speed Nock, AAE Plastinock, TopHat. Muchos tienen una marca índice que se alinea con la pluma timonera.", "en": "Plastic nock glued onto an 11° taper (the other side of the taper tool). Models: Bohning Classic, Bohning T-Nock, Bearpaw Speed Nock, AAE Plastinock, TopHat. Many have an index ridge to align with the cock feather." },
+      "materials": ["wood", "bamboo", "aluminium-swaged"],
+      "diameters": ["1/4", "9/32", "5/16", "11/32", "23/64"],
+      "weightGrains": [8, 16],
+      "examples": [
+        { "model": "Bohning Classic 5/16", "weight": 10, "throat": 0.115, "groove": 0.106 },
+        { "model": "Bohning Classic 11/32", "weight": 13 },
+        { "model": "Bohning T-Nock 5/16", "weight": 14 },
+        { "model": "Bohning T-Nock 11/32", "weight": 15 }
+      ],
+      "notes": { "es": "En astiles de 23/64 se puede usar un culatín de 11/32 dejando ver un poco del cono, o buscar culatines de 23/64. En astiles cónicos usa el diámetro final (normalmente 5/16).", "en": "On 23/64 shafts you can use an 11/32 nock with a little taper showing, or find 23/64 nocks. On tapered shafts use the end diameter (usually 5/16)." }
+    },
+    {
+      "id": "parallel-push-on",
+      "name": { "es": "Culatín paralelo de encaje", "en": "Parallel push-on nock" },
+      "desc": { "es": "Culatín que encaja sobre el extremo del astil sin conificar (p. ej. TopHat Parallel 11/32). Útil si no se dispone de conificador.", "en": "Nock that fits over the untapered shaft end (e.g. TopHat Parallel 11/32). Handy without a taper tool." },
+      "materials": ["wood"],
+      "diameters": ["5/16", "11/32"],
+      "weightGrains": [10, 15],
+      "approx": true
+    },
+    {
+      "id": "horn-nock",
+      "name": { "es": "Culatín de asta/hueso (histórico)", "en": "Horn/bone nock (historical)" },
+      "desc": { "es": "Culatín tallado en asta o hueso y pegado sobre cono o en una ranura. Recreación histórica y estética.", "en": "Nock carved from horn or bone, glued onto a taper or into a slot. Historical re-enactment and aesthetics." },
+      "materials": ["wood", "bamboo"],
+      "weightGrains": [5, 15],
+      "approx": true
+    },
+    {
+      "id": "press-fit-inside",
+      "name": { "es": "Culatín interior a presión (por ID)", "en": "Press-fit inside nock (by ID)" },
+      "desc": { "es": "Para tubos de carbono: el culatín encaja dentro del astil. Se elige según el diámetro interior. Se puede girar para orientarlo respecto a las plumas.", "en": "For carbon tubes: the nock fits inside the shaft. Chosen by inside diameter. Can be rotated to align with the fletching." },
+      "materials": ["carbon"],
+      "byId": [
+        { "id": ".166", "nocks": ["Easton G (small/large groove)", "Easton N", "Gold Tip GTO"] },
+        { "id": ".204", "nocks": ["Easton X", "Gold Tip Accu-Tough"] },
+        { "id": ".234", "nocks": ["Easton H / HE"] },
+        { "id": ".244", "nocks": ["Easton S", "Easton Super / 3D Super", "6.2 nocks (Skylon, Bearpaw, Cross-X)"] },
+        { "id": ".246", "nocks": ["Gold Tip GT"] }
+      ],
+      "weightGrains": [5, 12],
+      "approx": true
+    },
+    {
+      "id": "pin-nock",
+      "name": { "es": "Pin nock + casquillo pin", "en": "Pin nock + pin bushing" },
+      "desc": { "es": "El culatín se monta sobre un pivote de aluminio (pin) metido en el astil: si otra flecha lo golpea, se rompe el culatín y no el tubo. Típico de diana; cualquier pin nock vale en cualquier casquillo pin. Beiter #1 (cuerdas finas) y #2 (cuerdas gruesas).", "en": "The nock sits on an aluminium pin inserted in the shaft: if another arrow hits it, the nock breaks instead of the tube. Typical for target; any pin nock fits any pin bushing. Beiter #1 (thin strings) and #2 (thick strings)." },
+      "materials": ["carbon", "aluminium"],
+      "weightGrains": [8, 15],
+      "approx": true
+    },
+    {
+      "id": "uni-bushing",
+      "name": { "es": "Casquillo UNI + culatín (aluminio)", "en": "UNI bushing + nock (aluminium)" },
+      "desc": { "es": "Casquillo de aluminio en la cola del astil de aluminio que acepta culatines Super (UNI 6,5 mm) o G/F (UNI 4 mm).", "en": "Aluminium bushing in the end of an aluminium shaft that accepts Super (6.5mm UNI) or G/F (4mm UNI) nocks." },
+      "materials": ["aluminium"],
+      "weightGrains": [5, 17],
+      "source": "https://eastonarchery.com/arrows_/xx75-platinum-plus/"
+    },
+    {
+      "id": "over-nock",
+      "name": { "es": "Culatín exterior (overnock)", "en": "Over-nock" },
+      "desc": { "es": "Encaja por fuera del tubo. Para astiles muy finos, varillas de fibra de vidrio y algunas flechas infantiles.", "en": "Fits over the outside of the tube. For very thin shafts, fiberglass rods and some kids' arrows." },
+      "materials": ["carbon", "fiberglass"],
+      "weightGrains": [6, 12],
+      "approx": true
+    },
+    {
+      "id": "lighted",
+      "name": { "es": "Culatín luminoso", "en": "Lighted nock" },
+      "desc": { "es": "Culatín con LED que se enciende al disparar (Nockturnal, Lumenok...). Para encontrar flechas y seguir el vuelo. Pesa más que un culatín normal (~20-25 gr), lo que reduce el FOC. Ej.: Nockturnal FIT ~25 gr, encaja en X (.204) y con casquillos en H, S (.244) y GT (.246).", "en": "LED nock that lights on the shot (Nockturnal, Lumenok...). Helps find arrows and follow flight. Heavier than a normal nock (~20-25 gr), lowering FOC. E.g. Nockturnal FIT ~25 gr, fits X (.204) and with bushings H, S (.244) and GT (.246)." },
+      "materials": ["carbon", "aluminium"],
+      "weightGrains": [15, 25],
+      "examples": [{ "model": "Nockturnal FIT", "weight": 25 }, { "model": "Nockturnal (older push-in)", "weight": 20 }, { "model": "Lumenok", "weight": null, "uncertain": true }],
+      "notes": { "es": "No existen para culatín tallado; no permitido en algunas competiciones.", "en": "Not available for self-nocks; not allowed in some competitions." }
+    }
+  ],
+
+  "nockThroat": {
+    "desc": {
+      "es": "La garganta del culatín debe ajustarse a la cuerda (más concretamente al serving/forrado del punto de enfleche): la flecha debe quedarse colgando de la cuerda y caer con un golpecito suave. Las cuerdas tradicionales de Dacron/B-50 con muchos hilos son gruesas; las de materiales modernos (Fast Flight, 8125...) son más finas.",
+      "en": "The nock throat must fit the string (specifically the centre serving): the arrow should hang from the string and drop off with a light tap. Traditional Dacron/B-50 strings with many strands are thick; modern-material strings (Fast Flight, 8125...) are thinner."
+    },
+    "groups": [
+      { "id": "small", "name": { "es": "Garganta pequeña", "en": "Small groove" }, "grooveInch": [0.081, 0.090], "examples": ["Easton G Small 0.088", "Easton Super 0.081", "Beiter #1 0.088"] },
+      { "id": "large", "name": { "es": "Garganta grande", "en": "Large groove" }, "grooveInch": [0.092, 0.106], "examples": ["Easton G Large 0.098", "Easton X 0.096", "Gold Tip GT 0.101", "Beiter #2 0.098", "Bohning Classic 5/16 0.106"] }
+    ],
+    "source": "https://lancasterarchery.com/blogs/guides-and-information/nocks-everything-you-need-to-know"
+  },
+
+  "fletching": {
+    "materials": [
+      { "id": "turkey", "name": { "es": "Pluma natural de pavo", "en": "Turkey feather" }, "desc": { "es": "La pluma más usada (Trueflight, Gateway, Bearpaw). Se tiñe en muchos colores y en barrado. Plegable: no desvía la flecha si roza el arco.", "en": "The most used feather (Trueflight, Gateway, Bearpaw). Dyed in many colours and barred patterns. Folds down: does not deflect the arrow if it brushes the bow." }, "shelfOk": true, "waterResistance": 1 },
+      { "id": "goose", "name": { "es": "Pluma de oca/ganso", "en": "Goose feather" }, "desc": { "es": "La pluma histórica europea (gris/blanca natural). Caña más blanda y estrecha; ideal para recreación medieval.", "en": "The historical European feather (natural grey/white). Softer, narrower quill; ideal for medieval re-enactment." }, "shelfOk": true, "waterResistance": 1 },
+      { "id": "other-natural", "name": { "es": "Otras naturales (cisne, pato, pavo real…)", "en": "Other natural (swan, duck, peacock…)" }, "desc": { "es": "Decorativas o históricas; verifica la legalidad del origen (especies protegidas).", "en": "Decorative or historical; check the legality of the source (protected species)." }, "shelfOk": true, "uncertain": true },
+      { "id": "vane", "name": { "es": "Pluma de plástico (vane)", "en": "Plastic vane" }, "desc": { "es": "Resistente al agua y duradera, pero rígida: si toca el arco rebota y desvía la flecha. Solo con reposaflechas elevado que deje paso a las plumas.", "en": "Waterproof and durable, but stiff: if it touches the bow it bounces and deflects the arrow. Only with an elevated arrow rest that gives fletching clearance." }, "shelfOk": false, "waterResistance": 3 },
+      { "id": "spin-wing", "name": { "es": "Spin Wing (mylar)", "en": "Spin Wing (mylar)" }, "desc": { "es": "Láminas finas curvadas para recurvo olímpico con reposaflechas. No para tradicional.", "en": "Thin curled films for Olympic recurve with a rest. Not for traditional." }, "shelfOk": false }
+    ],
+    "cuts": [
+      { "id": "full-length", "name": { "es": "Pluma entera (full length)", "en": "Full-length" }, "desc": { "es": "Pluma completa sin cortar, para recortar con quemador o cortador a la forma deseada. Más barata y necesaria para flu-flu.", "en": "Uncut whole feather, to trim with a burner or chopper. Cheaper and needed for flu-flus." } },
+      { "id": "die-cut", "name": { "es": "Precortada (troquelada)", "en": "Die-cut / pre-cut" }, "desc": { "es": "Ya cortada con la forma y longitud final. Lo más cómodo para empezar.", "en": "Already cut to final shape and length. Easiest for beginners." } }
+    ],
+    "wings": [
+      { "id": "lw", "name": { "es": "Ala izquierda (LW)", "en": "Left wing (LW)" } },
+      { "id": "rw", "name": { "es": "Ala derecha (RW)", "en": "Right wing (RW)" } }
+    ],
+    "wingNotes": {
+      "es": "Las plumas de cada ala tienen una curvatura natural que hace girar la flecha en un sentido. Funcionan para arqueros diestros y zurdos; lo importante es no mezclar alas en la misma flecha (ni en el mismo juego) y usar la pinza helicoidal del mismo lado que el ala.",
+      "en": "Feathers from each wing have a natural curve that spins the arrow one way. Both work for right- and left-handed archers; what matters is never mixing wings on one arrow (or in one set) and using a helical clamp of the same hand as the wing."
+    },
+    "shapes": [
+      { "id": "shield", "name": { "es": "Escudo (shield)", "en": "Shield" }, "desc": { "es": "Forma clásica con muesca en la parte trasera. Mucho control, algo más de ruido. Muy usada en tradicional y arco a caballo.", "en": "Classic shape with a notch at the back. Lots of control, a little more noise. Very common in traditional and horse bow." } },
+      { "id": "parabolic", "name": { "es": "Parabólica", "en": "Parabolic" }, "desc": { "es": "Curva suave y continua. Silenciosa y estable; la más versátil.", "en": "Smooth, continuous curve. Quiet and stable; the most versatile." } },
+      { "id": "banana", "name": { "es": "Banana", "en": "Banana" }, "desc": { "es": "Perfil bajo y alargado con forma de plátano; buen control con poco ruido. Popular en 3D y arco a caballo.", "en": "Low, elongated banana profile; good steering with little noise. Popular in 3D and horse bow." } },
+      { "id": "low-profile", "name": { "es": "Perfil bajo", "en": "Low profile" }, "desc": { "es": "Pluma baja y larga: menos resistencia y ruido, mayor velocidad; necesita más longitud para guiar.", "en": "Low, long feather: less drag and noise, more speed; needs more length to steer." } },
+      { "id": "triangle", "name": { "es": "Triangular (estilo Pope & Young)", "en": "Triangle (Pope & Young style)" }, "desc": { "es": "Triangular, alta detrás. Mucha guía para puntas pesadas o de caza.", "en": "Triangular, tall at the back. Strong steering for heavy points or broadheads." } },
+      { "id": "round-back", "name": { "es": "Trasera redondeada", "en": "Round back" }, "desc": { "es": "Como la parabólica pero más alta y redondeada atrás.", "en": "Like parabolic but taller and rounded at the rear." } },
+      { "id": "historical", "name": { "es": "Histórica larga (medieval)", "en": "Long historical (medieval)" }, "desc": { "es": "Plumas largas (6-9\") y de perfil bajo o triangular, a menudo atadas con hilo. Flechas de guerra y recreación.", "en": "Long (6-9\") low or triangular feathers, often bound with thread. War arrows and re-enactment." } },
+      { "id": "flu-flu", "name": { "es": "Flu-flu (6 plumas)", "en": "Flu-flu (6 feathers)" }, "desc": { "es": "Seis plumas enteras sin recortar (o muy altas). Frena la flecha rápidamente tras ~20-30 m: tiro a blancos aéreos y para no perder flechas.", "en": "Six untrimmed (or very tall) full feathers. Slows the arrow sharply after ~20-30 m: aerial targets and not losing arrows." } },
+      { "id": "spiral-flu-flu", "name": { "es": "Flu-flu en espiral", "en": "Spiral flu-flu" }, "desc": { "es": "Una pluma entera enrollada en espiral alrededor del astil. Mismo efecto que la flu-flu.", "en": "One full-length feather wound spirally around the shaft. Same effect as a flu-flu." } }
+    ],
+    "lengths": [
+      { "inch": 2, "cm": 5.1, "use": { "es": "Diana/indoor con reposaflechas", "en": "Target/indoor with a rest" }, "weightGrainsFeather": [1.0, 1.5] },
+      { "inch": 3, "cm": 7.6, "use": { "es": "Diana con arcos ligeros y puntas ligeras", "en": "Target with light bows and points" }, "weightGrainsFeather": [1.5, 2.0] },
+      { "inch": 4, "cm": 10.2, "use": { "es": "El estándar en 3D y diana tradicional", "en": "Standard for 3D and traditional target" }, "weightGrainsFeather": [2.0, 2.8] },
+      { "inch": 5, "cm": 12.7, "use": { "es": "Tradicional desde la repisa, puntas pesadas, caza, arco a caballo", "en": "Shelf shooting, heavy points, hunting, horse bow" }, "weightGrainsFeather": [3.0, 3.5] },
+      { "inch": 5.5, "cm": 14.0, "use": { "es": "Puntas de caza, flechas pesadas y largas", "en": "Broadheads, heavy and long arrows" }, "weightGrainsFeather": [3.3, 4.0] },
+      { "inch": 6, "cm": 15.2, "use": { "es": "Histórico, warbow, flechas muy largas", "en": "Historical, warbow, very long arrows" }, "weightGrainsFeather": [3.5, 4.5] }
+    ],
+    "lengthWeightNote": { "es": "Ref. verificada: Trueflight 5\" escudo = 3,2 gr; 4\" redondeada = 2,3 gr. Pluma entera de pavo ≈ 6-9 gr (aprox.). Vane de 4\" ≈ 8-11 gr (aprox.).", "en": "Verified ref.: Trueflight 5\" shield = 3.2 gr; 4\" round back = 2.3 gr. Full-length turkey ≈ 6-9 gr (approx). 4\" vane ≈ 8-11 gr (approx)." },
+    "configs": [
+      { "id": "3-120", "name": { "es": "3 plumas a 120°", "en": "3-fletch at 120°" }, "desc": { "es": "La configuración estándar. La pluma timonera (de otro color) va perpendicular a la garganta del culatín y apuntando hacia fuera del arco; las otras dos (gallinas) pasan junto a la ventana.", "en": "The standard. The cock (index) feather, in a different colour, sits perpendicular to the nock throat pointing away from the bow; the two hen feathers pass next to the shelf." }, "count": 3, "angles": [0, 120, 240] },
+      { "id": "4-90", "name": { "es": "4 plumas a 90° (en X)", "en": "4-fletch at 90° (X)" }, "desc": { "es": "Más guía y la flecha se puede encocar en cualquier posición; más resistencia y ruido. Con plumas algo más cortas.", "en": "More steering and the arrow can be nocked any way; more drag and noise. Use slightly shorter feathers." }, "count": 4, "angles": [45, 135, 225, 315] },
+      { "id": "4-75-105", "name": { "es": "4 plumas a 75°/105°", "en": "4-fletch at 75°/105°" }, "desc": { "es": "Cuatro plumas con mejor paso por la ventana; muy usada en caza.", "en": "Four feathers with better shelf clearance; popular for hunting." }, "count": 4, "angles": [0, 75, 180, 255] },
+      { "id": "6-flu", "name": { "es": "6 plumas (flu-flu)", "en": "6-fletch (flu-flu)" }, "count": 6, "angles": [0, 60, 120, 180, 240, 300] }
+    ],
+    "orientations": [
+      { "id": "straight", "name": { "es": "Recta", "en": "Straight" }, "desc": { "es": "Alineada con el astil. Menos giro y algo más de velocidad; poca estabilización con puntas pesadas.", "en": "In line with the shaft. Less spin, a bit more speed; little stabilisation with heavy points." } },
+      { "id": "offset", "name": { "es": "Offset (desviada 1-3°)", "en": "Offset (1-3°)" }, "desc": { "es": "Recta pero ligeramente girada: equilibrio entre giro y velocidad.", "en": "Straight but slightly angled: balance between spin and speed." } },
+      { "id": "helical", "name": { "es": "Helicoidal", "en": "Helical" }, "desc": { "es": "Sigue la curva del astil; máximo giro y estabilidad. Lo habitual en tradicional con plumas naturales. La pinza (derecha/izquierda) debe coincidir con el ala.", "en": "Follows a curve around the shaft; maximum spin and stability. Usual for traditional with feathers. The clamp (right/left) must match the wing." } }
+    ],
+    "cockFeather": {
+      "es": "La pluma timonera (índice) se distingue por color (a menudo barrada o fluorescente) y sirve para encocar siempre igual. En 3 plumas apunta hacia fuera del arco (a la izquierda para un diestro, a la derecha para un zurdo).",
+      "en": "The cock (index) feather is a different colour (often barred or fluorescent) so the arrow is always nocked the same way. With 3 feathers it points away from the bow (left for a right-handed archer, right for a left-handed archer)."
+    }
+  },
+
+  "extras": [
+    { "id": "sealer", "name": { "es": "Sellado/barniz de la madera", "en": "Wood sealer/finish" }, "desc": { "es": "Imprescindible en madera: tinte opcional y barniz/laca/aceite para protegerla de la humedad. Hazlo antes de emplumar.", "en": "Essential for wood: optional stain plus lacquer/varnish/oil against moisture. Do it before fletching." }, "materials": ["wood", "bamboo"], "weightGrains": [3, 10], "approx": true },
+    { "id": "crown-dip", "name": { "es": "Coronado (crown dip)", "en": "Crown dip" }, "desc": { "es": "Inmersión de la parte trasera (7-10\") en laca de color, normalmente blanca o fluorescente. Mejora la visibilidad, protege y sirve de base para anillos. Se hace en un tubo de inmersión.", "en": "Dipping the rear 7-10\" in coloured lacquer, usually white or fluorescent. Improves visibility, protects and gives a base for cresting. Done in a dip tube." }, "materials": ["wood", "bamboo", "carbon-woodveneer"], "lengthsInch": [7, 8, 9, 10], "weightGrains": [3, 8], "approx": true },
+    { "id": "cresting", "name": { "es": "Anillado (cresting)", "en": "Cresting" }, "desc": { "es": "Anillos de colores pintados con un torno de anillar. Identifican tus flechas (útil en competición y en grupo).", "en": "Coloured bands painted on a cresting lathe. Identify your arrows (useful in competition and groups)." }, "materials": ["wood", "bamboo", "carbon", "aluminium"], "weightGrains": [0, 2], "approx": true },
+    { "id": "wrap", "name": { "es": "Wrap (vinilo adhesivo)", "en": "Arrow wrap" }, "desc": { "es": "Lámina de vinilo que se enrolla en la cola. Facilita pegar y cambiar plumas en carbono/aluminio y da color. Se elige por diámetro exterior del astil (tallas por marca) y por longitud (4\" corto, 7\" bajo plumas largas).", "en": "Vinyl sheet wrapped around the rear. Makes gluing and refletching on carbon/aluminium easy and adds colour. Chosen by shaft outside diameter (brand sizes) and length (4\" short, 7\" under long feathers)." }, "materials": ["carbon", "aluminium"], "lengthsInch": [4, 7], "weightGrains": [3, 10], "approx": true },
+    { "id": "thread-binding", "name": { "es": "Atado con hilo", "en": "Thread binding" }, "desc": { "es": "Hilo (seda, lino, tendón) para reforzar el culatín tallado, atar los extremos de las plumas o sujetar plumas históricas en espiral a través de ellas. Se fija con cola o laca.", "en": "Thread (silk, linen, sinew) to reinforce self-nocks, bind feather ends, or wrap historical fletching through the vanes. Fixed with glue or lacquer." }, "materials": ["wood", "bamboo"], "weightGrains": [1, 5], "approx": true },
+    { "id": "footing", "name": { "es": "Injerto (footing)", "en": "Footing" }, "desc": { "es": "Pieza de madera dura (5-8\": haya, nogal americano, purpleheart, bubinga…) empalmada en cola de pez en la punta del astil. Aumenta resistencia, peso delante (FOC) y rigidez. Avanzado.", "en": "Hardwood piece (5-8\": beech, hickory, purpleheart, bubinga…) spliced in a fishtail joint at the shaft front. Adds strength, front weight (FOC) and stiffness. Advanced." }, "materials": ["wood", "bamboo"], "weightGrains": [20, 60], "approx": true },
+    { "id": "front-weight", "name": { "es": "Peso delantero (inserciones de latón, tubos de peso, pesas roscadas)", "en": "Front weight (brass inserts, weight tubes, screw-in weights)" }, "desc": { "es": "Para subir el FOC o el peso total en carbono: inserciones de latón, half-outs/outserts, tubos de peso internos o pesas que se enroscan entre inserción y punta (p. ej. Black Eagle 5/10/30 gr).", "en": "To raise FOC or total weight on carbon: brass inserts, half-outs/outserts, internal weight tubes or weights screwed between insert and point (e.g. Black Eagle 5/10/30 gr)." }, "materials": ["carbon", "aluminium"], "weightGrains": [5, 100] },
+    { "id": "collar", "name": { "es": "Collarín protector", "en": "Impact collar" }, "desc": { "es": "Anillo metálico en la punta del tubo de carbono que protege el borde y ayuda a extraer de dianas 3D.", "en": "Metal ring at the front of the carbon tube that protects the edge and helps pulling from 3D targets." }, "materials": ["carbon"], "weightGrains": [5, 20], "approx": true },
+    { "id": "marking", "name": { "es": "Marcado personal", "en": "Personal marking" }, "desc": { "es": "Nombre, iniciales o número en cada flecha. Muchas federaciones y competiciones lo exigen.", "en": "Name, initials or number on each arrow. Many federations and competitions require it." }, "materials": ["wood", "bamboo", "carbon", "aluminium", "fiberglass"], "weightGrains": [0, 0] }
+  ],
+
+  "tools": [
+    { "id": "taper-tool", "name": { "es": "Conificador (doble 5°/11°)", "en": "Taper tool (5°/11°)" }, "desc": { "es": "Sacapuntas para astiles: 5° para la punta, 11° para el culatín. Debe ser del diámetro de tu astil o ajustable.", "en": "Shaft sharpener: 5° for the point, 11° for the nock. Must match your shaft diameter or be adjustable." }, "materials": ["wood", "bamboo"] },
+    { "id": "fletching-jig", "name": { "es": "Emplumadora", "en": "Fletching jig" }, "desc": { "es": "Sujeta el astil y la pinza para pegar las plumas en ángulo exacto (recta/offset/helicoidal derecha o izquierda).", "en": "Holds shaft and clamp to glue feathers at an exact angle (straight/offset/right or left helical)." } },
+    { "id": "feather-burner", "name": { "es": "Quemador/cortador de plumas", "en": "Feather burner/chopper" }, "desc": { "es": "Da forma a las plumas enteras (escudo, parabólica…).", "en": "Shapes full-length feathers (shield, parabolic…)." } },
+    { "id": "hot-melt", "name": { "es": "Cola termofusible", "en": "Hot-melt glue" }, "desc": { "es": "Para puntas en madera y en aluminio; permite despegarlas con calor. En carbono usar epoxi o termofusible de baja temperatura, nunca llama directa sobre el carbono.", "en": "For points on wood and aluminium; removable with heat. On carbon use epoxy or low-temp hot-melt, never direct flame on the carbon." } }
+  ],
+
+  "rules": [
+    { "id": "r-wood-point-glueon", "level": "require", "if": "shaft.material == wood AND point.mount == glue-on-taper", "then": "point.diameter == shaft.diameter; cut 5° point taper", "es": "Madera: la punta para pegar debe ser del mismo diámetro que el astil (5/16, 11/32 o 23/64) y se pega sobre un cono de 5°.", "en": "Wood: a glue-on point must match the shaft diameter (5/16, 11/32 or 23/64) and is glued on a 5° taper." },
+    { "id": "r-wood-point-screwin", "level": "require", "if": "shaft.material in [wood,bamboo] AND point.mount == screw-in", "then": "add taper-screw-adapter of shaft.diameter; adapter weight counts as point weight", "es": "Madera con punta roscada: necesitas un adaptador cónico roscado (8-32) del diámetro del astil. Su peso se suma a la punta.", "en": "Wood with a screw-in point: you need a threaded (8-32) taper adapter of the shaft diameter. Its weight adds to the point." },
+    { "id": "r-wood-nock", "level": "require", "if": "shaft.material == wood", "then": "nock in [self-nock, taper-glue-on(shaft end diameter), parallel-push-on, horn-nock]", "es": "Madera: culatín tallado (reforzado) o culatín cónico de 11° del diámetro de la cola del astil (en astiles cónicos, normalmente 5/16). En 23/64 vale un culatín de 11/32 dejando ver algo del cono.", "en": "Wood: a (reinforced) self-nock or an 11° taper nock matching the shaft end diameter (usually 5/16 on tapered shafts). On 23/64 an 11/32 nock works with some taper showing." },
+    { "id": "r-wood-no-inside", "level": "forbid", "if": "shaft.material in [wood,bamboo]", "then": "no press-fit inside nocks, no inserts, no glue-in carbon points", "es": "La madera no admite culatines interiores, inserciones ni puntas encolables interiores (salvo bambú taponado con sistemas específicos).", "en": "Wood does not take inside nocks, inserts or glue-in points (except plugged bamboo with specific systems)." },
+    { "id": "r-selfnock-wood", "level": "require", "if": "nock == self-nock", "then": "shaft.material in [wood,bamboo]; recommend reinforcement insert or thread binding", "es": "El culatín tallado solo es posible en madera (o bambú con tapón). Refuérzalo con una lámina de asta/fibra o con un atado de hilo.", "en": "A self-nock is only possible in wood (or plugged bamboo). Reinforce it with a horn/fibre insert or thread binding." },
+    { "id": "r-grain-orientation", "level": "recommend", "if": "shaft.material == wood", "then": "orient nock consistently to grain on all arrows", "es": "Orienta el culatín igual respecto a la veta en todas las flechas del juego (lo habitual es la ranura perpendicular a los anillos de crecimiento para reducir el riesgo de rajado).", "en": "Orient the nock the same way relative to the grain on every arrow (commonly with the slot perpendicular to the growth rings to reduce splitting).", "uncertain": true },
+    { "id": "r-bamboo-plug", "level": "require", "if": "shaft.material == bamboo AND end is hollow", "then": "plug with hardwood dowel or cut near a node before fitting point/nock", "es": "Bambú/caña: tapona los extremos huecos con madera dura o corta junto a un nudo antes de poner punta y culatín. La caña Arundo suele necesitar antefuste de madera.", "en": "Bamboo/cane: plug hollow ends with hardwood or cut near a node before fitting point and nock. Arundo cane usually needs a hardwood foreshaft." },
+    { "id": "r-carbon-id-match", "level": "require", "if": "shaft.material == carbon", "then": "nock, insert, glue-in point, outsert must match shaft.id", "es": "Carbono: culatín, inserción, punta encolable y outsert deben corresponder al diámetro interior del astil (.166 / .204 / .244-.246).", "en": "Carbon: nock, insert, glue-in point and outsert must match the shaft inside diameter (.166 / .204 / .244-.246)." },
+    { "id": "r-carbon-166", "level": "require", "if": "shaft.id == .166", "then": "nocks: G/N/GTO or brand .166; points: 4mm glue-in, .166 insert, or outsert", "es": "ID .166 (4,2 mm): culatines G, N, GTO o de la marca; puntas encolables de 4 mm, inserción .166 o outsert.", "en": "ID .166 (4.2mm): G, N, GTO or brand nocks; 4mm glue-in points, .166 insert or outsert." },
+    { "id": "r-carbon-204", "level": "require", "if": "shaft.id == .204", "then": "nocks: X or Accu-Tough; points: X HIT / half-out + 8-32", "es": "ID .204 (5,2 mm): culatín X (Easton) o Accu-Tough (Gold Tip); inserción HIT o half-out con puntas roscadas 8-32.", "en": "ID .204 (5.2mm): X (Easton) or Accu-Tough (Gold Tip) nock; HIT insert or half-out with 8-32 screw-in points." },
+    { "id": "r-carbon-244", "level": "require", "if": "shaft.id in [.244,.246]", "then": "nocks: S/Super/6.2 (.244) or GT (.246); points: .244/.246 insert + 8-32 or 6.2 glue-in", "es": "ID .244/.246 (6,2 mm): culatín S/Super/6.2 (.244) o GT (.246); inserción estándar con punta roscada 8-32 o punta encolable 6,2. Usa preferiblemente el culatín de la misma marca.", "en": "ID .244/.246 (6.2mm): S/Super/6.2 (.244) or GT (.246) nock; standard insert with 8-32 screw-in point or 6.2 glue-in point. Prefer the same brand's nock." },
+    { "id": "r-screwin-od", "level": "recommend", "if": "point.mount == screw-in", "then": "point.od ≈ shaft.od (never smaller by much, never larger)", "es": "La punta roscada debe tener el mismo diámetro exterior que el astil (p. ej. Carbon Legacy 500 → 19/64; 340 → 5/16) para que entre y salga limpia de la diana.", "en": "A screw-in point should match the shaft OD (e.g. Carbon Legacy 500 → 19/64; 340 → 5/16) so it enters and leaves the target cleanly." },
+    { "id": "r-alu-uni", "level": "require", "if": "shaft.material == aluminium", "then": "nock by bushing: Super UNI → Super nock; G UNI → G/F nock; swaged → taper glue-on nock; insert = RPS for exact size", "es": "Aluminio: el culatín depende del casquillo (Super UNI → culatín Super; G UNI → culatín G/F; cono estampado → culatín cónico). La inserción RPS o la punta encolable deben ser del tamaño exacto del astil (p. ej. 2016).", "en": "Aluminium: the nock depends on the bushing (Super UNI → Super nock; G UNI → G/F nock; swaged → taper nock). RPS insert or glue-in point must match the exact shaft size (e.g. 2016)." },
+    { "id": "r-fiberglass", "level": "recommend", "if": "shaft.material == fiberglass", "then": "use ready-made arrows; press-fit/over-nock; target or rubber points; bow ≤ ~30-35 lb", "es": "Fibra de vidrio: mejor comprar flechas ya montadas; culatines a presión o exteriores; puntas de diana o de goma; arcos suaves (hasta ~30-35 lb). Desecha las que estén astilladas.", "en": "Fiberglass: best bought ready-made; press-fit or over-nocks; target or rubber points; light bows (up to ~30-35 lb). Discard splintered arrows.", "approx": true },
+    { "id": "r-shelf-feathers", "level": "require", "if": "bow.rest in [shelf, hand]", "then": "fletching.material in [turkey, goose, other-natural]", "es": "Si tiras desde la repisa (ventana sin reposaflechas) o desde la mano, usa solo plumas naturales: se pliegan al rozar el arco. Las de plástico rebotan y desvían la flecha.", "en": "Shooting off the shelf (no rest) or off the hand requires natural feathers: they fold when they brush the bow. Plastic vanes bounce and deflect the arrow." },
+    { "id": "r-vanes-rest", "level": "require", "if": "fletching.material == vane", "then": "bow has an elevated rest with fletching clearance", "es": "Plumas de plástico (vanes) solo con reposaflechas elevado que deje paso libre al emplumado.", "en": "Plastic vanes only with an elevated arrow rest that gives the fletching clearance." },
+    { "id": "r-horsebow", "level": "require", "if": "bow.type == horse-bow OR draw == thumb", "then": "natural feathers; shoot off hand; often 5\" shield/banana/parabolic; longer shafts; nock fit for thumb ring", "es": "Arco a caballo / suelta con pulgar: plumas naturales obligatorias (se dispara sobre la mano, sin ventana). La flecha va al lado contrario que en la suelta mediterránea (a la derecha del arco para un diestro). Suelen usarse plumas de 5\" escudo/banana/parabólica, astiles algo más largos que la apertura y flechas ligeras; comprueba el peso mínimo que indica el fabricante del arco.", "en": "Horse bow / thumb draw: natural feathers mandatory (shot off the hand, no shelf). The arrow sits on the opposite side compared with Mediterranean draw (right of the bow for a right-hander). Typically 5\" shield/banana/parabolic feathers, shafts a bit longer than draw, and light arrows; check the bowyer's minimum arrow weight." },
+    { "id": "r-wing-consistency", "level": "require", "if": "fletching.material is natural", "then": "all feathers on an arrow (and set) same wing; helical clamp same hand as wing", "es": "Nunca mezcles plumas de ala izquierda y derecha en la misma flecha ni en el mismo juego. Para helicoidal, la pinza debe ser del mismo lado que el ala.", "en": "Never mix left- and right-wing feathers on one arrow or in one set. For helical, the clamp must be the same hand as the wing." },
+    { "id": "r-cock-feather", "level": "recommend", "if": "fletching.config == 3-120", "then": "cock feather perpendicular to nock slot, pointing away from bow", "es": "Con 3 plumas, la timonera va perpendicular a la ranura del culatín y apuntando hacia fuera del arco.", "en": "With 3 feathers, the cock feather is perpendicular to the nock slot and points away from the bow." },
+    { "id": "r-feather-length-point", "level": "recommend", "if": "point.weight >= 145 OR point.shape == broadhead", "then": "fletching length >= 5\" or 4-fletch / helical", "es": "Puntas pesadas (≥145 gr) o de caza necesitan más guía: plumas de 5-5,5\", helicoidal o 4 plumas.", "en": "Heavy points (≥145 gr) or broadheads need more steering: 5-5.5\" feathers, helical or 4-fletch." },
+    { "id": "r-flu-flu", "level": "recommend", "if": "use == aerial OR flu-flu", "then": "use blunt or judo point; full-length feathers", "es": "Flu-flu: úsala con puntas romas o judo para blancos aéreos; requiere plumas enteras.", "en": "Flu-flu: use with blunt or judo points for aerial targets; needs full-length feathers." },
+    { "id": "r-broadhead-legal", "level": "warn", "if": "point.shape == broadhead", "then": "hunting only, check local law, tune arrow, never on ranges", "es": "Las puntas de caza solo para caza legal: en muchos países europeos la caza con arco está prohibida y en España depende de cada comunidad autónoma. Nunca en campos de tiro.", "en": "Broadheads only for legal hunting: bowhunting is banned in many European countries and in Spain depends on each autonomous community. Never on ranges." },
+    { "id": "r-bodkin-ranges", "level": "warn", "if": "point.shape in [bodkin, medieval-broadhead]", "then": "re-enactment / straw butts only; not on foam 3D", "es": "Bodkins y puntas forjadas: para recreación y dianas de paja; la mayoría de campos 3D no las permiten.", "en": "Bodkins and forged heads: for re-enactment and straw butts; most 3D ranges ban them." },
+    { "id": "r-larp", "level": "forbid", "if": "use == larp OR shooting at people", "then": "only organiser-certified foam arrows; never convert standard arrows; never rubber blunts on standard arrows", "es": "Nunca dispares a personas con flechas normales, ni siquiera con puntas de goma. Para LARP/archery tag usa solo flechas de espuma homologadas por la organización y arcos de baja potencia.", "en": "Never shoot people with standard arrows, not even with rubber blunts. For LARP/archery tag use only organiser-approved foam arrows and low-poundage bows." },
+    { "id": "r-category-wood", "level": "warn", "if": "competition class in [longbow, historical]", "then": "wood shafts and natural feathers usually required", "es": "En categorías como longbow o arco histórico (RFETA, IFAA, WA…) suelen exigirse flechas de madera con plumas naturales. Consulta el reglamento de tu federación.", "en": "Classes such as longbow or historical bow (RFETA, IFAA, WA…) usually require wooden arrows with natural feathers. Check your federation's rules.", "uncertain": true },
+    { "id": "r-spine-wood", "level": "recommend", "if": "shaft.material == wood", "then": "spine group ≈ draw weight at your draw; +5 lb per inch over 28\"; +5 lb per 25 gr over 125 gr point", "es": "Spine en madera: empieza con un grupo igual a la potencia real del arco a tu apertura; suma ~5 lb por cada pulgada de astil por encima de 28\" y ~5 lb por cada 25 gr de punta por encima de 125 gr. Confirma con prueba de astil desnudo.", "en": "Wood spine: start with a group equal to the bow's actual draw weight at your draw; add ~5 lb per inch of shaft over 28\" and ~5 lb per 25 gr of point over 125 gr. Confirm with bare-shaft testing.", "approx": true },
+    { "id": "r-spine-carbon", "level": "require", "if": "shaft.material in [carbon, aluminium]", "then": "choose spine from manufacturer chart with draw weight, arrow length and point weight", "es": "Carbono/aluminio: elige el spine con la tabla del fabricante usando potencia, longitud de flecha y peso de punta. Número más bajo = astil más rígido.", "en": "Carbon/aluminium: choose spine from the maker's chart using draw weight, arrow length and point weight. Lower number = stiffer shaft." },
+    { "id": "r-point-spine", "level": "warn", "if": "point.weight changes", "then": "heavier point = weaker dynamic spine; lighter = stiffer", "es": "Una punta más pesada hace que la flecha se comporte más blanda; una más ligera, más rígida. Si cambias mucho el peso de punta, revisa el spine.", "en": "A heavier point makes the arrow act weaker; a lighter one, stiffer. If you change point weight a lot, recheck spine." },
+    { "id": "r-length-spine", "level": "warn", "if": "shaft.length changes", "then": "longer = weaker; shorter = stiffer", "es": "Cortar el astil lo hace más rígido; dejarlo largo, más blando. Corta siempre por la parte delantera y deja ~1-2\" más que tu apertura.", "en": "Cutting a shaft stiffens it; leaving it long weakens it. Always cut from the front and leave ~1-2\" beyond your draw length." },
+    { "id": "r-min-weight", "level": "warn", "if": "total arrow weight / draw weight < bowyer minimum (often 6-9 gr per lb)", "then": "warn: risk of bow damage (like a dry fire)", "es": "No uses flechas más ligeras que el mínimo que indica el fabricante del arco (en tradicional suele ser de 6 a 9 granos por libra). Una flecha demasiado ligera castiga el arco como un tiro en vacío.", "en": "Do not use arrows lighter than the bowyer's minimum (traditional bows often 6-9 grains per pound). An overly light arrow stresses the bow like a dry fire.", "approx": true },
+    { "id": "r-foc", "level": "recommend", "if": "always", "then": "FOC = (balance point from nock throat − L/2) / L × 100; target 7-15% (hunting often higher)", "es": "FOC (peso delante): equilibrio de la flecha respecto a su centro. Para tradicional, 7-15 % es lo habitual; más FOC = vuelo más estable, sobre todo con viento y puntas de caza.", "en": "FOC (front of centre): arrow balance relative to its centre. 7-15% is typical for traditional; more FOC = more stable flight, especially in wind and with broadheads.", "approx": true },
+    { "id": "r-lighted", "level": "warn", "if": "nock == lighted", "then": "shaft.material in [carbon, aluminium] AND id/bushing compatible; FOC decreases", "es": "Culatines luminosos: solo en carbono/aluminio con ID o casquillo compatible; añaden peso atrás y bajan el FOC. No disponibles para madera.", "en": "Lighted nocks: only on carbon/aluminium with compatible ID or bushing; they add rear weight and lower FOC. Not available for wood." },
+    { "id": "r-wrap", "level": "recommend", "if": "extra == wrap", "then": "shaft.material in [carbon, aluminium]; wrap size by OD; length ≥ fletching length", "es": "Wraps: en carbono/aluminio, talla según diámetro exterior y largo igual o mayor que las plumas (4\" o 7\"). En madera se usa coronado y barniz.", "en": "Wraps: on carbon/aluminium, sized by OD and at least as long as the fletching (4\" or 7\"). On wood use crown dip and lacquer instead." },
+    { "id": "r-crown-dip", "level": "recommend", "if": "extra == crown-dip", "then": "shaft.material in [wood, bamboo, carbon-woodveneer]; dip length ≥ fletching length + 2\"", "es": "Coronado: en madera (o carbono con chapa de madera); que cubra la zona de plumas y algo más (7-10\").", "en": "Crown dip: on wood (or wood-veneer carbon); cover the fletching area plus a bit (7-10\")." },
+    { "id": "r-footing", "level": "recommend", "if": "extra == footing", "then": "shaft.material in [wood, bamboo]; spine and weight increase; recheck spine", "es": "Injerto: solo en madera/bambú. Hace la flecha más rígida y pesada delante; revisa el spine.", "en": "Footing: wood/bamboo only. Makes the arrow stiffer and heavier up front; recheck spine." },
+    { "id": "r-glue", "level": "recommend", "if": "gluing points/inserts", "then": "wood/aluminium: hot-melt or epoxy; carbon: epoxy or low-temp hot-melt, no flame on carbon", "es": "Pegado: madera y aluminio con cola termofusible o epoxi; carbono con epoxi o termofusible de baja temperatura, sin aplicar llama directa al carbono.", "en": "Gluing: wood and aluminium with hot-melt or epoxy; carbon with epoxy or low-temp hot-melt, never direct flame on carbon." },
+    { "id": "r-set-consistency", "level": "require", "if": "building a set", "then": "same spine group, weight within ±10-15 gr (wood) and identical components", "es": "Un juego de flechas debe tener el mismo grupo de spine, pesos parecidos (en madera, dentro de ±10-15 gr) y los mismos componentes.", "en": "A set of arrows needs the same spine group, similar weights (wood within ±10-15 gr) and identical components.", "approx": true },
+    { "id": "r-inspect", "level": "warn", "if": "always", "then": "flex-check every shaft before shooting", "es": "Antes de tirar, flexiona y revisa cada flecha: grietas en madera o carbono pueden provocar roturas peligrosas.", "en": "Before shooting, flex and inspect each arrow: cracks in wood or carbon can cause dangerous breakages." }
+  ]
+}

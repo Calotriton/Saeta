@@ -1,0 +1,4886 @@
+{
+ "meta": {
+  "version": 1,
+  "generated": "2026-11-22",
+  "disclaimer": {
+   "es": "Todos los cálculos son estimaciones de partida. Confirma siempre con una prueba de flecha desnuda (bare shaft) y con un kit de prueba de spines antes de comprar una docena.",
+   "en": "All calculations are starting estimates. Always confirm with bare-shaft testing and a spine test kit before buying a dozen."
+  },
+  "conventions": {
+   "drawLength": {
+    "es": "Apertura = distancia, a plena apertura, desde el fondo de la ranura del culatín hasta la cara exterior (espalda) del arco en la ventana. Es lo que mide el Manual del Club con la flecha graduada y coincide en la práctica con la 'apertura AMO/ATA' (hasta el punto de pivote + 1,75\").",
+    "en": "Draw length = at full draw, from the bottom of the nock groove to the back (outer face) of the bow at the arrow pass. This is what the Manual del Club measures with the graduated arrow and in practice matches 'AMO/ATA draw length' (to the pivot point + 1.75\")."
+   },
+   "arrowLength": {
+    "es": "Longitud de flecha = desde el fondo de la ranura del culatín hasta el final del tubo/astil, sin contar punta ni inserto (Manual del Club, fig. 10; norma AMO).",
+    "en": "Arrow length = from the bottom of the nock groove to the end of the shaft, excluding point and insert (Manual del Club fig. 10; AMO standard)."
+   },
+   "drawWeight": {
+    "es": "Potencia real = la que marca la báscula a TU apertura, no la escrita en el arco (marcada normalmente a 28\").",
+    "en": "Actual draw weight = what the scale reads at YOUR draw length, not the figure written on the bow (normally rated at 28\")."
+   },
+   "spine": {
+    "es": "Spine estático (ATA/ASTM F2031): flexión en milésimas de pulgada con 1,94 lb (880 g) colgados en el centro de un vano de 28\"; número más alto = más flexible. En madera se expresa en libras (p. ej. 40-45#).",
+    "en": "Static spine (ATA/ASTM F2031): deflection in thousandths of an inch with 1.94 lb (880 g) hung at the centre of a 28\" span; higher number = more flexible. Wood is expressed in pounds (e.g. 40-45#)."
+   }
+  },
+  "units": {
+   "lbToG": 453.6,
+   "inToCm": 2.54,
+   "gToGrains": 15.4324,
+   "grainsToG": 0.0647989,
+   "manualGToGrains": 15,
+   "note": {
+    "es": "El Manual del Club redondea 1 g ≈ 15 grains; para cálculos usa 15,43.",
+    "en": "The Manual del Club rounds 1 g ≈ 15 grains; use 15.43 in calculations."
+   }
+  }
+ },
+ "vocab": {
+  "shootsOff": {
+   "hand": {
+    "es": "sobre la mano",
+    "en": "off the hand"
+   },
+   "shelf": {
+    "es": "sobre la repisa",
+    "en": "off the shelf"
+   },
+   "rest": {
+    "es": "sobre reposaflechas",
+    "en": "off a rest"
+   }
+  },
+  "draw": {
+   "mediterranean": {
+    "es": "mediterránea (tres dedos)",
+    "en": "Mediterranean (three fingers)"
+   },
+   "thumb": {
+    "es": "de pulgar (con anillo o guante)",
+    "en": "thumb draw (ring or glove)"
+   }
+  },
+  "centreShotLevel": {
+   "past-centre": {
+    "es": "cortado más allá del centro",
+    "en": "cut past centre"
+   },
+   "centre": {
+    "es": "cortado al centro",
+    "en": "cut to centre"
+   },
+   "near": {
+    "es": "cortado cerca del centro",
+    "en": "cut near centre"
+   },
+   "well-short": {
+    "es": "lejos del centro (se tira sobre la mano)",
+    "en": "well short of centre (off the hand)"
+   }
+  },
+  "materials": {
+   "wood": {
+    "es": "madera",
+    "en": "wood"
+   },
+   "bamboo": {
+    "es": "bambú",
+    "en": "bamboo"
+   },
+   "cane": {
+    "es": "caña",
+    "en": "cane"
+   },
+   "carbon": {
+    "es": "carbono",
+    "en": "carbon"
+   },
+   "aluminium": {
+    "es": "aluminio",
+    "en": "aluminium"
+   },
+   "carbon-aluminium": {
+    "es": "carbono-aluminio",
+    "en": "carbon-aluminium"
+   },
+   "fiberglass": {
+    "es": "fibra de vidrio",
+    "en": "fibreglass"
+   }
+  },
+  "fletchShapes": {
+   "shield": {
+    "es": "escudo",
+    "en": "shield"
+   },
+   "parabolic": {
+    "es": "parabólica",
+    "en": "parabolic"
+   },
+   "triangle-historical": {
+    "es": "triangular histórica",
+    "en": "historical triangle"
+   },
+   "low-long-historical": {
+    "es": "baja y larga (asiática)",
+    "en": "low & long (Asian)"
+   },
+   "spin-wing": {
+    "es": "spin-wing",
+    "en": "spin-wing"
+   },
+   "low-profile-vane": {
+    "es": "vane de perfil bajo",
+    "en": "low-profile vane"
+   },
+   "flu-flu": {
+    "es": "flu-flu",
+    "en": "flu-flu"
+   }
+  },
+  "orientation": {
+   "helical": {
+    "es": "helicoidal",
+    "en": "helical"
+   },
+   "offset": {
+    "es": "offset (inclinada)",
+    "en": "offset"
+   },
+   "straight": {
+    "es": "recta",
+    "en": "straight"
+   },
+   "straight-or-offset": {
+    "es": "recta u offset",
+    "en": "straight or offset"
+   },
+   "straight-or-helical": {
+    "es": "recta o helicoidal",
+    "en": "straight or helical"
+   }
+  },
+  "nocks": {
+   "self": {
+    "es": "culatín tallado (self nock)",
+    "en": "self nock"
+   },
+   "self-reinforced": {
+    "es": "culatín tallado con refuerzo de cuerno/hueso",
+    "en": "self nock with horn/bone insert"
+   },
+   "glue-on-taper": {
+    "es": "culatín pegado sobre cono (taper)",
+    "en": "glue-on taper nock"
+   },
+   "pin": {
+    "es": "culatín sobre pin",
+    "en": "pin nock"
+   },
+   "press-fit": {
+    "es": "culatín a presión",
+    "en": "press-fit nock"
+   },
+   "snap-on": {
+    "es": "culatín de clic",
+    "en": "snap-on nock"
+   },
+   "bulbous-asian": {
+    "es": "culatín bulboso asiático",
+    "en": "bulbous Asian nock"
+   }
+  },
+  "styles": {
+   "3d": {
+    "es": "3D",
+    "en": "3D"
+   },
+   "field": {
+    "es": "recorridos de campo",
+    "en": "field"
+   },
+   "target": {
+    "es": "tiro a diana",
+    "en": "target"
+   },
+   "instinctive": {
+    "es": "tiro instintivo",
+    "en": "instinctive"
+   },
+   "historical": {
+    "es": "tiro histórico",
+    "en": "historical"
+   },
+   "reenactment": {
+    "es": "recreación histórica",
+    "en": "re-enactment"
+   },
+   "hunting": {
+    "es": "caza",
+    "en": "hunting"
+   },
+   "indoor": {
+    "es": "sala",
+    "en": "indoor"
+   },
+   "mounted-archery": {
+    "es": "tiro a caballo",
+    "en": "mounted archery"
+   },
+   "flight": {
+    "es": "tiro de distancia (flight)",
+    "en": "flight shooting"
+   },
+   "primitive": {
+    "es": "arquería primitiva",
+    "en": "primitive archery"
+   },
+   "heavy-flight": {
+    "es": "distancia con flecha pesada",
+    "en": "heavy-arrow flight"
+   },
+   "beginner": {
+    "es": "iniciación",
+    "en": "beginner"
+   },
+   "school": {
+    "es": "escuela",
+    "en": "school"
+   },
+   "traditional-mongolian": {
+    "es": "tiro tradicional mongol",
+    "en": "Mongolian traditional"
+   },
+   "traditional-gungdo": {
+    "es": "gungdo (tiro tradicional coreano)",
+    "en": "gungdo (Korean traditional)"
+   },
+   "larp": {
+    "es": "LARP / combate con arco",
+    "en": "LARP / bow combat"
+   }
+  }
+ },
+ "bowTypes": [
+  {
+   "id": "longbow-english",
+   "name": {
+    "es": "Arco largo inglés (longbow)",
+    "en": "English longbow"
+   },
+   "desc": {
+    "es": "Arco largo en D, de una pieza (self) o laminado, sin repisa o con una mínima; se tira sobre la mano y no está cortado al centro. Sección profunda, casi tan gruesa como ancha.",
+    "en": "Long D-section bow, self or laminated, with no shelf (or a token one); shot off the hand and not centre-cut. Deep, stacked limb section."
+   },
+   "drawWeight": [
+    25,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "mediterranean",
+   "anchor": "corner-of-mouth",
+   "recommendedMaterials": [
+    "wood",
+    "bamboo"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4.5,
+     5.5
+    ],
+    "shapes": [
+     "shield",
+     "parabolic",
+     "triangle-historical"
+    ],
+    "orientation": "helical",
+    "count": 3,
+    "notes": {
+     "es": "Siempre plumas naturales: pasan sobre la mano sin desviar la flecha. Con puntas pesadas o flechas de madera gruesas, 5-5,5\".",
+     "en": "Always natural feathers: they fold over the hand without kicking the arrow. 5-5.5\" for heavy points or thick wooden shafts."
+    }
+   },
+   "pointWeights": [
+    100,
+    160
+   ],
+   "nocks": [
+    "self",
+    "self-reinforced",
+    "glue-on-taper"
+   ],
+   "gppRange": [
+    9,
+    11
+   ],
+   "spineAdj": -10,
+   "perInchPct": 0.05,
+   "braceHeightIn": [
+    6.5,
+    7.5
+   ],
+   "styles": [
+    "3d",
+    "field",
+    "instinctive",
+    "historical",
+    "target"
+   ],
+   "speedModel": {
+    "storageFactor": 0.5,
+    "hysteresis": 0.9,
+    "virtualMassGr": 140
+   },
+   "notes": {
+    "es": "En competición (WA/IFAA, división longbow) suelen exigirse flechas de madera: compruébalo en el reglamento. Estética: madera natural, cresting, culatín tallado con refuerzo de cuerno, plumas de pavo o de ganso. Longitud: apertura + 1\" (Manual del Club). Usar la tabla 'English Longbow / Spine Guide' del Manual.",
+    "en": "In competition (WA/IFAA longbow division) wooden arrows are usually required: check the rulebook. Look: natural wood, cresting, self nock reinforced with horn, turkey or goose feathers. Length: draw + 1\" (Manual del Club). Use the Manual's 'English Longbow / Spine Guide' chart."
+   }
+  },
+  {
+   "id": "flatbow",
+   "name": {
+    "es": "Arco plano americano (flatbow)",
+    "en": "American flatbow"
+   },
+   "desc": {
+    "es": "Arco de palas anchas y planas de sección rectangular, normalmente con repisa cortada cerca del centro, pero no más allá.",
+    "en": "Bow with wide, flat rectangular-section limbs, usually with a shelf cut near, but not past, centre."
+   },
+   "drawWeight": [
+    25,
+    55
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "near",
+   "shootsOff": "shelf",
+   "draw": "mediterranean",
+   "anchor": "corner-of-mouth",
+   "recommendedMaterials": [
+    "wood",
+    "carbon"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "carbon",
+    "aluminium",
+    "bamboo"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4,
+     5.5
+    ],
+    "shapes": [
+     "shield",
+     "parabolic"
+    ],
+    "orientation": "helical",
+    "count": 3,
+    "notes": {
+     "es": "Plumas de 4-5\" helicoidales u offset; la pluma perdona el contacto con la repisa.",
+     "en": "4-5\" helical or offset feathers; feathers forgive contact with the shelf."
+    }
+   },
+   "pointWeights": [
+    100,
+    160
+   ],
+   "nocks": [
+    "self",
+    "glue-on-taper",
+    "pin",
+    "press-fit"
+   ],
+   "gppRange": [
+    8,
+    10
+   ],
+   "spineAdj": -5,
+   "perInchPct": 0.05,
+   "braceHeightIn": [
+    6.5,
+    7.5
+   ],
+   "styles": [
+    "3d",
+    "field",
+    "instinctive",
+    "historical"
+   ],
+   "speedModel": {
+    "storageFactor": 0.52,
+    "hysteresis": 0.9,
+    "virtualMassGr": 130
+   },
+   "notes": {
+    "es": "Si la repisa queda claramente lejos del centro, usa el ajuste de longbow (-10 lb).",
+    "en": "If the shelf is clearly short of centre, use the longbow adjustment (-10 lb)."
+   }
+  },
+  {
+   "id": "longbow-hybrid",
+   "name": {
+    "es": "Longbow híbrido (reflejo-deflejo)",
+    "en": "Hybrid (reflex-deflex) longbow"
+   },
+   "desc": {
+    "es": "Longbow moderno laminado con reflejo-deflejo, repisa y ventana cortadas cerca del centro. Más rápido y estable que el inglés.",
+    "en": "Modern laminated R/D longbow with a shelf cut close to centre. Faster and smoother than an English longbow."
+   },
+   "drawWeight": [
+    30,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "near",
+   "shootsOff": "shelf",
+   "draw": "mediterranean",
+   "anchor": "corner-of-mouth",
+   "recommendedMaterials": [
+    "carbon",
+    "wood"
+   ],
+   "allowedMaterials": [
+    "carbon",
+    "wood",
+    "aluminium"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4,
+     5
+    ],
+    "shapes": [
+     "shield",
+     "parabolic"
+    ],
+    "orientation": "helical",
+    "count": 3,
+    "notes": {
+     "es": "Plumas de 4-5\". Con puntas de 200 gr o más y carbono fino, 5\".",
+     "en": "4-5\" feathers. With 200 gr+ points on skinny carbon, go 5\"."
+    }
+   },
+   "pointWeights": [
+    125,
+    200
+   ],
+   "nocks": [
+    "pin",
+    "press-fit",
+    "glue-on-taper",
+    "self"
+   ],
+   "gppRange": [
+    8,
+    10
+   ],
+   "spineAdj": -5,
+   "perInchPct": 0.052,
+   "braceHeightIn": [
+    6.75,
+    7.75
+   ],
+   "styles": [
+    "3d",
+    "field",
+    "instinctive",
+    "hunting"
+   ],
+   "speedModel": {
+    "storageFactor": 0.53,
+    "hysteresis": 0.91,
+    "virtualMassGr": 130
+   },
+   "notes": {
+    "es": "Muy común en 3D tradicional. Si el fabricante indica que está cortado al centro, usa ajuste 0.",
+    "en": "Very common in traditional 3D. If the maker says it is cut to centre, use 0 adjustment."
+   }
+  },
+  {
+   "id": "recurve-traditional",
+   "name": {
+    "es": "Recurvo tradicional (una pieza o desmontable)",
+    "en": "Traditional recurve (one-piece or take-down)"
+   },
+   "desc": {
+    "es": "Recurvo de madera/fibra con repisa tallada en el cuerpo, normalmente cortado al centro o casi. Sin visor ni botón de presión.",
+    "en": "Wood/glass recurve with a carved shelf, usually cut to or near centre. No sight, no plunger."
+   },
+   "drawWeight": [
+    25,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": true,
+   "centreShotLevel": "centre",
+   "shootsOff": "shelf",
+   "draw": "mediterranean",
+   "anchor": "corner-of-mouth",
+   "recommendedMaterials": [
+    "carbon",
+    "wood",
+    "aluminium"
+   ],
+   "allowedMaterials": [
+    "carbon",
+    "wood",
+    "aluminium",
+    "bamboo"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4,
+     5
+    ],
+    "shapes": [
+     "shield",
+     "parabolic"
+    ],
+    "orientation": "helical",
+    "count": 3,
+    "notes": {
+     "es": "Plumas de 4-5\". Las plumas son casi obligatorias al tirar sobre repisa (piel/alfombrilla); las vanes rebotan en ella.",
+     "en": "4-5\" feathers. Feathers are near-mandatory off a leather/carpet shelf; vanes bounce off it."
+    }
+   },
+   "pointWeights": [
+    100,
+    200
+   ],
+   "nocks": [
+    "pin",
+    "press-fit",
+    "glue-on-taper",
+    "self"
+   ],
+   "gppRange": [
+    8,
+    10
+   ],
+   "spineAdj": 0,
+   "perInchPct": 0.055,
+   "braceHeightIn": [
+    7.25,
+    8.75
+   ],
+   "styles": [
+    "3d",
+    "field",
+    "instinctive",
+    "target",
+    "hunting"
+   ],
+   "speedModel": {
+    "storageFactor": 0.57,
+    "hysteresis": 0.92,
+    "virtualMassGr": 120
+   },
+   "notes": {
+    "es": "Es la referencia de las tablas de spine (recurvo cortado al centro, cuerda de Dacron, punta de 125 gr). Los recurvos 'vintage' con ventana poco cortada pueden necesitar -5 lb.",
+    "en": "This is the reference case for the spine charts (centre-cut recurve, Dacron string, 125 gr point). Vintage recurves with a shallow window may need -5 lb."
+   }
+  },
+  {
+   "id": "recurve-ilf-barebow",
+   "name": {
+    "es": "Recurvo ILF desnudo (barebow)",
+    "en": "ILF barebow recurve"
+   },
+   "desc": {
+    "es": "Cuerpo metálico o de madera con palas ILF, reposaflechas y botón de presión (plunger); cortado más allá del centro y ajustable.",
+    "en": "Metal or wooden riser with ILF limbs, arrow rest and pressure button (plunger); cut past centre and adjustable."
+   },
+   "drawWeight": [
+    20,
+    45
+   ],
+   "markedAtIn": 28,
+   "centreShot": true,
+   "centreShotLevel": "past-centre",
+   "shootsOff": "rest",
+   "draw": "mediterranean",
+   "anchor": "under-chin-or-corner-of-mouth",
+   "recommendedMaterials": [
+    "carbon",
+    "aluminium"
+   ],
+   "allowedMaterials": [
+    "carbon",
+    "aluminium",
+    "carbon-aluminium",
+    "wood"
+   ],
+   "fletching": {
+    "type": "vanes-or-feathers",
+    "length": [
+     1.75,
+     3
+    ],
+    "shapes": [
+     "spin-wing",
+     "low-profile-vane",
+     "parabolic"
+    ],
+    "orientation": "offset",
+    "count": 3,
+    "notes": {
+     "es": "Con reposaflechas se pueden usar vanes de 1,75-3\" o plumas cortas; en sala muchos usan plumas de 2-3\" o spin-wings.",
+     "en": "With a rest, 1.75-3\" vanes or short feathers work; indoors many use 2-3\" feathers or spin-wings."
+    }
+   },
+   "pointWeights": [
+    100,
+    180
+   ],
+   "nocks": [
+    "pin",
+    "press-fit"
+   ],
+   "gppRange": [
+    6,
+    9
+   ],
+   "spineAdj": 5,
+   "perInchPct": 0.045,
+   "braceHeightIn": [
+    7.5,
+    9.25
+   ],
+   "styles": [
+    "target",
+    "field",
+    "3d",
+    "indoor"
+   ],
+   "speedModel": {
+    "storageFactor": 0.58,
+    "hysteresis": 0.93,
+    "virtualMassGr": 100
+   },
+   "notes": {
+    "es": "Ajuste +5 lb si las palas son de carbono/espuma (más rápidas); usa 0 con palas de madera y fibra (equivale a la regla de Easton: palas madera/fibra = -5 lb respecto a palas de competición). El spine se afina con el plunger. Respeta el peso mínimo del fabricante de las palas (suele ser 5-6 gpp).",
+    "en": "+5 lb adjustment for carbon/foam limbs (faster); use 0 with wood/glass limbs (matches Easton's rule: wood/glass limbs = -5 lb vs competition limbs). Fine-tune spine with the plunger. Respect the limb maker's minimum arrow weight (usually 5-6 gpp)."
+   }
+  },
+  {
+   "id": "horsebow-hungarian",
+   "name": {
+    "es": "Arco a caballo húngaro (magiar)",
+    "en": "Hungarian (Magyar) horse bow"
+   },
+   "desc": {
+    "es": "Arco corto asimétrico o simétrico con siyahs (puntas rígidas), sin repisa; la flecha se apoya en la mano y, con suelta de pulgar, a la derecha del arco (diestros).",
+    "en": "Short reflexed bow with rigid tips (siyahs), no shelf; the arrow rests on the hand and, with a thumb draw, on the right side of the bow for right-handers."
+   },
+   "drawWeight": [
+    25,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "thumb",
+   "anchor": "cheek-or-ear",
+   "recommendedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     5,
+     6.5
+    ],
+    "shapes": [
+     "parabolic",
+     "shield",
+     "low-long-historical"
+    ],
+    "orientation": "straight-or-offset",
+    "count": 3,
+    "notes": {
+     "es": "Solo plumas naturales (pasan sobre la mano). Plumas largas y bajas; tradicionalmente rectas o ligeramente offset.",
+     "en": "Natural feathers only (they pass over the hand). Long, low feathers; traditionally straight or slightly offset."
+    }
+   },
+   "pointWeights": [
+    70,
+    145
+   ],
+   "nocks": [
+    "self",
+    "glue-on-taper",
+    "bulbous-asian"
+   ],
+   "gppRange": [
+    8,
+    10
+   ],
+   "spineAdj": 0,
+   "perInchPct": 0.06,
+   "braceHeightIn": [
+    5.5,
+    7
+   ],
+   "styles": [
+    "instinctive",
+    "historical",
+    "mounted-archery",
+    "3d"
+   ],
+   "speedModel": {
+    "storageFactor": 0.56,
+    "hysteresis": 0.91,
+    "virtualMassGr": 100
+   },
+   "arrowLengthExtraIn": 2,
+   "drawStyleAdjIn": 1,
+   "notes": {
+    "es": "Las flechas suelen ser más largas: la apertura con pulgar es mayor y la punta no debe quedar sobre la mano; recomienda apertura + 2\" (29-32\" típico). Los vendedores dan spines de carbono parecidos a los del recurvo (30-35 lb → 600; 40-45 lb → 500; 50 lb → 400). Los siyahs hacen que la potencia suba deprisa más allá de la apertura nominal: no sobretenses.",
+    "en": "Arrows are usually longer: the thumb draw is longer and the point must not sit over the hand; suggest draw + 2\" (29-32\" typical). Sellers quote carbon spines close to recurve charts (30-35 lb → 600; 40-45 lb → 500; 50 lb → 400). Siyahs make weight climb quickly past the rated draw: don't overdraw."
+   }
+  },
+  {
+   "id": "horsebow-turkish",
+   "name": {
+    "es": "Arco turco (otomano)",
+    "en": "Turkish (Ottoman) bow"
+   },
+   "desc": {
+    "es": "Arco compuesto muy reflejado y corto; versiones de tiro de distancia (flight) y de tiro a blanco. Suelta de pulgar.",
+    "en": "Very short, heavily reflexed composite bow; flight and target versions. Thumb draw."
+   },
+   "drawWeight": [
+    30,
+    70
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "thumb",
+   "anchor": "cheek-or-ear",
+   "recommendedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     3.5,
+     5.5
+    ],
+    "shapes": [
+     "parabolic",
+     "low-long-historical"
+    ],
+    "orientation": "straight-or-offset",
+    "count": 3,
+    "notes": {
+     "es": "Plumas bajas; en flechas de distancia, muy pequeñas.",
+     "en": "Low feathers; very small on flight arrows."
+    }
+   },
+   "pointWeights": [
+    60,
+    125
+   ],
+   "nocks": [
+    "self",
+    "bulbous-asian",
+    "glue-on-taper"
+   ],
+   "gppRange": [
+    8,
+    10
+   ],
+   "spineAdj": 0,
+   "perInchPct": 0.065,
+   "braceHeightIn": [
+    5,
+    6.5
+   ],
+   "styles": [
+    "historical",
+    "instinctive",
+    "flight",
+    "mounted-archery"
+   ],
+   "speedModel": {
+    "storageFactor": 0.58,
+    "hysteresis": 0.91,
+    "virtualMassGr": 90
+   },
+   "arrowLengthExtraIn": 1.5,
+   "drawStyleAdjIn": 1,
+   "notes": {
+    "es": "Históricamente se usaba el 'siper' (guía de sobreapertura) para flechas cortas de distancia: no es para principiantes. Usa la tabla de recurvo como punto de partida.",
+    "en": "Historically a 'siper' overdraw guide was used for short flight arrows: not for beginners. Start from the recurve chart."
+   }
+  },
+  {
+   "id": "horsebow-mongolian",
+   "name": {
+    "es": "Arco mongol",
+    "en": "Mongolian bow"
+   },
+   "desc": {
+    "es": "Arco compuesto grande con siyahs largos y puentes de cuerda; flechas largas y pesadas. Suelta de pulgar.",
+    "en": "Large composite bow with long siyahs and string bridges; long, heavy arrows. Thumb draw."
+   },
+   "drawWeight": [
+    30,
+    80
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "thumb",
+   "anchor": "ear",
+   "recommendedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "bamboo",
+    "carbon"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     6,
+     9
+    ],
+    "shapes": [
+     "low-long-historical",
+     "parabolic"
+    ],
+    "orientation": "straight-or-offset",
+    "count": 3,
+    "notes": {
+     "es": "Plumas largas (6-9\") y bajas; flechas tradicionales con grandes plumas de águila/buitre (hoy ganso o pavo).",
+     "en": "Long (6-9\"), low feathers; traditional arrows used large raptor feathers (today goose or turkey)."
+    }
+   },
+   "pointWeights": [
+    100,
+    250
+   ],
+   "nocks": [
+    "self",
+    "bulbous-asian"
+   ],
+   "gppRange": [
+    9,
+    12
+   ],
+   "spineAdj": 0,
+   "perInchPct": 0.055,
+   "braceHeightIn": [
+    6,
+    8
+   ],
+   "styles": [
+    "historical",
+    "instinctive",
+    "mounted-archery",
+    "traditional-mongolian"
+   ],
+   "speedModel": {
+    "storageFactor": 0.55,
+    "hysteresis": 0.9,
+    "virtualMassGr": 150
+   },
+   "arrowLengthExtraIn": 2.5,
+   "drawStyleAdjIn": 2,
+   "notes": {
+    "es": "Apertura larga (hasta la oreja o más) y flechas de 32-36\". Las flechas pesadas y largas son parte de la estética y del rendimiento del arco.",
+    "en": "Long draw (to the ear or beyond) and 32-36\" arrows. Heavy, long arrows are part of both the look and the bow's performance."
+   }
+  },
+  {
+   "id": "horsebow-korean",
+   "name": {
+    "es": "Arco coreano (gakgung)",
+    "en": "Korean bow (gakgung)"
+   },
+   "desc": {
+    "es": "Arco muy reflejado y corto; en el gungdo moderno se usan flechas de bambú o carbono muy ligeras y largas, apertura más allá de la oreja. Suelta de pulgar.",
+    "en": "Very short, heavily reflexed bow; modern gungdo uses very light, long bamboo or carbon arrows, drawn past the ear. Thumb draw."
+   },
+   "drawWeight": [
+    30,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "thumb",
+   "anchor": "past-ear",
+   "recommendedMaterials": [
+    "bamboo",
+    "carbon"
+   ],
+   "allowedMaterials": [
+    "bamboo",
+    "carbon",
+    "wood"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4.5,
+     6
+    ],
+    "shapes": [
+     "low-long-historical",
+     "parabolic"
+    ],
+    "orientation": "straight-or-offset",
+    "count": 3,
+    "notes": {
+     "es": "Plumas bajas y largas.",
+     "en": "Low, long feathers."
+    }
+   },
+   "pointWeights": [
+    60,
+    125
+   ],
+   "nocks": [
+    "self",
+    "glue-on-taper"
+   ],
+   "gppRange": [
+    7,
+    9
+   ],
+   "spineAdj": 0,
+   "perInchPct": 0.06,
+   "braceHeightIn": [
+    5.5,
+    7
+   ],
+   "styles": [
+    "historical",
+    "target",
+    "traditional-gungdo"
+   ],
+   "speedModel": {
+    "storageFactor": 0.58,
+    "hysteresis": 0.92,
+    "virtualMassGr": 80
+   },
+   "arrowLengthExtraIn": 2,
+   "drawStyleAdjIn": 3,
+   "notes": {
+    "es": "Las flechas de gungdo son muy ligeras para su longitud: comprueba con el arquero/bowyer el peso mínimo; los arcos de fibra modernos suelen admitir flechas más ligeras que los arcos de cuerno.",
+    "en": "Gungdo arrows are very light for their length: confirm the minimum weight with the bowyer; modern fibreglass gakgung usually tolerate lighter arrows than horn bows."
+   }
+  },
+  {
+   "id": "selfbow-primitive",
+   "name": {
+    "es": "Arco primitivo / de una pieza (self bow)",
+    "en": "Primitive self bow"
+   },
+   "desc": {
+    "es": "Arco tallado de una sola madera (tejo, olmo, fresno, osage, avellano...), sin laminados ni fibra; se tira sobre la mano.",
+    "en": "Bow carved from a single stave (yew, elm, ash, osage, hazel...), no laminations or glass; shot off the hand."
+   },
+   "drawWeight": [
+    25,
+    60
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "mediterranean",
+   "anchor": "corner-of-mouth",
+   "recommendedMaterials": [
+    "wood",
+    "cane",
+    "bamboo"
+   ],
+   "allowedMaterials": [
+    "wood",
+    "cane",
+    "bamboo"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     4,
+     6
+    ],
+    "shapes": [
+     "shield",
+     "triangle-historical",
+     "parabolic"
+    ],
+    "orientation": "straight-or-helical",
+    "count": 3,
+    "notes": {
+     "es": "Plumas naturales, a menudo recortadas a fuego y atadas con hilo; 2 o 3 plumas en reproducciones prehistóricas.",
+     "en": "Natural feathers, often burn-trimmed and thread-bound; 2 or 3 feathers in prehistoric reproductions."
+    }
+   },
+   "pointWeights": [
+    100,
+    200
+   ],
+   "nocks": [
+    "self",
+    "self-reinforced"
+   ],
+   "gppRange": [
+    9,
+    12
+   ],
+   "spineAdj": -10,
+   "perInchPct": 0.06,
+   "braceHeightIn": [
+    5.5,
+    7
+   ],
+   "styles": [
+    "historical",
+    "instinctive",
+    "primitive",
+    "3d"
+   ],
+   "speedModel": {
+    "storageFactor": 0.48,
+    "hysteresis": 0.86,
+    "virtualMassGr": 170
+   },
+   "notes": {
+    "es": "Los arcos de una pieza necesitan flechas pesadas (Manual: 8-9 gpp como mínimo general; para self bows 9-10 gpp o más). Hacen 'stacking' al final: no sobretenses y mide la potencia en tu apertura real.",
+    "en": "Self bows need heavy arrows (Manual: 8-9 gpp general minimum; self bows 9-10+ gpp). They stack at the end of the draw: never overdraw and measure the weight at your real draw."
+   }
+  },
+  {
+   "id": "warbow-medieval",
+   "name": {
+    "es": "Arco de guerra medieval (warbow)",
+    "en": "Medieval warbow"
+   },
+   "desc": {
+    "es": "Reproducción de arco largo de guerra (tipo Mary Rose), de tejo u otras maderas, con potencias muy altas y aperturas largas hasta la oreja.",
+    "en": "Reproduction war longbow (Mary Rose type), yew or other woods, very heavy draw weights and long draws to the ear."
+   },
+   "drawWeight": [
+    70,
+    160
+   ],
+   "markedAtIn": 30,
+   "centreShot": false,
+   "centreShotLevel": "well-short",
+   "shootsOff": "hand",
+   "draw": "mediterranean",
+   "anchor": "ear",
+   "recommendedMaterials": [
+    "wood"
+   ],
+   "allowedMaterials": [
+    "wood"
+   ],
+   "fletching": {
+    "type": "feathers",
+    "length": [
+     6,
+     9
+    ],
+    "shapes": [
+     "triangle-historical",
+     "shield"
+    ],
+    "orientation": "straight-or-helical",
+    "count": 3,
+    "notes": {
+     "es": "Plumas de ganso o cisne de 6-9\", pegadas y atadas con hilo (whipping).",
+     "en": "6-9\" goose or swan feathers, glued and thread-bound (whipped)."
+    }
+   },
+   "pointWeights": [
+    200,
+    800
+   ],
+   "nocks": [
+    "self-reinforced"
+   ],
+   "gppRange": [
+    10,
+    15
+   ],
+   "spineAdj": -10,
+   "perInchPct": 0.045,
+   "braceHeightIn": [
+    6,
+    8
+   ],
+   "styles": [
+    "historical",
+    "reenactment",
+    "heavy-flight"
+   ],
+   "speedModel": {
+    "storageFactor": 0.5,
+    "hysteresis": 0.88,
+    "virtualMassGr": 300
+   },
+   "arrowLengthExtraIn": 1,
+   "drawStyleAdjIn": 2,
+   "notes": {
+    "es": "Fuera del alcance de las tablas estándar (que acaban en ~85 lb). Astiles barrilados de ~1/2\", flechas de 30-32\" y 900-1600 gr. Muchos warbows se marcan a 30\" o 32\": comprueba el marcado. Consultar con especialistas.",
+    "en": "Beyond standard charts (they stop around 85 lb). Barrelled ~1/2\" shafts, 30-32\" arrows of 900-1600 gr. Many warbows are rated at 30\" or 32\": check the marking. Consult specialists."
+   }
+  },
+  {
+   "id": "kids-fiberglass",
+   "name": {
+    "es": "Arco infantil / de iniciación de fibra de vidrio",
+    "en": "Kids' / beginner fibreglass bow"
+   },
+   "desc": {
+    "es": "Arco sencillo de fibra de vidrio o recurvo de iniciación de baja potencia; a menudo ambidiestro y con un pequeño apoyo.",
+    "en": "Simple fibreglass bow or low-poundage starter recurve; often ambidextrous with a small rest/shelf."
+   },
+   "drawWeight": [
+    8,
+    20
+   ],
+   "markedAtIn": 28,
+   "centreShot": false,
+   "centreShotLevel": "near",
+   "shootsOff": "shelf",
+   "draw": "mediterranean",
+   "anchor": "under-chin-or-corner-of-mouth",
+   "recommendedMaterials": [
+    "fiberglass",
+    "aluminium",
+    "carbon",
+    "wood"
+   ],
+   "allowedMaterials": [
+    "fiberglass",
+    "aluminium",
+    "carbon",
+    "wood"
+   ],
+   "fletching": {
+    "type": "vanes-or-feathers",
+    "length": [
+     3,
+     4
+    ],
+    "shapes": [
+     "parabolic",
+     "shield",
+     "low-profile-vane"
+    ],
+    "orientation": "straight-or-offset",
+    "count": 3,
+    "notes": {
+     "es": "Vanes de plástico (duraderas) o plumas; para niños priman la durabilidad y la seguridad.",
+     "en": "Plastic vanes (durable) or feathers; for children durability and safety come first."
+    }
+   },
+   "pointWeights": [
+    50,
+    100
+   ],
+   "nocks": [
+    "press-fit",
+    "snap-on",
+    "glue-on-taper"
+   ],
+   "gppRange": [
+    8,
+    20
+   ],
+   "spineAdj": -5,
+   "perInchPct": 0.055,
+   "braceHeightIn": [
+    6,
+    8
+   ],
+   "styles": [
+    "beginner",
+    "target",
+    "school"
+   ],
+   "speedModel": {
+    "storageFactor": 0.48,
+    "hysteresis": 0.85,
+    "virtualMassGr": 120
+   },
+   "arrowLengthExtraIn": 2,
+   "notes": {
+    "es": "En niños, la flecha debe ser algo más larga (apertura + 2\") para que nunca se caiga por dentro del arco al crecer o sobretensar. Con potencias tan bajas el GPP sale alto: no es problema. Muchos arcos infantiles están marcados a 24-26\": comprueba la etiqueta.",
+    "en": "For children make arrows a bit longer (draw + 2\") so they can never be overdrawn off the rest as they grow. At such low weights GPP comes out high: that is fine. Many youth bows are rated at 24-26\": check the label."
+   }
+  }
+ ],
+ "styleNotes": {
+  "larp": {
+   "es": "LARP / combate con arco (archery tag): NO se deben fabricar flechas caseras para tirar a personas. Usa solo flechas de seguridad comerciales homologadas por la organización del evento (punta de espuma ancha, que no pueda entrar en un ojo) y respeta su potencia máxima (habitualmente ≤ 25-30 lb a 28\"). La web no debe calcular flechas para este uso; solo remitir al reglamento del evento.",
+   "en": "LARP / bow combat (archery tag): do NOT build home-made arrows to shoot at people. Use only commercial safety arrows approved by the event organiser (wide foam head that cannot enter an eye) and respect the maximum draw weight (usually ≤ 25-30 lb at 28\"). The site should not compute arrows for this use; only point to the event rules."
+  }
+ },
+ "drawLength": {
+  "definition": "see meta.conventions.drawLength",
+  "preferred": {
+   "es": "Mide con una flecha graduada (Manual del Club, fig. 9): a plena apertura y anclaje habitual, que otra persona lea la marca en la cara exterior del arco. Repite 3 veces y usa la media.",
+   "en": "Measure with a graduated arrow (Manual del Club fig. 9): at full draw and your usual anchor, have someone read the mark at the back of the bow. Repeat 3 times and average."
+  },
+  "methods": [
+   {
+    "id": "measured",
+    "name": {
+     "es": "Medida con flecha graduada",
+     "en": "Measured with a graduated arrow"
+    },
+    "expr": "drawLengthIn = measuredIn",
+    "uncertaintyIn": 0.25,
+    "source": "Manual del Club"
+   },
+   {
+    "id": "wingspan",
+    "name": {
+     "es": "Envergadura ÷ 2,5",
+     "en": "Wingspan ÷ 2.5"
+    },
+    "expr": "drawLengthIn = wingspanCm / 2.5 / 2.54 + styleAdjIn",
+    "desc": {
+     "es": "Brazos en cruz, de punta a punta del dedo corazón, en cm. Envergadura/2,5 da la apertura en cm; ÷2,54 para pulgadas (equivale a envergadura en cm ÷ 6,35).",
+     "en": "Arms outstretched, middle fingertip to fingertip, in cm. Wingspan/2.5 gives draw in cm; ÷2.54 for inches (same as wingspan cm ÷ 6.35)."
+    },
+    "uncertaintyIn": 1.0,
+    "source": "https://www.3riversarchery.com/pdf/ArrowCharts.pdf (draw-check method); wingspan/2.5 is the standard ATA fitting rule"
+   },
+   {
+    "id": "height",
+    "name": {
+     "es": "A partir de la altura",
+     "en": "From height"
+    },
+    "expr": "drawLengthIn = heightCm / 6.35 + styleAdjIn",
+    "desc": {
+     "es": "Supone envergadura ≈ altura. Menos fiable que la envergadura.",
+     "en": "Assumes wingspan ≈ height. Less reliable than wingspan."
+    },
+    "uncertaintyIn": 1.5
+   }
+  ],
+  "styleAdjustments": [
+   {
+    "id": "med-chin",
+    "name": {
+     "es": "Mediterránea, anclaje bajo la barbilla (recurvo olímpico/barebow)",
+     "en": "Mediterranean, under-chin anchor (Olympic/barebow)"
+    },
+    "adjIn": 0
+   },
+   {
+    "id": "med-mouth",
+    "name": {
+     "es": "Mediterránea, comisura de la boca (tradicional, arco inclinado)",
+     "en": "Mediterranean, corner of mouth (traditional, canted bow)"
+    },
+    "adjIn": -0.5,
+    "note": {
+     "es": "Los tiradores tradicionales con el brazo del arco algo flexionado suelen abrir 0,5-1\" menos que lo que da la fórmula.",
+     "en": "Traditional shooters with a slightly bent bow arm usually draw 0.5-1\" less than the formula."
+    }
+   },
+   {
+    "id": "med-ear",
+    "name": {
+     "es": "Mediterránea hasta la oreja/mandíbula (arco de guerra, histórico)",
+     "en": "Mediterranean to the ear/jaw (warbow, historical)"
+    },
+    "adjIn": 2
+   },
+   {
+    "id": "thumb-cheek",
+    "name": {
+     "es": "Pulgar, anclaje en mejilla/oreja (arco a caballo)",
+     "en": "Thumb draw, cheek/ear anchor (horse bow)"
+    },
+    "adjIn": 1
+   },
+   {
+    "id": "thumb-past-ear",
+    "name": {
+     "es": "Pulgar, más allá de la oreja (gungdo, mongol)",
+     "en": "Thumb draw past the ear (gungdo, Mongolian)"
+    },
+    "adjIn": 2.5
+   }
+  ],
+  "heightTable": [
+   {
+    "heightCm": 110,
+    "drawIn": 17.3,
+    "drawCm": 44.0
+   },
+   {
+    "heightCm": 115,
+    "drawIn": 18.1,
+    "drawCm": 46.0
+   },
+   {
+    "heightCm": 120,
+    "drawIn": 18.9,
+    "drawCm": 48.0
+   },
+   {
+    "heightCm": 125,
+    "drawIn": 19.7,
+    "drawCm": 50.0
+   },
+   {
+    "heightCm": 130,
+    "drawIn": 20.5,
+    "drawCm": 52.0
+   },
+   {
+    "heightCm": 135,
+    "drawIn": 21.3,
+    "drawCm": 54.0
+   },
+   {
+    "heightCm": 140,
+    "drawIn": 22.0,
+    "drawCm": 56.0
+   },
+   {
+    "heightCm": 145,
+    "drawIn": 22.8,
+    "drawCm": 58.0
+   },
+   {
+    "heightCm": 150,
+    "drawIn": 23.6,
+    "drawCm": 60.0
+   },
+   {
+    "heightCm": 155,
+    "drawIn": 24.4,
+    "drawCm": 62.0
+   },
+   {
+    "heightCm": 160,
+    "drawIn": 25.2,
+    "drawCm": 64.0
+   },
+   {
+    "heightCm": 165,
+    "drawIn": 26.0,
+    "drawCm": 66.0
+   },
+   {
+    "heightCm": 170,
+    "drawIn": 26.8,
+    "drawCm": 68.0
+   },
+   {
+    "heightCm": 175,
+    "drawIn": 27.6,
+    "drawCm": 70.0
+   },
+   {
+    "heightCm": 180,
+    "drawIn": 28.3,
+    "drawCm": 72.0
+   },
+   {
+    "heightCm": 185,
+    "drawIn": 29.1,
+    "drawCm": 74.0
+   },
+   {
+    "heightCm": 190,
+    "drawIn": 29.9,
+    "drawCm": 76.0
+   },
+   {
+    "heightCm": 195,
+    "drawIn": 30.7,
+    "drawCm": 78.0
+   },
+   {
+    "heightCm": 200,
+    "drawIn": 31.5,
+    "drawCm": 80.0
+   }
+  ],
+  "uncertaintyNote": {
+   "es": "Las estimaciones tienen un error típico de ±1\" (±2,5 cm). Corta las flechas largas al principio y ajusta después: siempre se puede recortar, nunca alargar.",
+   "en": "Estimates carry a typical error of ±1\" (±2.5 cm). Start with arrows long and trim later: you can always cut, never lengthen."
+  }
+ },
+ "arrowLength": {
+  "expr": "arrowLengthIn = drawLengthIn + (bowType.arrowLengthExtraIn ?? 1)",
+  "base": {
+   "addIn": 1,
+   "addCm": 2.5,
+   "source": "Manual del Club"
+  },
+  "notes": {
+   "es": "Regla del Manual: apertura + 1\" (2,5 cm). 3Rivers recomienda +1 o +2\" para puntas de caza (que la broadhead no toque la repisa). Arcos a caballo y niños: +2\".",
+   "en": "Manual rule: draw + 1\" (2.5 cm). 3Rivers suggests +1 or +2\" with broadheads (so the head clears the shelf). Horse bows and children: +2\"."
+  }
+ },
+ "drawWeight": {
+  "markedAtIn": 28,
+  "tolerance": {
+   "es": "La industria permite ±2 lb respecto a la potencia marcada (3Rivers).",
+   "en": "Industry tolerance is ±2 lb from the marked weight (3Rivers)."
+  },
+  "perInchAdjust": {
+   "longbow-english": 2.0,
+   "flatbow": 2.2,
+   "longbow-hybrid": 2.3,
+   "recurve-traditional": 2.5,
+   "recurve-ilf-barebow": 2.0,
+   "horsebow": 2.8,
+   "selfbow-primitive": 2.8,
+   "warbow-medieval": 3.5,
+   "kids-fiberglass": 1.0
+  },
+  "perInchAdjustNote": {
+   "es": "Libras por pulgada válidas para arcos de ~35-50 lb (3Rivers: 2-3 lb por pulgada). Para otras potencias usa el porcentaje por pulgada (perInchPct de cada arco).",
+   "en": "Pounds per inch valid for ~35-50 lb bows (3Rivers: 2-3 lb per inch). For other weights use the percentage per inch (each bow's perInchPct)."
+  },
+  "expr": "actualLbs = markedLbs * (1 + perInchPct * (drawLengthIn - markedAtIn))",
+  "exprSimple": "actualLbs = markedLbs + perInchLbs * (drawLengthIn - 28)",
+  "measure": {
+   "es": "Con una báscula de arquería o de equipaje (Manual del Club, fig. 7-8): engancha la cuerda en el punto de enfleche, abre hasta tu apertura (usa la flecha graduada como referencia) y lee la báscula. Repite 3 veces. No uses una báscula de muelle barata más allá de su rango.",
+   "en": "With an archery or luggage scale (Manual del Club figs 7-8): hook the string at the nocking point, draw to your draw length (use the graduated arrow as a guide) and read the scale. Repeat 3 times. Don't use a cheap spring scale beyond its range."
+  },
+  "profiles": [
+   {
+    "id": "child-small",
+    "name": {
+     "es": "Niño/a (6-10 años)",
+     "en": "Child (6-10 years)"
+    },
+    "range": [
+     10,
+     15
+    ]
+   },
+   {
+    "id": "child-large",
+    "name": {
+     "es": "Niño/a (11-13 años)",
+     "en": "Child (11-13 years)"
+    },
+    "range": [
+     12,
+     20
+    ]
+   },
+   {
+    "id": "teen",
+    "name": {
+     "es": "Adolescente (14-17 años)",
+     "en": "Teenager (14-17 years)"
+    },
+    "range": [
+     16,
+     26
+    ]
+   },
+   {
+    "id": "adult-woman-beginner",
+    "name": {
+     "es": "Mujer adulta, principiante",
+     "en": "Adult woman, beginner"
+    },
+    "range": [
+     18,
+     26
+    ]
+   },
+   {
+    "id": "adult-man-beginner",
+    "name": {
+     "es": "Hombre adulto, principiante",
+     "en": "Adult man, beginner"
+    },
+    "range": [
+     22,
+     32
+    ]
+   },
+   {
+    "id": "senior-beginner",
+    "name": {
+     "es": "Persona mayor o con poca fuerza, principiante",
+     "en": "Older or less strong beginner"
+    },
+    "range": [
+     15,
+     24
+    ]
+   },
+   {
+    "id": "intermediate",
+    "name": {
+     "es": "Intermedio (1-3 años de tiro)",
+     "en": "Intermediate (1-3 years)"
+    },
+    "range": [
+     28,
+     40
+    ]
+   },
+   {
+    "id": "experienced-target",
+    "name": {
+     "es": "Experimentado, 3D/recorridos",
+     "en": "Experienced, 3D/field"
+    },
+    "range": [
+     35,
+     50
+    ]
+   },
+   {
+    "id": "experienced-hunting",
+    "name": {
+     "es": "Experimentado, caza (donde sea legal)",
+     "en": "Experienced, hunting (where legal)"
+    },
+    "range": [
+     45,
+     60
+    ]
+   },
+   {
+    "id": "warbow-specialist",
+    "name": {
+     "es": "Especialista en arco de guerra",
+     "en": "Warbow specialist"
+    },
+    "range": [
+     80,
+     160
+    ]
+   }
+  ],
+  "profilesNote": {
+   "es": "Rangos orientativos (potencia real a la apertura del arquero, arcos tradicionales). Test práctico: debes poder sostener la apertura 5-6 s sin temblar y tirar una sesión completa (60 flechas) sin dolor; si no, baja potencia.",
+   "en": "Indicative ranges (actual weight at the archer's draw, traditional bows). Practical test: you should hold full draw 5-6 s without shaking and shoot a full session (60 arrows) without pain; if not, go lighter."
+  }
+ },
+ "spine": {
+  "directionNote": {
+   "es": "Cuanto MENOS cortado al centro está el arco (longbow, self bow, arcos a caballo sobre la mano), más tiene que flexionar la flecha para rodear el cuerpo del arco: necesita un spine MÁS DÉBIL (menos libras en madera, número más alto en carbono). Un arco cortado más allá del centro necesita una flecha MÁS RÍGIDA.",
+   "en": "The LESS centre-cut the bow (longbow, self bow, horse bows off the hand), the more the arrow must bend around the handle: it needs a WEAKER spine (fewer pounds in wood, higher number in carbon). A bow cut past centre needs a STIFFER arrow."
+  },
+  "commonAdjustments": [
+   {
+    "id": "length",
+    "wood": "+5 lb per inch of arrow over 28\" (−5 under)",
+    "carbon": "+5 lb effective per inch over 28\"",
+    "expr": "5 * (arrowLengthIn - 28)",
+    "source": "Manual del Club; 3Rivers chart"
+   },
+   {
+    "id": "pointWood",
+    "expr": "interp(pointGr, [100,125,145,160,190], [-5,0,5,10,15]); extrapolate 0.2 lb/gr below 100 and 0.167 lb/gr above 190",
+    "desc": {
+     "es": "Madera/aluminio: ~5 lb por cada 20-25 gr de punta por encima de 125 (columnas de la tabla).",
+     "en": "Wood/aluminium: ~5 lb per 20-25 gr of point over 125 (chart columns)."
+    },
+    "source": "Manual del Club (Annex I) / 3Rivers"
+   },
+   {
+    "id": "pointCarbon",
+    "expr": "3 * (pointGr - 125) / 25",
+    "desc": {
+     "es": "Carbono: +3 lb por cada 25 gr por encima de 125 (−3 por debajo). Cuenta punta + inserto si el inserto pesa más de 25 gr.",
+     "en": "Carbon: +3 lb per 25 gr over 125 (−3 under). Count point + insert if the insert is over 25 gr."
+    },
+    "source": "Easton target & hunting charts; 3Rivers carbon columns"
+   },
+   {
+    "id": "bowType",
+    "expr": "bowType.spineAdj",
+    "desc": {
+     "es": "Recurvo al centro 0; híbrido/flatbow −5; longbow inglés, self bow, warbow −10; ILF con palas de carbono +5; infantil −5; arcos a caballo 0.",
+     "en": "Centre-cut recurve 0; hybrid/flatbow −5; English longbow, self bow, warbow −10; ILF carbon limbs +5; kids −5; horse bows 0."
+    },
+    "source": "3Rivers (longbow side = +10 lb on wood/aluminium chart); Easton (wood/glass limb −5)"
+   },
+   {
+    "id": "string",
+    "options": {
+     "dacron": 0,
+     "fastflight": 5
+    },
+    "desc": {
+     "es": "Cuerda de material de bajo estiramiento (Fast Flight, Dyneema, 8125, 452X): +5 lb.",
+     "en": "Low-stretch string (Fast Flight, Dyneema, 8125, 452X): +5 lb."
+    },
+    "source": "3Rivers chart header"
+   },
+   {
+    "id": "braceHeight",
+    "expr": "0 (qualitative)",
+    "desc": {
+     "es": "Fistmele (altura de cuerda): ajuste fino, sin valor numérico. Manual del Club: fistmele grande → menos recorrido, menos velocidad, más estabilidad; corto → más velocidad y menos estabilidad. Según la mayoría de arqueros tradicionales, subir el fistmele hace que la flecha se comporte algo más rígida y bajarlo, más débil (Easton describe lo contrario en algún texto: comprueba en tu arco). Mantén el fistmele recomendado por el fabricante.",
+     "en": "Brace height (fistmele): fine-tuning only, no numeric value. Manual del Club: higher brace → shorter power stroke, less speed, more stability; lower → more speed, less stability. Most traditional archers report that raising brace height makes the arrow act slightly stiffer and lowering it weaker (an Easton text is quoted saying the opposite: verify on your bow). Keep the maker's recommended brace height."
+    },
+    "source": "Manual del Club; tradgang.com discussions"
+   }
+  ],
+  "wood": {
+   "unit": "lb",
+   "method": {
+    "es": "1) Potencia real a tu apertura (W). 2) W_ef = W + ajuste_punta(madera) + ajuste_tipo_arco + ajuste_cuerda. 3) Spine ≈ W_ef + 5 × (longitud_flecha − 28). 4) Elige el rango de 5 lb que contiene el valor (p. ej. 47 → 45-50). Reproduce las tablas del Manual del Club (Annex I).",
+    "en": "1) Actual weight at your draw (W). 2) W_eff = W + pointAdj(wood) + bowTypeAdj + stringAdj. 3) Spine ≈ W_eff + 5 × (arrowLength − 28). 4) Pick the 5-lb band containing the value (e.g. 47 → 45-50). Reproduces the Manual del Club charts (Annex I)."
+   },
+   "expr": "spineLbs = W + pointAdjWood + bowTypeAdj + stringAdj + 5 * (arrowLengthIn - 28); bandLow = 5 * Math.floor((spineLbs - 0.5) / 5)",
+   "checks": [
+    {
+     "es": "Recurvo 41-45 lb, flecha 28\", punta 125 → 40-45 (Manual/3Rivers).",
+     "en": "Recurve 41-45 lb, 28\" arrow, 125 gr → 40-45 (Manual/3Rivers)."
+    },
+    {
+     "es": "Longbow 40-45 lb, apertura 30\" (flecha 31\") → 45-50 (Manual, English Longbow Spine Guide).",
+     "en": "Longbow 40-45 lb, 30\" draw (31\" arrow) → 45-50 (Manual, English Longbow Spine Guide)."
+    }
+   ],
+   "charts": {
+    "manualEnglishLongbow": {
+     "title": {
+      "es": "Guía de spine para longbow inglés (Manual del Club, Annex I p. 47)",
+      "en": "English Longbow Spine Guide (Manual del Club, Annex I p. 47)"
+     },
+     "colsAre": "drawLengthIn",
+     "rows": [
+      [
+       20,
+       25
+      ],
+      [
+       25,
+       30
+      ],
+      [
+       30,
+       35
+      ],
+      [
+       35,
+       40
+      ],
+      [
+       40,
+       45
+      ],
+      [
+       45,
+       50
+      ],
+      [
+       50,
+       55
+      ],
+      [
+       55,
+       60
+      ],
+      [
+       60,
+       65
+      ],
+      [
+       65,
+       70
+      ],
+      [
+       70,
+       75
+      ],
+      [
+       75,
+       80
+      ]
+     ],
+     "cols": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+     ],
+     "cells": [
+      [
+       "<10",
+       "<10",
+       "10/15",
+       "15/20",
+       "20/25",
+       "25/30",
+       "30/35"
+      ],
+      [
+       "<10",
+       "10/15",
+       "15/20",
+       "20/25",
+       "25/30",
+       "30/35",
+       "35/40"
+      ],
+      [
+       "10/15",
+       "15/20",
+       "20/25",
+       "25/30",
+       "30/35",
+       "35/40",
+       "40/45"
+      ],
+      [
+       "15/20",
+       "20/25",
+       "25/30",
+       "30/35",
+       "35/40",
+       "40/45",
+       "45/50"
+      ],
+      [
+       "20/25",
+       "25/30",
+       "30/35",
+       "35/40",
+       "40/45",
+       "45/50",
+       "50/55"
+      ],
+      [
+       "25/30",
+       "30/35",
+       "35/40",
+       "40/45",
+       "45/50",
+       "50/55",
+       "55/60"
+      ],
+      [
+       "30/35",
+       "35/40",
+       "40/45",
+       "45/50",
+       "50/55",
+       "55/60",
+       "60/65"
+      ],
+      [
+       "35/40",
+       "40/45",
+       "45/50",
+       "50/55",
+       "55/60",
+       "60/65",
+       "65/70"
+      ],
+      [
+       "40/45",
+       "45/50",
+       "50/55",
+       "55/60",
+       "60/65",
+       "65/70",
+       "70/75"
+      ],
+      [
+       "45/50",
+       "50/55",
+       "55/60",
+       "60/65",
+       "65/70",
+       "70/75",
+       "75/80"
+      ],
+      [
+       "50/55",
+       "55/60",
+       "60/65",
+       "65/70",
+       "70/75",
+       "75/80",
+       "80/85"
+      ],
+      [
+       "55/60",
+       "60/65",
+       "65/70",
+       "70/75",
+       "75/80",
+       "80/85",
+       "85/90"
+      ]
+     ],
+     "rule": "spineLow = rowLow - 5 + 5 * (drawIn - 28)",
+     "source": "Manual del Club"
+    },
+    "manual3RiversWood": {
+     "title": {
+      "es": "Tabla de flechas de madera recurvo/longbow (Manual del Club Annex I p. 46 = tabla 3Rivers)",
+      "en": "Wood arrow chart recurve/longbow (Manual del Club Annex I p. 46 = 3Rivers chart)"
+     },
+     "colsAre": "arrowLengthIn",
+     "cols": [
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+     ],
+     "pointWeights": [
+      100,
+      125,
+      145,
+      160,
+      190
+     ],
+     "rows": [
+      {
+       "recurveBowWeight": {
+        "100": [
+         31,
+         35
+        ],
+        "125": [
+         26,
+         30
+        ],
+        "145": [
+         21,
+         25
+        ],
+        "160": [
+         16,
+         20
+        ],
+        "190": null
+       },
+       "longbowBowWeight": {
+        "100": [
+         41,
+         45
+        ],
+        "125": [
+         36,
+         40
+        ],
+        "145": [
+         31,
+         35
+        ],
+        "160": [
+         26,
+         30
+        ],
+        "190": null
+       },
+       "cells": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         36,
+         40
+        ],
+        "125": [
+         31,
+         35
+        ],
+        "145": [
+         26,
+         30
+        ],
+        "160": [
+         21,
+         25
+        ],
+        "190": [
+         16,
+         20
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         46,
+         50
+        ],
+        "125": [
+         41,
+         45
+        ],
+        "145": [
+         36,
+         40
+        ],
+        "160": [
+         31,
+         35
+        ],
+        "190": [
+         26,
+         30
+        ]
+       },
+       "cells": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         41,
+         45
+        ],
+        "125": [
+         36,
+         40
+        ],
+        "145": [
+         31,
+         35
+        ],
+        "160": [
+         26,
+         30
+        ],
+        "190": [
+         21,
+         25
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         51,
+         55
+        ],
+        "125": [
+         46,
+         50
+        ],
+        "145": [
+         41,
+         45
+        ],
+        "160": [
+         36,
+         40
+        ],
+        "190": [
+         31,
+         35
+        ]
+       },
+       "cells": [
+        null,
+        null,
+        null,
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         46,
+         50
+        ],
+        "125": [
+         41,
+         45
+        ],
+        "145": [
+         36,
+         40
+        ],
+        "160": [
+         31,
+         35
+        ],
+        "190": [
+         26,
+         30
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         56,
+         60
+        ],
+        "125": [
+         51,
+         55
+        ],
+        "145": [
+         46,
+         50
+        ],
+        "160": [
+         41,
+         45
+        ],
+        "190": [
+         36,
+         40
+        ]
+       },
+       "cells": [
+        null,
+        null,
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         51,
+         55
+        ],
+        "125": [
+         46,
+         50
+        ],
+        "145": [
+         41,
+         45
+        ],
+        "160": [
+         36,
+         40
+        ],
+        "190": [
+         31,
+         35
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         61,
+         65
+        ],
+        "125": [
+         56,
+         60
+        ],
+        "145": [
+         51,
+         55
+        ],
+        "160": [
+         46,
+         50
+        ],
+        "190": [
+         41,
+         45
+        ]
+       },
+       "cells": [
+        null,
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         56,
+         60
+        ],
+        "125": [
+         51,
+         55
+        ],
+        "145": [
+         46,
+         50
+        ],
+        "160": [
+         41,
+         45
+        ],
+        "190": [
+         36,
+         40
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         66,
+         70
+        ],
+        "125": [
+         61,
+         65
+        ],
+        "145": [
+         56,
+         60
+        ],
+        "160": [
+         51,
+         55
+        ],
+        "190": [
+         46,
+         50
+        ]
+       },
+       "cells": [
+        null,
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         61,
+         65
+        ],
+        "125": [
+         56,
+         60
+        ],
+        "145": [
+         51,
+         55
+        ],
+        "160": [
+         46,
+         50
+        ],
+        "190": [
+         41,
+         45
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         71,
+         75
+        ],
+        "125": [
+         66,
+         70
+        ],
+        "145": [
+         61,
+         65
+        ],
+        "160": [
+         56,
+         60
+        ],
+        "190": [
+         51,
+         55
+        ]
+       },
+       "cells": [
+        "30-35",
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         66,
+         70
+        ],
+        "125": [
+         61,
+         65
+        ],
+        "145": [
+         56,
+         60
+        ],
+        "160": [
+         51,
+         55
+        ],
+        "190": [
+         46,
+         50
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         76,
+         80
+        ],
+        "125": [
+         71,
+         75
+        ],
+        "145": [
+         66,
+         70
+        ],
+        "160": [
+         61,
+         65
+        ],
+        "190": [
+         56,
+         60
+        ]
+       },
+       "cells": [
+        "35-40",
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80",
+        "80-85"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         71,
+         75
+        ],
+        "125": [
+         66,
+         70
+        ],
+        "145": [
+         61,
+         65
+        ],
+        "160": [
+         56,
+         60
+        ],
+        "190": [
+         51,
+         55
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         81,
+         85
+        ],
+        "125": [
+         76,
+         80
+        ],
+        "145": [
+         71,
+         75
+        ],
+        "160": [
+         66,
+         70
+        ],
+        "190": [
+         61,
+         65
+        ]
+       },
+       "cells": [
+        "40-45",
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80",
+        "80-85",
+        "85-90"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         76,
+         80
+        ],
+        "125": [
+         71,
+         75
+        ],
+        "145": [
+         66,
+         70
+        ],
+        "160": [
+         61,
+         65
+        ],
+        "190": [
+         56,
+         60
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         86,
+         90
+        ],
+        "125": [
+         81,
+         85
+        ],
+        "145": [
+         76,
+         80
+        ],
+        "160": [
+         71,
+         75
+        ],
+        "190": [
+         66,
+         70
+        ]
+       },
+       "cells": [
+        "45-50",
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80",
+        "80-85",
+        "85-90",
+        "90-95"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         81,
+         85
+        ],
+        "125": [
+         76,
+         80
+        ],
+        "145": [
+         71,
+         75
+        ],
+        "160": [
+         66,
+         70
+        ],
+        "190": [
+         61,
+         65
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         91,
+         95
+        ],
+        "125": [
+         86,
+         90
+        ],
+        "145": [
+         81,
+         85
+        ],
+        "160": [
+         76,
+         80
+        ],
+        "190": [
+         71,
+         75
+        ]
+       },
+       "cells": [
+        "50-55",
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80",
+        "80-85",
+        "85-90",
+        "90-95",
+        "95-100"
+       ]
+      },
+      {
+       "recurveBowWeight": {
+        "100": [
+         86,
+         90
+        ],
+        "125": [
+         81,
+         85
+        ],
+        "145": [
+         76,
+         80
+        ],
+        "160": [
+         71,
+         75
+        ],
+        "190": [
+         66,
+         70
+        ]
+       },
+       "longbowBowWeight": {
+        "100": [
+         96,
+         100
+        ],
+        "125": [
+         91,
+         95
+        ],
+        "145": [
+         86,
+         90
+        ],
+        "160": [
+         81,
+         85
+        ],
+        "190": [
+         76,
+         80
+        ]
+       },
+       "cells": [
+        "55-60",
+        "60-65",
+        "65-70",
+        "70-75",
+        "75-80",
+        "80-85",
+        "85-90",
+        "90-95",
+        "95-100",
+        "100-105"
+       ]
+      }
+     ],
+     "rule": "row = band of bow weight under chosen point-weight column (recurve or longbow side); cell index = row + (arrowLength - 28); spineLow = 30 + 5*(index-1); blank if index < 1",
+     "source": "Manual del Club; https://www.3riversarchery.com/pdf/ArrowCharts.pdf"
+    },
+    "recurve": {
+     "title": {
+      "es": "Recurvo cortado al centro, punta 125 gr, Dacron (generada)",
+      "en": "Centre-cut recurve, 125 gr point, Dacron (generated)"
+     },
+     "colsAre": "arrowLengthIn",
+     "rows": [
+      [
+       20,
+       25
+      ],
+      [
+       25,
+       30
+      ],
+      [
+       30,
+       35
+      ],
+      [
+       35,
+       40
+      ],
+      [
+       40,
+       45
+      ],
+      [
+       45,
+       50
+      ],
+      [
+       50,
+       55
+      ],
+      [
+       55,
+       60
+      ],
+      [
+       60,
+       65
+      ],
+      [
+       65,
+       70
+      ],
+      [
+       70,
+       75
+      ],
+      [
+       75,
+       80
+      ]
+     ],
+     "cols": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+     ],
+     "cells": [
+      [
+       "<10",
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45"
+      ],
+      [
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50"
+      ],
+      [
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55"
+      ],
+      [
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60"
+      ],
+      [
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65"
+      ],
+      [
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70"
+      ],
+      [
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75"
+      ],
+      [
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80"
+      ],
+      [
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85"
+      ],
+      [
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85",
+       "85-90"
+      ],
+      [
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85",
+       "85-90",
+       "90-95"
+      ],
+      [
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85",
+       "85-90",
+       "90-95",
+       "95-100"
+      ]
+     ],
+     "bowTypeAdj": 0
+    },
+    "longbow": {
+     "title": {
+      "es": "Longbow / self bow, punta 125 gr, Dacron (generada; coincide con la guía del Manual con flecha = apertura + 1\")",
+      "en": "Longbow / self bow, 125 gr point, Dacron (generated; matches the Manual guide with arrow = draw + 1\")"
+     },
+     "colsAre": "arrowLengthIn",
+     "rows": [
+      [
+       20,
+       25
+      ],
+      [
+       25,
+       30
+      ],
+      [
+       30,
+       35
+      ],
+      [
+       35,
+       40
+      ],
+      [
+       40,
+       45
+      ],
+      [
+       45,
+       50
+      ],
+      [
+       50,
+       55
+      ],
+      [
+       55,
+       60
+      ],
+      [
+       60,
+       65
+      ],
+      [
+       65,
+       70
+      ],
+      [
+       70,
+       75
+      ],
+      [
+       75,
+       80
+      ]
+     ],
+     "cols": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+     ],
+     "cells": [
+      [
+       "<10",
+       "<10",
+       "<10",
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35"
+      ],
+      [
+       "<10",
+       "<10",
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40"
+      ],
+      [
+       "<10",
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45"
+      ],
+      [
+       "10-15",
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50"
+      ],
+      [
+       "15-20",
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55"
+      ],
+      [
+       "20-25",
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60"
+      ],
+      [
+       "25-30",
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65"
+      ],
+      [
+       "30-35",
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70"
+      ],
+      [
+       "35-40",
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75"
+      ],
+      [
+       "40-45",
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80"
+      ],
+      [
+       "45-50",
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85"
+      ],
+      [
+       "50-55",
+       "55-60",
+       "60-65",
+       "65-70",
+       "70-75",
+       "75-80",
+       "80-85",
+       "85-90"
+      ]
+     ],
+     "bowTypeAdj": -10
+    }
+   },
+   "diameterGuide": [
+    {
+     "diameter": "5/16",
+     "name": {
+      "es": "fino",
+      "en": "thin"
+     },
+     "spineLbs": [
+      20,
+      45
+     ],
+     "source": "Manual del Club (calibres)"
+    },
+    {
+     "diameter": "11/32",
+     "name": {
+      "es": "medio",
+      "en": "medium"
+     },
+     "spineLbs": [
+      35,
+      70
+     ],
+     "source": "Manual del Club"
+    },
+    {
+     "diameter": "23/64",
+     "name": {
+      "es": "grueso",
+      "en": "thick"
+     },
+     "spineLbs": [
+      55,
+      90
+     ],
+     "source": "Manual del Club"
+    }
+   ],
+   "diameterNote": {
+    "es": "Rangos orientativos de spine por calibre en cedro; varían por especie y proveedor. Más grueso = más rígido y más pesado.",
+    "en": "Indicative spine ranges by diameter for cedar; vary by species and supplier. Thicker = stiffer and heavier."
+   }
+  },
+  "carbon": {
+   "unit": "ATA deflection ×1000",
+   "method": {
+    "es": "1) W_ef = W + 5 × (longitud − 28) + 3 × (punta − 125)/25 + ajuste_tipo_arco + ajuste_cuerda. 2) Busca W_ef en la tabla (o interpola la curva en escala logarítmica) y ajusta al grupo de spine disponible más próximo. 3) Si cae entre dos grupos: en recurvo cortado al centro con puntas de 125 gr o más, elige el más débil (consejo de Easton); en caso de duda, compra un tubo de cada y haz bare shaft.",
+    "en": "1) W_eff = W + 5 × (length − 28) + 3 × (point − 125)/25 + bowTypeAdj + stringAdj. 2) Look W_eff up in the table (or interpolate the curve in log space) and snap to the nearest available spine group. 3) If between two groups: for centre-cut recurves with 125 gr+ points choose the weaker (Easton's advice); if unsure, buy one of each and bare-shaft test."
+   },
+   "expr": "effLbs = W + 5*(arrowLengthIn-28) + 3*(pointGr-125)/25 + bowTypeAdj + stringAdj; spine = logInterp(curve, effLbs)",
+   "curve": [
+    [
+     15,
+     1500
+    ],
+    [
+     20,
+     1150
+    ],
+    [
+     25,
+     900
+    ],
+    [
+     30,
+     740
+    ],
+    [
+     35,
+     650
+    ],
+    [
+     40,
+     575
+    ],
+    [
+     45,
+     510
+    ],
+    [
+     50,
+     460
+    ],
+    [
+     55,
+     420
+    ],
+    [
+     60,
+     385
+    ],
+    [
+     65,
+     355
+    ],
+    [
+     70,
+     330
+    ],
+    [
+     80,
+     290
+    ],
+    [
+     90,
+     260
+    ],
+    [
+     100,
+     235
+    ]
+   ],
+   "groups": [
+    1500,
+    1200,
+    1000,
+    900,
+    800,
+    700,
+    600,
+    500,
+    400,
+    340,
+    300,
+    250
+   ],
+   "otherGroups": [
+    1300,
+    550,
+    450,
+    350
+   ],
+   "betweenRule": "if |ln(spine) - ln(sqrt(a*b))| < 0.02 show 'a/b'",
+   "chart": [
+    {
+     "effectiveLbsMin": 0,
+     "effectiveLbsMax": 17,
+     "spine": 1500
+    },
+    {
+     "effectiveLbsMin": 18,
+     "effectiveLbsMax": 20,
+     "spine": 1200
+    },
+    {
+     "effectiveLbsMin": 21,
+     "effectiveLbsMax": 23,
+     "spine": 1000
+    },
+    {
+     "effectiveLbsMin": 24,
+     "effectiveLbsMax": 26,
+     "spine": 900
+    },
+    {
+     "effectiveLbsMin": 27,
+     "effectiveLbsMax": 29,
+     "spine": 800
+    },
+    {
+     "effectiveLbsMin": 30,
+     "effectiveLbsMax": 35,
+     "spine": 700
+    },
+    {
+     "effectiveLbsMin": 36,
+     "effectiveLbsMax": 42,
+     "spine": 600
+    },
+    {
+     "effectiveLbsMin": 43,
+     "effectiveLbsMax": 51,
+     "spine": 500
+    },
+    {
+     "effectiveLbsMin": 52,
+     "effectiveLbsMax": 62,
+     "spine": 400
+    },
+    {
+     "effectiveLbsMin": 63,
+     "effectiveLbsMax": 72,
+     "spine": 340
+    },
+    {
+     "effectiveLbsMin": 73,
+     "effectiveLbsMax": 85,
+     "spine": 300
+    },
+    {
+     "effectiveLbsMin": 86,
+     "effectiveLbsMax": 120,
+     "spine": 250
+    }
+   ],
+   "charts": {
+    "recurve": {
+     "title": {
+      "es": "Carbono, recurvo al centro, 125 gr (generada)",
+      "en": "Carbon, centre-cut recurve, 125 gr (generated)"
+     },
+     "colsAre": "arrowLengthIn",
+     "rows": [
+      [
+       20,
+       25
+      ],
+      [
+       25,
+       30
+      ],
+      [
+       30,
+       35
+      ],
+      [
+       35,
+       40
+      ],
+      [
+       40,
+       45
+      ],
+      [
+       45,
+       50
+      ],
+      [
+       50,
+       55
+      ],
+      [
+       55,
+       60
+      ],
+      [
+       60,
+       65
+      ],
+      [
+       65,
+       70
+      ],
+      [
+       70,
+       75
+      ],
+      [
+       75,
+       80
+      ]
+     ],
+     "cols": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+     ],
+     "cells": [
+      [
+       "1500",
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500"
+      ],
+      [
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500"
+      ],
+      [
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400"
+      ],
+      [
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400"
+      ],
+      [
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340"
+      ],
+      [
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340"
+      ],
+      [
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300"
+      ],
+      [
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300"
+      ],
+      [
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300"
+      ],
+      [
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300",
+       "250"
+      ],
+      [
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300",
+       "250",
+       "250"
+      ],
+      [
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300",
+       "250",
+       "250",
+       "250"
+      ]
+     ],
+     "bowTypeAdj": 0
+    },
+    "longbow": {
+     "title": {
+      "es": "Carbono, longbow/self bow, 125 gr (generada)",
+      "en": "Carbon, longbow/self bow, 125 gr (generated)"
+     },
+     "colsAre": "arrowLengthIn",
+     "rows": [
+      [
+       20,
+       25
+      ],
+      [
+       25,
+       30
+      ],
+      [
+       30,
+       35
+      ],
+      [
+       35,
+       40
+      ],
+      [
+       40,
+       45
+      ],
+      [
+       45,
+       50
+      ],
+      [
+       50,
+       55
+      ],
+      [
+       55,
+       60
+      ],
+      [
+       60,
+       65
+      ],
+      [
+       65,
+       70
+      ],
+      [
+       70,
+       75
+      ],
+      [
+       75,
+       80
+      ]
+     ],
+     "cols": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+     ],
+     "cells": [
+      [
+       "1500",
+       "1500",
+       "1500",
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700"
+      ],
+      [
+       "1500",
+       "1500",
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600"
+      ],
+      [
+       "1500",
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500"
+      ],
+      [
+       "1500",
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500"
+      ],
+      [
+       "1200",
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400"
+      ],
+      [
+       "1000",
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400"
+      ],
+      [
+       "800",
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340"
+      ],
+      [
+       "700",
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340"
+      ],
+      [
+       "600",
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300"
+      ],
+      [
+       "600/500",
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300"
+      ],
+      [
+       "500",
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300"
+      ],
+      [
+       "500/400",
+       "400",
+       "400/340",
+       "340",
+       "340/300",
+       "300",
+       "300",
+       "250"
+      ]
+     ],
+     "bowTypeAdj": -10
+    }
+   },
+   "calibration": {
+    "es": "Curva situada entre la tabla Easton Target (recurvo, con −5 lb por palas de madera/fibra y +3 lb por 125 gr) y la tabla de carbono de 3Rivers (que da ~1 grupo más rígido por debajo de 50 lb). A 28\"/125 gr: 3Rivers da 600 para 29-33 lb, 500 para 34-48, 400 para 49-63, 340 para 64-75, 300 para 76+.",
+    "en": "Curve placed between the Easton Target chart (recurve, with −5 lb for wood/glass limbs and +3 lb for 125 gr) and 3Rivers' carbon chart (which runs ~1 group stiffer below 50 lb). At 28\"/125 gr, 3Rivers gives 600 for 29-33 lb, 500 for 34-48, 400 for 49-63, 340 for 64-75, 300 for 76+."
+   },
+   "longbowNote": {
+    "es": "La tabla de carbono de 3Rivers desplaza el longbow ~15-18 lb (más que en madera); aquí usamos −10 lb de forma coherente y recomendamos bare shaft. La tabla de caza de Easton tiene una columna 'longbow' que parece ir en sentido contrario: no la usamos.",
+    "en": "3Rivers' carbon chart shifts longbows by ~15-18 lb (more than for wood); we use −10 lb consistently and recommend bare-shaft testing. Easton's hunting chart has a 'longbow' column that appears to go the other way: not used."
+   },
+   "typicalGpi": [
+    {
+     "spine": 1000,
+     "gpi": [
+      5.5,
+      7.5
+     ]
+    },
+    {
+     "spine": 900,
+     "gpi": [
+      6,
+      7.5
+     ]
+    },
+    {
+     "spine": 800,
+     "gpi": [
+      6.5,
+      8
+     ]
+    },
+    {
+     "spine": 700,
+     "gpi": [
+      7,
+      8.5
+     ]
+    },
+    {
+     "spine": 600,
+     "gpi": [
+      7.5,
+      9
+     ]
+    },
+    {
+     "spine": 500,
+     "gpi": [
+      8,
+      10
+     ]
+    },
+    {
+     "spine": 400,
+     "gpi": [
+      9,
+      11
+     ]
+    },
+    {
+     "spine": 340,
+     "gpi": [
+      10,
+      12
+     ]
+    },
+    {
+     "spine": 300,
+     "gpi": [
+      11,
+      13
+     ]
+    },
+    {
+     "spine": 250,
+     "gpi": [
+      12.5,
+      14.5
+     ]
+    }
+   ],
+   "typicalGpiNote": {
+    "es": "Valores típicos; los tubos 'tradicionales' con aspecto de madera suelen ser más pesados y los de diana finos, más ligeros. Usa siempre el GPI que publica el fabricante (Manual del Club: peso = longitud × GPI del fabricante).",
+    "en": "Typical values; wood-look 'traditional' shafts tend to be heavier and skinny target shafts lighter. Always use the maker's published GPI (Manual del Club: weight = length × maker's GPI)."
+   }
+  },
+  "aluminium": {
+   "method": {
+    "es": "Igual que madera para longitud, punta y tipo de arco (W_ef = W + ajuste_punta(madera) + ajuste_tipo_arco + ajuste_cuerda + 5 × (longitud − 28)); busca W_ef en la tabla de grupos (3Rivers). Código Easton XXYY: XX = diámetro en 64avos de pulgada, YY = pared en milésimas.",
+    "en": "Same as wood for length, point and bow type (W_eff = W + pointAdj(wood) + bowTypeAdj + stringAdj + 5 × (length − 28)); look W_eff up in the group table (3Rivers). Easton code XXYY: XX = diameter in 64ths of an inch, YY = wall in thousandths."
+   },
+   "chart": [
+    {
+     "effectiveLbsMin": 26,
+     "effectiveLbsMax": 30,
+     "group": "A",
+     "sizes": [
+      "1716"
+     ]
+    },
+    {
+     "effectiveLbsMin": 31,
+     "effectiveLbsMax": 35,
+     "group": "A",
+     "sizes": [
+      "1716"
+     ]
+    },
+    {
+     "effectiveLbsMin": 36,
+     "effectiveLbsMax": 40,
+     "group": "B",
+     "sizes": [
+      "1816"
+     ]
+    },
+    {
+     "effectiveLbsMin": 41,
+     "effectiveLbsMax": 45,
+     "group": "C-D",
+     "sizes": [
+      "1916",
+      "2013"
+     ]
+    },
+    {
+     "effectiveLbsMin": 46,
+     "effectiveLbsMax": 50,
+     "group": "C-D",
+     "sizes": [
+      "1916",
+      "2013"
+     ]
+    },
+    {
+     "effectiveLbsMin": 51,
+     "effectiveLbsMax": 55,
+     "group": "E",
+     "sizes": [
+      "2016"
+     ]
+    },
+    {
+     "effectiveLbsMin": 56,
+     "effectiveLbsMax": 60,
+     "group": "E-F",
+     "sizes": [
+      "2016",
+      "2018"
+     ]
+    },
+    {
+     "effectiveLbsMin": 61,
+     "effectiveLbsMax": 65,
+     "group": "E-H",
+     "sizes": [
+      "2016",
+      "2213"
+     ]
+    },
+    {
+     "effectiveLbsMin": 66,
+     "effectiveLbsMax": 70,
+     "group": "H-I",
+     "sizes": [
+      "2213",
+      "2215"
+     ]
+    },
+    {
+     "effectiveLbsMin": 71,
+     "effectiveLbsMax": 75,
+     "group": "G-I",
+     "sizes": [
+      "2117",
+      "2215"
+     ]
+    },
+    {
+     "effectiveLbsMin": 76,
+     "effectiveLbsMax": 80,
+     "group": "J-L-O",
+     "sizes": [
+      "2216",
+      "2314",
+      "2413"
+     ]
+    },
+    {
+     "effectiveLbsMin": 81,
+     "effectiveLbsMax": 85,
+     "group": "K-L-O",
+     "sizes": [
+      "2219",
+      "2314",
+      "2413"
+     ]
+    },
+    {
+     "effectiveLbsMin": 86,
+     "effectiveLbsMax": 90,
+     "group": "M",
+     "sizes": [
+      "2315"
+     ]
+    },
+    {
+     "effectiveLbsMin": 91,
+     "effectiveLbsMax": 95,
+     "group": "N",
+     "sizes": [
+      "2317"
+     ]
+    },
+    {
+     "effectiveLbsMin": 96,
+     "effectiveLbsMax": 100,
+     "group": "N",
+     "sizes": [
+      "2317"
+     ]
+    },
+    {
+     "effectiveLbsMin": 101,
+     "effectiveLbsMax": 105,
+     "group": "N",
+     "sizes": [
+      "2317"
+     ]
+    }
+   ],
+   "letters": {
+    "A": "1716",
+    "B": "1816",
+    "C": "1916",
+    "D": "2013",
+    "E": "2016",
+    "F": "2018",
+    "G": "2117",
+    "H": "2213",
+    "I": "2215",
+    "J": "2216",
+    "K": "2219",
+    "L": "2314",
+    "M": "2315",
+    "N": "2317",
+    "O": "2413"
+   },
+   "sizes": [
+    {
+     "size": "1716",
+     "odIn": 0.2656,
+     "wallIn": 0.016,
+     "gpiApprox": 8.9
+    },
+    {
+     "size": "1816",
+     "odIn": 0.2812,
+     "wallIn": 0.016,
+     "gpiApprox": 9.5
+    },
+    {
+     "size": "1916",
+     "odIn": 0.2969,
+     "wallIn": 0.016,
+     "gpiApprox": 10.0
+    },
+    {
+     "size": "2013",
+     "odIn": 0.3125,
+     "wallIn": 0.013,
+     "gpiApprox": 8.7
+    },
+    {
+     "size": "2016",
+     "odIn": 0.3125,
+     "wallIn": 0.016,
+     "gpiApprox": 10.6
+    },
+    {
+     "size": "2018",
+     "odIn": 0.3125,
+     "wallIn": 0.018,
+     "gpiApprox": 11.8
+    },
+    {
+     "size": "2117",
+     "odIn": 0.3281,
+     "wallIn": 0.017,
+     "gpiApprox": 11.8
+    },
+    {
+     "size": "2213",
+     "odIn": 0.3438,
+     "wallIn": 0.013,
+     "gpiApprox": 9.6
+    },
+    {
+     "size": "2215",
+     "odIn": 0.3438,
+     "wallIn": 0.015,
+     "gpiApprox": 11.0
+    },
+    {
+     "size": "2216",
+     "odIn": 0.3438,
+     "wallIn": 0.016,
+     "gpiApprox": 11.7
+    },
+    {
+     "size": "2219",
+     "odIn": 0.3438,
+     "wallIn": 0.019,
+     "gpiApprox": 13.8
+    },
+    {
+     "size": "2314",
+     "odIn": 0.3594,
+     "wallIn": 0.014,
+     "gpiApprox": 10.8
+    },
+    {
+     "size": "2315",
+     "odIn": 0.3594,
+     "wallIn": 0.015,
+     "gpiApprox": 11.5
+    },
+    {
+     "size": "2317",
+     "odIn": 0.3594,
+     "wallIn": 0.017,
+     "gpiApprox": 13.0
+    },
+    {
+     "size": "2413",
+     "odIn": 0.375,
+     "wallIn": 0.013,
+     "gpiApprox": 10.5
+    }
+   ],
+   "gpiExpr": "gpi = PI * (od - wall) * wall * 16.387 * 2.81 * 15.4324  // od, wall in inches; 7075 alloy",
+   "source": "https://www.3riversarchery.com/pdf/ArrowCharts.pdf"
+  },
+  "fiberglass": {
+   "method": {
+    "es": "Los fabricantes de flechas de fibra (sobre todo infantiles) usan su propia numeración o ninguna. Guía por potencia real:",
+    "en": "Fibreglass arrow makers (mostly youth) use their own numbering or none. Guide by actual weight:"
+   },
+   "bands": [
+    {
+     "lbs": [
+      0,
+      15
+     ],
+     "advice": {
+      "es": "Flechas de fibra de 6 mm (≈1/4\") o de aluminio 1416-1516.",
+      "en": "6 mm (≈1/4\") fibreglass or 1416-1516 aluminium."
+     }
+    },
+    {
+     "lbs": [
+      15,
+      25
+     ],
+     "advice": {
+      "es": "Fibra de 5/16\" (8 mm) tubular; o carbono 1000-1500 / aluminio 1616-1716.",
+      "en": "5/16\" (8 mm) tubular fibreglass; or 1000-1500 carbon / 1616-1716 aluminium."
+     }
+    },
+    {
+     "lbs": [
+      25,
+      30
+     ],
+     "advice": {
+      "es": "Solo fibra de pared gruesa; mejor pasar a carbono o madera.",
+      "en": "Only thick-walled fibreglass; better move to carbon or wood."
+     }
+    },
+    {
+     "lbs": [
+      30,
+      200
+     ],
+     "advice": {
+      "es": "No recomendado: usa carbono, aluminio o madera.",
+      "en": "Not recommended: use carbon, aluminium or wood."
+     }
+    }
+   ],
+   "gpi": [
+    12,
+    20
+   ],
+   "safety": {
+    "es": "La fibra de vidrio se astilla al romperse: revisa cada flecha y desecha las agrietadas.",
+    "en": "Fibreglass splinters when it breaks: inspect every arrow and discard cracked ones."
+   }
+  },
+  "conversions": {
+   "carbonToWoodLbs": "woodLbs ≈ 31500 / ataSpine",
+   "woodLbsFromDeflection26": "woodLbs = 26 / deflectionIn  // 2 lb load on 26\" span (old wood/AMO method)",
+   "note": {
+    "es": "Equivalencia ESTÁTICA solamente (p. ej. 500 ≈ 63#). No uses la equivalencia para elegir spine: el carbono, al ser más ligero, se comporta más rígido; usa la tabla de carbono.",
+    "en": "STATIC equivalence only (e.g. 500 ≈ 63#). Don't use it to pick spine: lighter carbon acts stiffer dynamically; use the carbon chart."
+   }
+  }
+ },
+ "shafts": {
+  "woodSpecies": [
+   {
+    "id": "port-orford-cedar",
+    "name": {
+     "es": "Cedro de Port Orford",
+     "en": "Port Orford cedar"
+    },
+    "densityGcm3": 0.47,
+    "densityRange": [
+     0.42,
+     0.52
+    ],
+    "notes": {
+     "es": "El astil tradicional por excelencia: recto, ligero, se clasifica por spine y peso.",
+     "en": "The classic traditional shaft: straight, light, sold spine- and weight-matched."
+    },
+    "gpi": {
+     "5/16": 9.1,
+     "11/32": 11.0,
+     "23/64": 12.1
+    },
+    "gpiRange": {
+     "5/16": [
+      8.1,
+      10.1
+     ],
+     "11/32": [
+      9.9,
+      12.2
+     ],
+     "23/64": [
+      10.8,
+      13.3
+     ]
+    }
+   },
+   {
+    "id": "sitka-spruce",
+    "name": {
+     "es": "Abeto de Sitka",
+     "en": "Sitka spruce"
+    },
+    "densityGcm3": 0.43,
+    "densityRange": [
+     0.38,
+     0.47
+    ],
+    "notes": {
+     "es": "Muy ligero; algo más frágil que el cedro.",
+     "en": "Very light; somewhat more fragile than cedar."
+    },
+    "gpi": {
+     "5/16": 8.3,
+     "11/32": 10.1,
+     "23/64": 11.0
+    },
+    "gpiRange": {
+     "5/16": [
+      7.4,
+      9.1
+     ],
+     "11/32": [
+      8.9,
+      11.0
+     ],
+     "23/64": [
+      9.7,
+      12.1
+     ]
+    }
+   },
+   {
+    "id": "pine",
+    "name": {
+     "es": "Pino (silvestre / radiata)",
+     "en": "Pine (Scots / radiata)"
+    },
+    "densityGcm3": 0.5,
+    "densityRange": [
+     0.45,
+     0.55
+    ],
+    "notes": {
+     "es": "Barato y fácil de encontrar en Europa; resistencia media.",
+     "en": "Cheap and common in Europe; medium toughness."
+    },
+    "gpi": {
+     "5/16": 9.7,
+     "11/32": 11.7,
+     "23/64": 12.8
+    },
+    "gpiRange": {
+     "5/16": [
+      8.7,
+      10.7
+     ],
+     "11/32": [
+      10.6,
+      12.9
+     ],
+     "23/64": [
+      11.5,
+      14.1
+     ]
+    }
+   },
+   {
+    "id": "douglas-fir",
+    "name": {
+     "es": "Abeto de Douglas",
+     "en": "Douglas fir"
+    },
+    "densityGcm3": 0.53,
+    "densityRange": [
+     0.48,
+     0.58
+    ],
+    "notes": {
+     "es": "Más rígido y pesado que el cedro; buena durabilidad.",
+     "en": "Stiffer and heavier than cedar; durable."
+    },
+    "gpi": {
+     "5/16": 10.3,
+     "11/32": 12.4,
+     "23/64": 13.6
+    },
+    "gpiRange": {
+     "5/16": [
+      9.3,
+      11.3
+     ],
+     "11/32": [
+      11.3,
+      13.6
+     ],
+     "23/64": [
+      12.3,
+      14.9
+     ]
+    }
+   },
+   {
+    "id": "poplar",
+    "name": {
+     "es": "Chopo / álamo",
+     "en": "Poplar / aspen"
+    },
+    "densityGcm3": 0.45,
+    "densityRange": [
+     0.4,
+     0.5
+    ],
+    "notes": {
+     "es": "Usado en flechas medievales (Mary Rose); ligero.",
+     "en": "Used for medieval arrows (Mary Rose); light."
+    },
+    "gpi": {
+     "5/16": 8.7,
+     "11/32": 10.6,
+     "23/64": 11.5
+    },
+    "gpiRange": {
+     "5/16": [
+      7.8,
+      9.7
+     ],
+     "11/32": [
+      9.4,
+      11.7
+     ],
+     "23/64": [
+      10.3,
+      12.8
+     ]
+    }
+   },
+   {
+    "id": "birch",
+    "name": {
+     "es": "Abedul",
+     "en": "Birch"
+    },
+    "densityGcm3": 0.65,
+    "densityRange": [
+     0.6,
+     0.7
+    ],
+    "notes": {
+     "es": "Pesado y muy resistente; habitual en flechas históricas.",
+     "en": "Heavy and very tough; common for historical arrows."
+    },
+    "gpi": {
+     "5/16": 12.6,
+     "11/32": 15.3,
+     "23/64": 16.7
+    },
+    "gpiRange": {
+     "5/16": [
+      11.6,
+      13.6
+     ],
+     "11/32": [
+      14.1,
+      16.4
+     ],
+     "23/64": [
+      15.4,
+      18.0
+     ]
+    }
+   },
+   {
+    "id": "ash",
+    "name": {
+     "es": "Fresno",
+     "en": "Ash"
+    },
+    "densityGcm3": 0.67,
+    "densityRange": [
+     0.62,
+     0.72
+    ],
+    "notes": {
+     "es": "Muy pesado y duro: flechas de caza y de arco de guerra.",
+     "en": "Very heavy and tough: hunting and warbow arrows."
+    },
+    "gpi": {
+     "5/16": 13.0,
+     "11/32": 15.7,
+     "23/64": 17.2
+    },
+    "gpiRange": {
+     "5/16": [
+      12.0,
+      14.0
+     ],
+     "11/32": [
+      14.6,
+      16.9
+     ],
+     "23/64": [
+      15.9,
+      18.5
+     ]
+    }
+   },
+   {
+    "id": "bamboo",
+    "name": {
+     "es": "Bambú (Tonkin)",
+     "en": "Bamboo (Tonkin)"
+    },
+    "densityGcm3": null,
+    "densityRange": null,
+    "notes": {
+     "es": "Hueco: no se calcula por densidad; pesa ~9-14 gr/in según diámetro y pared. Pesa cada astil.",
+     "en": "Hollow: not computed from density; ~9-14 gr/in depending on diameter and wall. Weigh each shaft."
+    },
+    "gpi": {
+     "5/16": 9.5,
+     "11/32": 11.0,
+     "23/64": 12.5
+    },
+    "gpiRange": {
+     "5/16": [
+      8,
+      11
+     ],
+     "11/32": [
+      9,
+      13
+     ],
+     "23/64": [
+      10,
+      14
+     ]
+    }
+   }
+  ],
+  "woodGpiExpr": "gpi = densityGcm3 * PI/4 * (diamIn*2.54)^2 * 2.54 * 15.4324",
+  "woodNote": {
+   "es": "Valores medios; la madera varía mucho. Pesa los astiles (balanza de grains) y emparéjalos en ±10 gr.",
+   "en": "Average values; wood varies a lot. Weigh shafts (grain scale) and match them within ±10 gr."
+  }
+ },
+ "weights": {
+  "shaftExpr": "shaftGr = arrowLengthIn * gpi",
+  "feathers": {
+   "grPerInch": {
+    "turkey-low-profile": 0.6,
+    "turkey-high-profile": 0.75,
+    "goose": 0.8
+   },
+   "gluePerFletchGr": 1,
+   "fluFluEachGr": [
+    6,
+    12
+   ],
+   "examples": [
+    {
+     "length": 4,
+     "shape": "shield",
+     "grEach": 2.3,
+     "source": "Trueflight 4\" shield (Lancaster Archery listing)"
+    },
+    {
+     "length": 5,
+     "shape": "shield/parabolic",
+     "grEach": 3
+    },
+    {
+     "length": 5.5,
+     "shape": "shield/parabolic",
+     "grEach": 3.5
+    },
+    {
+     "length": 7,
+     "shape": "historical",
+     "grEach": 5
+    }
+   ],
+   "expr": "fletchGr = count * (lengthIn * grPerInch + gluePerFletchGr)"
+  },
+  "vanes": {
+   "grPerInch": 2.5,
+   "examples": [
+    {
+     "length": 2,
+     "grEach": 5.5
+    },
+    {
+     "length": 3,
+     "grEach": 7.5
+    },
+    {
+     "length": 4,
+     "grEach": 10
+    }
+   ],
+   "spinWingEachGr": 1.5
+  },
+  "nocks": [
+   {
+    "id": "self",
+    "gr": 0,
+    "note": {
+     "es": "Tallado en el astil: no añade peso.",
+     "en": "Cut into the shaft: adds no weight."
+    }
+   },
+   {
+    "id": "self-reinforced",
+    "gr": 5
+   },
+   {
+    "id": "glue-on-taper",
+    "grByDiameter": {
+     "5/16": 8,
+     "11/32": 10,
+     "23/64": 12
+    }
+   },
+   {
+    "id": "pin",
+    "gr": 12,
+    "note": {
+     "es": "Pin + culatín.",
+     "en": "Pin + nock."
+    }
+   },
+   {
+    "id": "press-fit",
+    "gr": 7
+   },
+   {
+    "id": "snap-on",
+    "gr": 7
+   },
+   {
+    "id": "bulbous-asian",
+    "gr": 12
+   },
+   {
+    "id": "aluminium-bushing",
+    "gr": 15,
+    "note": {
+     "es": "Casquillo + culatín (aluminio).",
+     "en": "Bushing + nock (aluminium)."
+    }
+   }
+  ],
+  "inserts": [
+   {
+    "id": "none-wood",
+    "gr": 0,
+    "note": {
+     "es": "Madera: punta pegada sobre cono, sin inserto.",
+     "en": "Wood: glue-on point over taper, no insert."
+    }
+   },
+   {
+    "id": "aluminium-standard",
+    "gr": 16,
+    "range": [
+     10,
+     25
+    ]
+   },
+   {
+    "id": "brass",
+    "gr": 50,
+    "range": [
+     25,
+     100
+    ]
+   },
+   {
+    "id": "outsert",
+    "gr": 20,
+    "range": [
+     15,
+     30
+    ]
+   }
+  ],
+  "points": [
+   {
+    "id": "field-glue-5/16",
+    "range": [
+     70,
+     125
+    ]
+   },
+   {
+    "id": "field-glue-11/32",
+    "range": [
+     100,
+     160
+    ]
+   },
+   {
+    "id": "field-glue-23/64",
+    "range": [
+     125,
+     200
+    ]
+   },
+   {
+    "id": "screw-in",
+    "range": [
+     75,
+     300
+    ]
+   },
+   {
+    "id": "bodkin-historical",
+    "range": [
+     70,
+     250
+    ]
+   },
+   {
+    "id": "warbow-heavy",
+    "range": [
+     200,
+     800
+    ]
+   }
+  ],
+  "wraps": {
+   "grPerInch": 1.5,
+   "typicalLengthIn": 4
+  },
+  "crestingGr": [
+   3,
+   10
+  ],
+  "pointWeightManual": {
+   "wood": "pointGr ≈ (shaftGr + nockGr + fletchGr + wrapGr) / 3",
+   "carbon": "pointGr ≈ (shaftGr + nockGr + fletchGr + wrapGr) / 2.5",
+   "source": "Manual del Club (Form. 1-2 / 5-6)",
+   "interpretation": {
+    "es": "El Manual llama 'peso total de la flecha' al peso del astil con plumas y culatín (Form. 4-6: 'quin pes total tindrà el nostre vàstag... plomes... culatí'). Interpretamos que la punta NO está incluida en el dividendo. Si se incluyera, la fórmula equivalente sería punta = resto/2 (madera) o resto/1,5 (carbono), que da puntas mucho más pesadas.",
+    "en": "The Manual calls the shaft + feathers + nock weight the 'total arrow weight' (Forms 4-6). We read it as NOT including the point. If the point were included, the equivalent would be point = rest/2 (wood) or rest/1.5 (carbon), giving much heavier points."
+   }
+  },
+  "gppBands": [
+   {
+    "id": "danger",
+    "max": 6,
+    "name": {
+     "es": "Peligrosa: por debajo del mínimo de casi todos los fabricantes (riesgo de 'tiro en vacío')",
+     "en": "Dangerous: below nearly every maker's minimum (dry-fire risk)"
+    }
+   },
+   {
+    "id": "light",
+    "min": 6,
+    "max": 8,
+    "name": {
+     "es": "Ligera: diana/ILF; comprueba el mínimo del fabricante",
+     "en": "Light: target/ILF; check the maker's minimum"
+    }
+   },
+   {
+    "id": "standard",
+    "min": 8,
+    "max": 10,
+    "name": {
+     "es": "Estándar tradicional (Manual del Club: 8-9 gpp mínimo)",
+     "en": "Traditional standard (Manual del Club: 8-9 gpp minimum)"
+    }
+   },
+   {
+    "id": "heavy",
+    "min": 10,
+    "max": 12,
+    "name": {
+     "es": "Pesada: caza, self bows",
+     "en": "Heavy: hunting, self bows"
+    }
+   },
+   {
+    "id": "very-heavy",
+    "min": 12,
+    "name": {
+     "es": "Muy pesada: arco de guerra, primitivo",
+     "en": "Very heavy: warbow, primitive"
+    }
+   }
+  ],
+  "minWeightManual": {
+   "expr": "minArrowGr = drawWeightLbs * gpp  // gpp = 8 or 9",
+   "gpp": [
+    8,
+    9
+   ],
+   "source": "Manual del Club (Form. 3)"
+  },
+  "focTargets": [
+   {
+    "id": "target",
+    "range": [
+     7,
+     12
+    ],
+    "name": {
+     "es": "Diana / 3D tradicional",
+     "en": "Target / traditional 3D"
+    }
+   },
+   {
+    "id": "3d",
+    "range": [
+     6,
+     12
+    ],
+    "name": {
+     "es": "3D (Ashby)",
+     "en": "3D (Ashby)"
+    },
+    "source": "Ashby 2005"
+   },
+   {
+    "id": "fita",
+    "range": [
+     11,
+     16
+    ],
+    "name": {
+     "es": "Diana olímpica / FITA (Ashby)",
+     "en": "Olympic / FITA target (Ashby)"
+    },
+    "source": "Ashby 2005"
+   },
+   {
+    "id": "hunting",
+    "range": [
+     10,
+     15
+    ],
+    "name": {
+     "es": "Caza (Easton)",
+     "en": "Hunting (Easton)"
+    },
+    "source": "Easton"
+   },
+   {
+    "id": "hunting-efoc",
+    "range": [
+     19,
+     30
+    ],
+    "name": {
+     "es": "Caza con FOC extremo (Ashby, EFOC ≥ 19%)",
+     "en": "Hunting extreme FOC (Ashby, EFOC ≥ 19%)"
+    },
+    "source": "Ashby"
+   }
+  ],
+  "focNote": {
+   "es": "FOC negativo o < 5%: flecha inestable. Más FOC = más estable y más penetración, pero la flecha se comporta más débil (añadir peso en punta debilita el spine dinámico).",
+   "en": "Negative or < 5% FOC: unstable arrow. More FOC = more stable and more penetration, but the arrow acts weaker (adding point weight weakens dynamic spine)."
+  }
+ },
+ "foc": {
+  "expr": "FOC = (B - L/2) / L * 100",
+  "definitions": {
+   "es": "L = longitud del astil desde el fondo de la ranura del culatín hasta el final del tubo (norma AMO, sin punta). B = punto de equilibrio medido desde el fondo de la ranura del culatín.",
+   "en": "L = shaft length from the bottom of the nock groove to the end of the shaft (AMO standard, excluding point). B = balance point measured from the bottom of the nock groove."
+  },
+  "fromComponents": {
+   "expr": "B = sum(m_i * x_i) / sum(m_i)",
+   "positionsIn": {
+    "shaft": "L / 2",
+    "point": "L + 0.3",
+    "insert": "L - 0.5",
+    "nock": "0.3",
+    "fletching": "rearOffset + fletchLength / 2   // rearOffset ≈ 1.25 (feathers) or 1.0 (vanes)",
+    "wrap": "0.25 + wrapLength / 2",
+    "cresting": "3"
+   },
+   "example": {
+    "L": 28.5,
+    "gpi": 11,
+    "pointGr": 125,
+    "nockGr": 10,
+    "fletch": "3 × 5\" shield",
+    "resultFocPct": 11.8,
+    "totalGr": 460
+   }
+  },
+  "source": "https://cpw.state.co.us/Documents/Hunting/EHU/UpdatePrologue-UnderstandingFOC.pdf ; https://eastonarchery.com/2014/06/foc/"
+ },
+ "speed": {
+  "caveat": {
+   "es": "Estimación aproximada (±10-15%). Solo un cronógrafo da la velocidad real.",
+   "en": "Rough estimate (±10-15%). Only a chronograph gives the real speed."
+  },
+  "storedEnergyExpr": "E_ftlb = storageFactor * W * (drawLengthIn - 1.75 - braceHeightIn) / 12",
+  "efficiencyExpr": "eta = hysteresis * m / (m + virtualMassGr)",
+  "velocityExpr": "v_fps = sqrt(450240 * eta * E_ftlb / m)",
+  "keExpr": "KE_ftlb = m * v^2 / 450240",
+  "momentumExpr": "p = m * v / 225218  // slug·ft/s",
+  "metric": "v_ms = v_fps * 0.3048; KE_J = KE_ftlb * 1.3558",
+  "notes": {
+   "es": "Modelo de masa virtual (Hickman/Klopsteg) con parámetros por tipo de arco (speedModel). Calibrado para dar ~170-180 fps con un recurvo de 50 lb a 28\" y flecha de 500 gr, y ~160-165 fps con un longbow inglés.",
+   "en": "Virtual-mass model (Hickman/Klopsteg) with per-bow parameters (speedModel). Calibrated to give ~170-180 fps for a 50 lb recurve at 28\" with a 500 gr arrow and ~160-165 fps for an English longbow."
+  },
+  "examples": [
+   {
+    "bow": "recurve-traditional",
+    "W": 50,
+    "draw": 28,
+    "brace": 7.5,
+    "arrowGr": 500,
+    "fps": 172
+   },
+   {
+    "bow": "longbow-english",
+    "W": 50,
+    "draw": 28,
+    "brace": 7,
+    "arrowGr": 500,
+    "fps": 159
+   },
+   {
+    "bow": "selfbow-primitive",
+    "W": 50,
+    "draw": 28,
+    "brace": 6.5,
+    "arrowGr": 550,
+    "fps": 146
+   },
+   {
+    "bow": "recurve-ilf-barebow",
+    "W": 38,
+    "draw": 28,
+    "brace": 8.5,
+    "arrowGr": 300,
+    "fps": 185
+   },
+   {
+    "bow": "kids-fiberglass",
+    "W": 15,
+    "draw": 23,
+    "brace": 7,
+    "arrowGr": 300,
+    "fps": 88
+   }
+  ]
+ },
+ "formulas": [
+  {
+   "id": "arrow-length",
+   "expr": "drawLengthIn + 1",
+   "desc": {
+    "es": "Longitud de flecha = apertura + 1\" (2,5 cm).",
+    "en": "Arrow length = draw length + 1\" (2.5 cm)."
+   },
+   "source": "Manual del Club"
+  },
+  {
+   "id": "arrow-length-cm",
+   "expr": "drawLengthCm + 2.5",
+   "desc": {
+    "es": "Igual, en centímetros.",
+    "en": "Same, in centimetres."
+   },
+   "source": "Manual del Club"
+  },
+  {
+   "id": "draw-from-wingspan",
+   "expr": "wingspanCm / 2.5 / 2.54 + styleAdjIn",
+   "desc": {
+    "es": "Apertura estimada a partir de la envergadura.",
+    "en": "Draw length estimated from wingspan."
+   },
+   "source": "ATA fitting rule (wingspan/2.5)"
+  },
+  {
+   "id": "draw-from-height",
+   "expr": "heightCm / 6.35 + styleAdjIn",
+   "desc": {
+    "es": "Apertura estimada a partir de la altura (envergadura ≈ altura).",
+    "en": "Draw length estimated from height (wingspan ≈ height)."
+   }
+  },
+  {
+   "id": "actual-draw-weight",
+   "expr": "markedLbs * (1 + perInchPct * (drawLengthIn - markedAtIn))",
+   "desc": {
+    "es": "Potencia real a tu apertura.",
+    "en": "Actual weight at your draw."
+   },
+   "source": "3Rivers (2-3 lb per inch)"
+  },
+  {
+   "id": "min-arrow-weight",
+   "expr": "drawWeightLbs * gpp  /* gpp = 8 or 9 */",
+   "desc": {
+    "es": "Peso mínimo recomendado de la flecha (grains).",
+    "en": "Minimum recommended arrow weight (grains)."
+   },
+   "source": "Manual del Club (Form. 3)"
+  },
+  {
+   "id": "shaft-weight",
+   "expr": "arrowLengthIn * gpi",
+   "desc": {
+    "es": "Peso del astil = longitud × GPI del fabricante.",
+    "en": "Shaft weight = length × maker's GPI."
+   },
+   "source": "Manual del Club (Form. 4)"
+  },
+  {
+   "id": "point-weight-wood",
+   "expr": "(shaftGr + nockGr + fletchGr + wrapGr) / 3",
+   "desc": {
+    "es": "Peso aproximado de la punta, flecha de madera.",
+    "en": "Approximate point weight, wooden arrow."
+   },
+   "source": "Manual del Club (Form. 1/5)"
+  },
+  {
+   "id": "point-weight-carbon",
+   "expr": "(shaftGr + nockGr + fletchGr + wrapGr) / 2.5",
+   "desc": {
+    "es": "Peso aproximado de la punta, flecha de carbono.",
+    "en": "Approximate point weight, carbon arrow."
+   },
+   "source": "Manual del Club (Form. 2/6)"
+  },
+  {
+   "id": "total-weight",
+   "expr": "shaftGr + pointGr + insertGr + nockGr + fletchGr + wrapGr + crestGr",
+   "desc": {
+    "es": "Peso total de la flecha.",
+    "en": "Total arrow weight."
+   }
+  },
+  {
+   "id": "gpp",
+   "expr": "totalGr / drawWeightLbs",
+   "desc": {
+    "es": "Grains por libra de potencia.",
+    "en": "Grains per pound of draw weight."
+   }
+  },
+  {
+   "id": "fletch-weight",
+   "expr": "count * (lengthIn * grPerInch + gluePerFletchGr)",
+   "desc": {
+    "es": "Peso estimado del emplumado.",
+    "en": "Estimated fletching weight."
+   }
+  },
+  {
+   "id": "wood-gpi",
+   "expr": "densityGcm3 * Math.PI/4 * Math.pow(diamIn*2.54, 2) * 2.54 * 15.4324",
+   "desc": {
+    "es": "GPI teórico de un astil de madera.",
+    "en": "Theoretical GPI of a wooden shaft."
+   }
+  },
+  {
+   "id": "aluminium-gpi",
+   "expr": "Math.PI * (odIn - wallIn) * wallIn * 16.387 * 2.81 * 15.4324",
+   "desc": {
+    "es": "GPI teórico de un tubo de aluminio a partir de su código.",
+    "en": "Theoretical GPI of an aluminium tube from its size code."
+   }
+  },
+  {
+   "id": "spine-wood",
+   "expr": "W + pointAdjWood + bowTypeAdj + stringAdj + 5 * (arrowLengthIn - 28)",
+   "desc": {
+    "es": "Spine de madera en libras (redondear al rango de 5 lb).",
+    "en": "Wood spine in pounds (round to the 5-lb band)."
+   },
+   "source": "Manual del Club (Annex I); 3Rivers"
+  },
+  {
+   "id": "spine-carbon-eff",
+   "expr": "W + 5*(arrowLengthIn - 28) + 3*(pointGr - 125)/25 + bowTypeAdj + stringAdj",
+   "desc": {
+    "es": "Potencia efectiva para la tabla de carbono.",
+    "en": "Effective weight for the carbon chart."
+   },
+   "source": "Easton; 3Rivers"
+  },
+  {
+   "id": "foc",
+   "expr": "(B - L/2) / L * 100",
+   "desc": {
+    "es": "FOC (%) a partir del punto de equilibrio.",
+    "en": "FOC (%) from the balance point."
+   },
+   "source": "Easton / Ashby (AMO)"
+  },
+  {
+   "id": "balance-point",
+   "expr": "sum(m_i * x_i) / sum(m_i)",
+   "desc": {
+    "es": "Punto de equilibrio a partir de los componentes.",
+    "en": "Balance point from component masses and positions."
+   }
+  },
+  {
+   "id": "speed",
+   "expr": "Math.sqrt(450240 * eta * E / m)",
+   "desc": {
+    "es": "Velocidad estimada (fps).",
+    "en": "Estimated speed (fps)."
+   }
+  },
+  {
+   "id": "kinetic-energy",
+   "expr": "m * v*v / 450240",
+   "desc": {
+    "es": "Energía cinética (ft·lb).",
+    "en": "Kinetic energy (ft·lb)."
+   }
+  },
+  {
+   "id": "momentum",
+   "expr": "m * v / 225218",
+   "desc": {
+    "es": "Cantidad de movimiento (slug·ft/s).",
+    "en": "Momentum (slug·ft/s)."
+   }
+  },
+  {
+   "id": "carbon-to-wood-static",
+   "expr": "31500 / ataSpine",
+   "desc": {
+    "es": "Equivalencia estática spine carbono → libras de madera.",
+    "en": "Static carbon spine → wood pounds equivalence."
+   }
+  },
+  {
+   "id": "lb-to-kg",
+   "expr": "lbs * 0.4536",
+   "desc": {
+    "es": "Libras a kilos.",
+    "en": "Pounds to kilograms."
+   },
+   "source": "Manual del Club"
+  },
+  {
+   "id": "in-to-cm",
+   "expr": "inches * 2.54",
+   "desc": {
+    "es": "Pulgadas a centímetros.",
+    "en": "Inches to centimetres."
+   },
+   "source": "Manual del Club"
+  },
+  {
+   "id": "g-to-grains",
+   "expr": "grams * 15.4324",
+   "desc": {
+    "es": "Gramos a grains (el Manual redondea a 15).",
+    "en": "Grams to grains (the Manual rounds to 15)."
+   },
+   "source": "Manual del Club"
+  }
+ ],
+ "sources": [
+  "Manual del Club: Club Vall-Llobera Terra d'Arquers, 'Curs Tecnificació Bàsic – Manual fletxes' (Documentos/Manual fletxes.PDF), pp. 4-15, 46-47",
+  "https://www.3riversarchery.com/pdf/ArrowCharts.pdf",
+  "https://eastonarchery.com/wp-content/uploads/2023/08/301055-A-Arrow-Shaft-Selection-Target.pdf",
+  "https://eastonarchery.com/wp-content/uploads/2023/08/301055-A-Arrow-Shaft-Selection-Hunting.pdf",
+  "https://goldtip.com/arrow-spine-selector",
+  "https://cpw.state.co.us/Documents/Hunting/EHU/UpdatePrologue-UnderstandingFOC.pdf",
+  "https://eastonarchery.com/2014/06/foc/",
+  "https://eastonarchery.com/2022/06/the-simple-guidelines-to-correct-arrow-balance-foc/",
+  "https://lancasterarchery.com/products/trueflight-4-shield-back-feathers-18-count-combo-pack",
+  "https://www.tradgang.com/tgsmf/index.php?msg=322592",
+  "https://www.tradgang.com/tgsmf/index.php?msg=563580",
+  "https://outdoorlife.com/blogs/game-changers/how-tune-arrows-traditional-bows-correct-spine-and-length-combo",
+  "https://archery360.com/2020/12/09/understanding-arrow-spine/",
+  "https://www.chnarchery.com/blogs/news/recommended-draw-weight-for-new-archers-bow-draw-weight-charts",
+  "https://archery360.com/?p=97171",
+  "https://www.bearpaw-products.com/blogs/our-products/the-fascination-of-horsebows",
+  "https://www.3riversarchery.com/magyar-sport-horse-bow.html",
+  "https://en.wikipedia.org/wiki/Archer%27s_paradox"
+ ]
+}

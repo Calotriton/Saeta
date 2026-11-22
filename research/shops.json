@@ -1,0 +1,840 @@
+[
+  {
+    "id": "nock-point",
+    "name": "Nock Point",
+    "url": "https://www.nockpoint.es",
+    "country": "ES",
+    "languages": ["es"],
+    "shipsTo": "ES (check site for other countries)",
+    "priceLevel": 2,
+    "traditionalFocus": 1,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","wraps","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.nockpoint.es/tienda/flechas-vastagos-de-madera",
+      "carbon-shafts": "https://www.nockpoint.es/tienda/tubos-tubos-de-carbono",
+      "aluminium-shafts": "https://www.nockpoint.es/tienda/tubos-tubos-de-aluminio",
+      "points": "https://www.nockpoint.es/tienda/flechas-puntas",
+      "inserts": "https://www.nockpoint.es/tienda/flechas-insertos",
+      "nocks": "https://www.nockpoint.es/tienda/flechas-culatines",
+      "feathers": "https://www.nockpoint.es/tienda/flechas-plumas",
+      "glue": "https://www.nockpoint.es/tienda/flechas-adhesivos-resinas-y-lubricantes-para-flechas",
+      "wraps": "https://www.nockpoint.es/tienda/flechas-vinilos-para-tubos-arrow-wraps",
+      "tools": "https://www.nockpoint.es/tienda/herramientas-emplumadoras"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Bearpaw","Black Eagle","Victory","Rose City","Trueflight","Bohning","AAE","Flex-Fletch"],
+    "desc": {
+      "es": "Tienda española muy completa con vástagos de madera, tubos de carbono y aluminio, culatines, plumas, vinilos y emplumadoras. Más orientada al tiro olímpico, pero tiene todo lo básico para montar tus primeras flechas.",
+      "en": "Well-stocked Spanish shop with wooden shafts, carbon and aluminium tubes, nocks, feathers, wraps and fletching jigs. Leans towards target archery, but covers all the basics for your first arrows."
+    },
+    "verified": true
+  },
+  {
+    "id": "cerra-archery",
+    "name": "Cerra Archery",
+    "url": "https://cerraarchery.com",
+    "country": "ES",
+    "languages": ["es"],
+    "shipsTo": "ES + PT",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","fletching-jigs"],
+    "links": {
+      "wood-shafts": "https://cerraarchery.com/95-vastagos-de-madera",
+      "carbon-shafts": "https://cerraarchery.com/101-tubos-carbono",
+      "aluminium-shafts": "https://cerraarchery.com/100-tubos-aluminio",
+      "points": "https://cerraarchery.com/98-puntas-de-tiro",
+      "inserts": "https://cerraarchery.com/91-inserts-de-punta",
+      "nocks": "https://cerraarchery.com/38-nocks",
+      "feathers": "https://cerraarchery.com/163-plumas-naturales",
+      "vanes": "https://cerraarchery.com/162-plumas-de-plastico",
+      "tools": "https://cerraarchery.com/110-emplumadoras"
+    },
+    "notableBrands": ["Easton","Carbon Express","Skylon","Bearpaw","Penthalon","Black Eagle","Victory","Rose City"],
+    "desc": {
+      "es": "Tienda de Oviedo con categorías claras para vástagos de madera, tubos, puntas, nocks y plumas naturales. Envía a toda la península (España y Portugal) en 24 h.",
+      "en": "Oviedo-based shop with clear categories for wooden shafts, tubes, points, nocks and natural feathers. Ships across mainland Spain and Portugal in about 24 h."
+    },
+    "verified": true
+  },
+  {
+    "id": "born4bow",
+    "name": "Born4Bow",
+    "url": "https://www.born4bow.com",
+    "country": "ES",
+    "languages": ["es"],
+    "shipsTo": "ES + rest of Europe",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.born4bow.com/categoria/flechas-y-componentes/madera-culatines-flechas-y-componentes/",
+      "carbon-shafts": "https://www.born4bow.com/categoria/flechas-y-componentes/tubos/",
+      "points": "https://www.born4bow.com/categoria/flechas-y-componentes/componentes/",
+      "nocks": "https://www.born4bow.com/categoria/flechas-y-componentes/componentes/",
+      "feathers": "https://www.born4bow.com/categoria/flechas-y-componentes/componentes/",
+      "tools": "https://www.born4bow.com/categoria/flechas-y-componentes/herramientas-flechas/"
+    },
+    "notableBrands": ["Easton","Skylon","Victory","Avalon","Bohning","AAE","Rose City","Bearpaw","Black Eagle"],
+    "desc": {
+      "es": "Tienda física en Alcorcón (Madrid) y online, distribuidor oficial de Bearpaw y Black Eagle, con más de 700 artículos de flechas y componentes. Buena opción si quieres pasar por tienda a pedir consejo.",
+      "en": "Physical shop in Alcorcón (Madrid) plus webshop; official Bearpaw and Black Eagle dealer with 700+ arrow and component items. Good if you want to visit in person for advice."
+    },
+    "verified": true
+  },
+  {
+    "id": "moito-archery",
+    "name": "MoitoArchery",
+    "url": "https://moitoarchery.com",
+    "country": "ES",
+    "languages": ["es"],
+    "shipsTo": "ES + most EU countries",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","fletching-jigs","taper-tools","scales","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://moitoarchery.com/arqueria/flechas/tubos/vastagos-de-madera/",
+      "carbon-shafts": "https://moitoarchery.com/arqueria/flechas/tubos/tubos-de-carbono/",
+      "aluminium-shafts": "https://moitoarchery.com/arqueria/flechas/tubos/tubos-de-aluminio/",
+      "points": "https://moitoarchery.com/arqueria/flechas/puntas-de-precision/",
+      "inserts": "https://moitoarchery.com/arqueria/flechas/inserts/",
+      "nocks": "https://moitoarchery.com/arqueria/flechas/culatines/culatin-tradicional/",
+      "feathers": "https://moitoarchery.com/arqueria/flechas/plumas/pluma-natural/",
+      "fletching-jigs": "https://moitoarchery.com/arqueria/herramientas/emplumadoras/",
+      "taper-tools": "https://moitoarchery.com/arqueria/herramientas/conificadores/",
+      "scales": "https://moitoarchery.com/arqueria/herramientas/bascula-de-precision/",
+      "tools": "https://moitoarchery.com/arqueria/herramientas/"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Bearpaw","Penthalon","Black Eagle","Avalon","Rose City","Gateway","Bohning","Top Hat"],
+    "desc": {
+      "es": "Tienda online y física con categorías muy bien separadas: vástagos de madera, culatines tradicionales, plumas naturales, conificadores y básculas. Ideal para encontrar cada pieza sin perderse.",
+      "en": "Online and physical shop with neatly separated categories: wooden shafts, traditional nocks, natural feathers, taper tools and grain scales. Easy to find each part without getting lost."
+    },
+    "verified": true
+  },
+  {
+    "id": "bearpaw-products",
+    "name": "Bearpaw Products",
+    "url": "https://www.bearpaw-products.de",
+    "country": "DE",
+    "languages": ["de","en"],
+    "shipsTo": "EU + international (choose country at checkout)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","glue","fletching-jigs","taper-tools","cresting","wraps","kits","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.bearpaw-products.de/collections/holzschafte",
+      "carbon-shafts": "https://www.bearpaw-products.de/collections/carbonschafte",
+      "aluminium-shafts": "https://www.bearpaw-products.de/collections/aluminium-carbon",
+      "points": "https://www.bearpaw-products.de/collections/spitzen-holz",
+      "inserts": "https://www.bearpaw-products.de/collections/inserts-adapter",
+      "nocks": "https://www.bearpaw-products.de/collections/nocken-holz",
+      "feathers": "https://www.bearpaw-products.de/collections/naturfedern",
+      "fletching-jigs": "https://www.bearpaw-products.de/collections/befiederungsgerat",
+      "glue": "https://www.bearpaw-products.de/collections/kleber-pfeilbau",
+      "cresting": "https://www.bearpaw-products.de/collections/crestings",
+      "tools": "https://www.bearpaw-products.de/collections/zubehor-pfeilbau"
+    },
+    "notableBrands": ["Bearpaw","Penthalon","Nijora"],
+    "desc": {
+      "es": "Fabricante alemán de referencia en arquería tradicional: vástagos de cedro y abeto, carbono Penthalon, plumas naturales, la emplumadora Deluxe, conificadores y kits completos de iniciación. Muchos de sus productos también se venden en otras tiendas de esta lista.",
+      "en": "The leading German traditional-archery brand: cedar and spruce shafts, Penthalon carbon, natural feathers, the Deluxe fletching jig, taper tools and complete starter kits. Many of its products are also sold by other shops on this list."
+    },
+    "verified": true
+  },
+  {
+    "id": "bogensport-beier",
+    "name": "Bogensport Beier",
+    "url": "https://www.bogensport-beier.de",
+    "country": "DE",
+    "languages": ["de","en"],
+    "shipsTo": "DE/AT + EU (check shipping page)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","kits","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.bogensport-beier.de/pfeile/pfeilschaefte/pfeilschaefte-holz/",
+      "carbon-shafts": "https://www.bogensport-beier.de/pfeile/pfeilschaefte/gold-tip-schaefte/",
+      "points": "https://www.bogensport-beier.de/pfeile/pfeilspitzen-inserts/",
+      "nocks": "https://www.bogensport-beier.de/pfeile/nocken/",
+      "feathers": "https://www.bogensport-beier.de/pfeile/federn-fletchen/",
+      "kits": "https://www.bogensport-beier.de/pfeile/pfeilbausets-pfeilsets/",
+      "tools": "https://www.bogensport-beier.de/pfeile/pfeilbau-werkzeuge/"
+    },
+    "notableBrands": ["By Beier","Gold Tip","Easton","Skylon","AAE"],
+    "desc": {
+      "es": "Especialista alemán en tradicional que fabrica sus propias flechas de madera (incluidas self-nock y medievales) y vende vástagos, puntas históricas y kits de montaje. Web también en inglés.",
+      "en": "German traditional specialist that makes its own wooden arrows (including self-nock and medieval styles) and sells shafts, historical points and arrow-building kits. Site also in English."
+    },
+    "verified": true
+  },
+  {
+    "id": "franks-castle",
+    "name": "Franks-Castle",
+    "url": "https://www.franks-castle.de",
+    "country": "DE",
+    "languages": ["de"],
+    "shipsTo": "DE, AT, BE, DK, FR, IT, LU, NL and others (country selector)",
+    "priceLevel": 1,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","taper-tools","cresting","kits"],
+    "links": {
+      "wood-shafts": "https://www.franks-castle.de/Holzschaefte-Zeder",
+      "carbon-shafts": "https://www.franks-castle.de/Carbonschaefte",
+      "aluminium-shafts": "https://www.franks-castle.de/Aluminium-Schaefte",
+      "points": "https://www.franks-castle.de/Stahlspitzen-fuer-Holzpfeile",
+      "nocks": "https://www.franks-castle.de/Nocken-fuer-Holzpfeile",
+      "feathers": "https://www.franks-castle.de/Naturfedern-Trueflight",
+      "fletching-jigs": "https://www.franks-castle.de/Befiederungsgeraete",
+      "glue": "https://www.franks-castle.de/Befiederungskleber",
+      "cresting": "https://www.franks-castle.de/Pfeilcrestings",
+      "kits": "https://www.franks-castle.de/Pfeilbausets",
+      "tools": "https://www.franks-castle.de/Pfeilbau-Werkzeug"
+    },
+    "notableBrands": ["Bearpaw","Trueflight","Stefan Raab","Gold Tip","Easton","Black Eagle","Cross-X","Bitzenburger","Avalon","Bohning","Saunders"],
+    "desc": {
+      "es": "Precios muy ajustados y kits de montaje por madera (cedro, pino, abeto) y diámetro, además de plumas Trueflight sueltas, conificadores y la emplumadora Bitzenburger. Puede medir y anotar el spine de cada vástago.",
+      "en": "Very keen prices and arrow-building kits by wood type (cedar, pine, spruce) and diameter, plus loose Trueflight feathers, taper tools and the Bitzenburger jig. Can measure and mark the spine of each shaft for a small fee."
+    },
+    "verified": true
+  },
+  {
+    "id": "bogenbau-tradition",
+    "name": "Bogenbau Tradition",
+    "url": "https://bogenbautradition.de",
+    "country": "DE",
+    "languages": ["de"],
+    "shipsTo": "DE (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","bamboo-shafts","carbon-shafts","points","inserts","nocks","feathers","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Holzschaefte/Zedernholzschaefte/",
+      "bamboo-shafts": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Holzschaefte/Bambusschaefte/",
+      "carbon-shafts": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Carbonschaefte/",
+      "points": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Komponenten-fuer-Holzpfeile/",
+      "nocks": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Komponenten-fuer-Holzpfeile/Nocken-Adapter/",
+      "feathers": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Befiederung/",
+      "tools": "https://bogenbautradition.de/Shop/Pfeile-und-Pfeilbau/Komponenten-fuer-Holzpfeile/Zubehoer-Pfleilbau/"
+    },
+    "notableBrands": ["Rose City","Bearpaw","Penthalon","Easton","Gold Tip","Black Eagle","Sphere","Nijora","Top Hat"],
+    "desc": {
+      "es": "Arquero-artesano alemán con vástagos de cedro, abeto y bambú, plumas por tamaño (3\", 4\", 5\" y largo completo) y puntas especiales (blunts, medievales, prehistóricas). Muy enfocado a madera.",
+      "en": "German bowyer shop with cedar, spruce and bamboo shafts, feathers sorted by size (3\", 4\", 5\", full length) and special points (blunts, medieval, prehistoric). Strong focus on wood."
+    },
+    "verified": true
+  },
+  {
+    "id": "histofakt",
+    "name": "HistoFakt",
+    "url": "https://shop.histofakt.de",
+    "country": "DE",
+    "languages": ["de"],
+    "shipsTo": "DE + international (no shipping to the USA)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","points","nocks","feathers","fletching-jigs","spine-tester"],
+    "links": {
+      "wood-shafts": "https://shop.histofakt.de/Pfeilbau/Schaefte:::2_6.html",
+      "points": "https://shop.histofakt.de/Pfeilbau/Spitzen:::2_7.html",
+      "nocks": "https://shop.histofakt.de/Pfeilbau/Nocken:::2_19.html",
+      "feathers": "https://shop.histofakt.de/Pfeilbau/Federn:::2_8.html",
+      "tools": "https://shop.histofakt.de/Pfeilbau/Werkzeug:::2_9.html"
+    },
+    "notableBrands": ["Stefan Raab","Avalon"],
+    "desc": {
+      "es": "Tienda de arquería histórica con vástagos, puntas de réplica, plumas, plantillas de corte de plumas y herramientas como testers de spine. Perfecta si te atraen las flechas medievales o primitivas.",
+      "en": "Historical archery shop with shafts, replica points, feathers, feather-cutting templates and tools such as spine testers. Ideal if you like medieval or primitive-style arrows."
+    },
+    "verified": true
+  },
+  {
+    "id": "bogensportwelt",
+    "name": "BogenSportWelt (BSW)",
+    "url": "https://www.bogensportwelt.de",
+    "country": "DE",
+    "languages": ["de"],
+    "shipsTo": "EU (not verified)",
+    "priceLevel": 1,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","nocks","feathers","fletching-jigs","cresting","finished-arrows"],
+    "links": {},
+    "notableBrands": ["BSW","Bearpaw","Skylon","Black Eagle"],
+    "desc": {
+      "es": "Uno de los mayores distribuidores online de Europa (BSW Handels GmbH, Anklam), con marca propia de vástagos de abeto/pino y flechas completas. Su web bloqueó nuestra comprobación automática: revisa el catálogo tú mismo.",
+      "en": "One of Europe's largest online archery retailers (BSW Handels GmbH, Anklam), with own-brand spruce/pine shafts and complete arrows. Its site blocked our automated check, so browse the catalogue yourself."
+    },
+    "verified": false
+  },
+  {
+    "id": "bogensport-kaufmann",
+    "name": "Bogensport Bogenbau Kaufmann",
+    "url": "https://www.bogensport-bogenbau.at",
+    "country": "AT",
+    "languages": ["de"],
+    "shipsTo": "AT (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","cresting","glue"],
+    "links": {
+      "wood-shafts": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/holzschaefte/",
+      "carbon-shafts": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/carbonschaefte/",
+      "points": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/pfeilspitzen-fuer-holzpfeile/",
+      "nocks": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/pfeilnocken-fuer-holzpfeile/",
+      "feathers": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/naturfedern-und-vanes/",
+      "cresting": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/pfeilcrestings/",
+      "glue": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/kleber-pfeilbau/",
+      "tools": "https://www.bogensport-bogenbau.at/produkt-kategorie/1-bogensport/pfeilbau/werkzeuge-pfeilbau/"
+    },
+    "notableBrands": ["Bearpaw","Penthalon","Easton","Gold Tip","Cross-X","Top Hat","Saunders"],
+    "desc": {
+      "es": "Arquero y tienda de Graz con una sección de construcción de flechas muy completa y cursos presenciales de fabricación de flechas. Tiene una guía en alemán para montar una flecha de madera.",
+      "en": "Graz bowyer and shop with a complete arrow-building section and in-person arrow-making courses. Has a German-language guide to building a wooden arrow."
+    },
+    "verified": true
+  },
+  {
+    "id": "bogensport-austria",
+    "name": "Bogensport Austria",
+    "url": "https://www.bogensport-austria.at",
+    "country": "AT",
+    "languages": ["de","en"],
+    "shipsTo": "Most European countries (delivery-country selector)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","glue","wraps","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.bogensport-austria.at/en/arrows/arrow-making/arrow-shafts-191/wooden-shafts-192/",
+      "carbon-shafts": "https://www.bogensport-austria.at/en/arrows/arrow-making/arrow-shafts-191/",
+      "points": "https://www.bogensport-austria.at/en/arrows/arrow-making/arrow-heads/",
+      "nocks": "https://www.bogensport-austria.at/en/arrows/arrow-making/nocks/",
+      "feathers": "https://www.bogensport-austria.at/en/arrows/arrow-making/feathers-vanes/",
+      "glue": "https://www.bogensport-austria.at/en/arrows/arrow-making/glues/",
+      "wraps": "https://www.bogensport-austria.at/en/arrows/arrow-making/arrow-wraps/",
+      "tools": "https://www.bogensport-austria.at/en/arrows/arrow-making/"
+    },
+    "notableBrands": ["Bearpaw","White Feather"],
+    "desc": {
+      "es": "Tienda de Viena con web en inglés y sección \"Arrow Making\" ordenada (vástagos, puntas, nocks, plumas, pegamentos, wraps). También hace flechas a medida de madera o carbono.",
+      "en": "Vienna shop with an English site and a tidy \"Arrow Making\" section (shafts, heads, nocks, feathers, glues, wraps). Also builds custom wood or carbon arrows."
+    },
+    "verified": true
+  },
+  {
+    "id": "merlin-archery",
+    "name": "Merlin Archery",
+    "url": "https://www.merlinarchery.co.uk",
+    "country": "GB",
+    "languages": ["en"],
+    "shipsTo": "Worldwide",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","taper-tools","spine-tester","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.merlinarchery.co.uk/arrows/arrow-shafts/wood.html",
+      "carbon-shafts": "https://www.merlinarchery.co.uk/arrows/arrow-shafts/carbon.html",
+      "aluminium-shafts": "https://www.merlinarchery.co.uk/arrows/arrow-shafts/aluminium-shafts.html",
+      "points": "https://www.merlinarchery.co.uk/arrows/arrow-points/wooden-arrow-points.html",
+      "nocks": "https://www.merlinarchery.co.uk/arrows/nocks/taper-fit-nocks.html",
+      "feathers": "https://www.merlinarchery.co.uk/arrows/fletchings/feathers.html",
+      "fletching-jigs": "https://www.merlinarchery.co.uk/arrows/arrow-making/fletching-jigs.html",
+      "glue": "https://www.merlinarchery.co.uk/arrows/arrow-making/glues-adhesive.html",
+      "spine-tester": "https://www.merlinarchery.co.uk/arrows/arrow-making/spine-testers.html",
+      "tools": "https://www.merlinarchery.co.uk/arrows/arrow-making.html"
+    },
+    "notableBrands": ["Easton","Gold Tip","Carbon Express","Skylon","Cross-X","Black Eagle","Victory","Bearpaw","Gateway","Bohning","Timber Creek"],
+    "desc": {
+      "es": "Uno de los grandes de Europa, con envío mundial y catálogo enorme: vástagos de cedro Port Orford, carbono, aluminio, testers de spine y emplumadoras. Tiene una guía \"Making Wooden Arrows\" muy útil.",
+      "en": "One of Europe's big players with worldwide shipping and a huge range: Port Orford cedar shafts, carbon, aluminium, spine testers and fletching jigs. Its \"Making Wooden Arrows\" guide is very helpful."
+    },
+    "verified": true
+  },
+  {
+    "id": "quicks-archery",
+    "name": "Quicks Archery",
+    "url": "https://www.quicksarchery.co.uk",
+    "country": "GB",
+    "languages": ["en"],
+    "shipsTo": "UK + EU (EU prices shown ex-UK VAT)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","nocks","feathers","vanes","fletching-jigs"],
+    "links": {
+      "wood-shafts": "https://www.quicksarchery.co.uk/Arrows/arrow-shafts/wood-aarow-shafts/",
+      "carbon-shafts": "https://www.quicksarchery.co.uk/Arrows/arrow-shafts/carbon-shafts/",
+      "aluminium-shafts": "https://www.quicksarchery.co.uk/Arrows/arrow-shafts/aluminium-shafts/",
+      "points": "https://www.quicksarchery.co.uk/Arrows/arrow-points/points-for-wood-arrows/",
+      "nocks": "https://www.quicksarchery.co.uk/Arrows/arrow-nocks/taper-fit-arrow-nocks/",
+      "feathers": "https://www.quicksarchery.co.uk/Arrows/arrow-fletchings/feather-fletchings/",
+      "fletching-jigs": "https://www.quicksarchery.co.uk/Arrows/making-arrows/fletching-jigs-489520112/",
+      "tools": "https://www.quicksarchery.co.uk/Arrows/making-arrows/tools-1083127456/"
+    },
+    "notableBrands": ["Easton","Rose City","Trueflight","Bohning","Beiter","Black Eagle"],
+    "desc": {
+      "es": "Veterana tienda británica (antes en quicks.com, ahora quicksarchery.co.uk) con vástagos de cedro Rose City sueltos o por docenas, puntas para madera y nocks de cono.",
+      "en": "Long-established UK shop (formerly quicks.com, now quicksarchery.co.uk) with Rose City cedar shafts singly or by the dozen, points for wood arrows and taper-fit nocks."
+    },
+    "verified": true
+  },
+  {
+    "id": "the-longbow-shop",
+    "name": "The Longbow Shop",
+    "url": "https://www.thelongbowshop.com",
+    "country": "GB",
+    "languages": ["en"],
+    "shipsTo": "Worldwide",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","points","nocks","feathers","vanes","glue","fletching-jigs","taper-tools","cresting","wraps","spine-tester","scales","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.thelongbowshop.com/collections/arrow-shafts",
+      "points": "https://www.thelongbowshop.com/collections/arrow-points",
+      "nocks": "https://www.thelongbowshop.com/collections/arrow-nocks",
+      "feathers": "https://www.thelongbowshop.com/collections/arrow-feathers",
+      "glue": "https://www.thelongbowshop.com/collections/glues-and-adhesives",
+      "wraps": "https://www.thelongbowshop.com/collections/arrow-wraps",
+      "tools": "https://www.thelongbowshop.com/collections/arrow-tools"
+    },
+    "notableBrands": ["Rose City","Bearpaw","Bohning","Fairbow","Top Hat","ACE","Coop"],
+    "desc": {
+      "es": "Especialista británico en arco largo: vástagos de cedro, abeto, pino, fresno y álamo, insertos de cuerno, hilo de emplumar, barnices y la máquina de cresting Bohning. Muy completo para flechas de madera.",
+      "en": "UK longbow specialist: cedar, spruce, pine, ash and poplar shafts, horn nock inserts, fletching thread, stains/varnish and the Bohning cresting jig. Excellent for wooden arrows."
+    },
+    "verified": true
+  },
+  {
+    "id": "phoenix-archery",
+    "name": "Phoenix Archery",
+    "url": "https://phoenix-archery.co.uk",
+    "country": "GB",
+    "languages": ["en"],
+    "shipsTo": "UK (check site for international)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","nocks","feathers","vanes","glue","fletching-jigs"],
+    "links": {
+      "wood-shafts": "https://phoenix-archery.co.uk/product-category/archery-arrows/arrow-shafts/wood-arrow-shafts/",
+      "carbon-shafts": "https://phoenix-archery.co.uk/product-category/archery-arrows/arrow-shafts/carbon-arrows-shafts/",
+      "points": "https://phoenix-archery.co.uk/product-category/archery-arrows/archery-points/wooden-arrow-points/",
+      "nocks": "https://phoenix-archery.co.uk/product-category/archery-arrows/archery-nocks/taper-fit-nocks/",
+      "feathers": "https://phoenix-archery.co.uk/product-category/archery-arrows/fletchings/feathers/",
+      "fletching-jigs": "https://phoenix-archery.co.uk/product-category/archery-arrows/arrow-making/fletching-jigs/",
+      "glue": "https://phoenix-archery.co.uk/product-category/archery-arrows/arrow-making/glues-adhesive/",
+      "tools": "https://phoenix-archery.co.uk/product-category/archery-arrows/arrow-making/"
+    },
+    "notableBrands": ["Easton","Gold Tip","Carbon Express","Skylon","Cross-X","Black Eagle","Victory","Avalon","Top Hat","Gateway"],
+    "desc": {
+      "es": "Tienda británica con sección clara de \"Arrow Making\" (vástagos de cedro Port Orford por docena, puntas para madera, emplumadoras y pegamentos) y cursos de iniciación a la fabricación de flechas.",
+      "en": "UK shop with a clear \"Arrow Making\" section (Port Orford cedar shafts by the dozen, wood-arrow points, jigs and glues) and beginner arrow-making courses."
+    },
+    "verified": true
+  },
+  {
+    "id": "perris-archery",
+    "name": "Perris Archery",
+    "url": "https://www.perrisarchery.co.uk",
+    "country": "GB",
+    "languages": ["en"],
+    "shipsTo": "UK (check site for international)",
+    "priceLevel": 2,
+    "traditionalFocus": 1,
+    "categories": ["carbon-shafts","points","nocks","vanes","fletching-jigs"],
+    "links": {
+      "carbon-shafts": "https://www.perrisarchery.co.uk/carbon-arrows-shafts-components-262-c.asp",
+      "points": "https://www.perrisarchery.co.uk/heavy-points-181-c.asp",
+      "nocks": "https://www.perrisarchery.co.uk/fletchings--nocks-127-c.asp",
+      "tools": "https://www.perrisarchery.co.uk/bohning---vanes--fletching-tools-122-c.asp"
+    },
+    "notableBrands": ["Easton","Skylon","Avalon","Bohning","Beiter"],
+    "desc": {
+      "es": "Tienda británica más orientada a recurvo olímpico y compuesto; útil para carbono, nocks y herramientas Bohning, pero sin sección de madera ni plumas naturales.",
+      "en": "UK shop geared towards Olympic recurve and compound; useful for carbon, nocks and Bohning tools, but no wood-shaft or natural-feather section."
+    },
+    "verified": true
+  },
+  {
+    "id": "diane-archerie",
+    "name": "Diane Archerie",
+    "url": "https://dianearcherie.com",
+    "country": "FR",
+    "languages": ["fr"],
+    "shipsTo": "FR (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","taper-tools"],
+    "links": {
+      "carbon-shafts": "https://dianearcherie.com/68-tube-nu",
+      "points": "https://dianearcherie.com/72-pointe-tradition-et-lame-de-chasse-pour-fut-bois",
+      "nocks": "https://dianearcherie.com/69-encoche-et-pin",
+      "feathers": "https://dianearcherie.com/70-plume",
+      "fletching-jigs": "https://dianearcherie.com/105-empenneuse",
+      "taper-tools": "https://dianearcherie.com/104-taille-fut",
+      "glue": "https://dianearcherie.com/106-colle-et-resine",
+      "tools": "https://dianearcherie.com/96-outillage-consommables"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Cross-X","Trueflight","Gateway","Bohning","Rose City","Top Hat","Saunders"],
+    "desc": {
+      "es": "Tienda francesa con secciones específicas de puntas tradicionales para fuste de madera, conificadores (taille-fût) y emplumadoras. Ofrece lotes de vástagos de pino con puntas y plumas Trueflight.",
+      "en": "French shop with dedicated sections for traditional points for wooden shafts, taper tools (taille-fût) and fletching jigs. Offers bundles of pine shafts with points and Trueflight feathers."
+    },
+    "verified": true
+  },
+  {
+    "id": "archerie-frere-loup",
+    "name": "Archerie Frère-Loup",
+    "url": "https://www.archerie-frereloup.com",
+    "country": "FR",
+    "languages": ["fr"],
+    "shipsTo": "FR (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","fletching-jigs","taper-tools","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.archerie-frereloup.com/155-bois",
+      "carbon-shafts": "https://www.archerie-frereloup.com/156-carbone",
+      "points": "https://www.archerie-frereloup.com/162-a-coller-sur-futs-bois",
+      "nocks": "https://www.archerie-frereloup.com/107-encoches",
+      "feathers": "https://www.archerie-frereloup.com/110-plumes-naturelles",
+      "fletching-jigs": "https://www.archerie-frereloup.com/151-empenneuses",
+      "taper-tools": "https://www.archerie-frereloup.com/175-taille-futs",
+      "glue": "https://www.archerie-frereloup.com/150-colles-et-resines",
+      "tools": "https://www.archerie-frereloup.com/83-materiaux-et-outils"
+    },
+    "notableBrands": ["Rose City","Trueflight","Gateway","Bearpaw","Cross-X","Victory","Avalon"],
+    "desc": {
+      "es": "Especialista francés en caza con arco y tradicional. Además de componentes, publica fichas útiles como \"Bien choisir ses fûts bois\" y la prueba de fuste desnudo para arco tradicional.",
+      "en": "French bowhunting and traditional specialist. Besides components, it publishes handy guides such as choosing wooden shafts and bare-shaft testing for traditional bows."
+    },
+    "verified": true
+  },
+  {
+    "id": "archerie-fr",
+    "name": "Archerie.fr",
+    "url": "https://www.archerie.fr",
+    "country": "FR",
+    "languages": ["fr"],
+    "shipsTo": "FR (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["carbon-shafts","points","nocks","feathers","vanes","glue","fletching-jigs","finished-arrows"],
+    "links": {
+      "carbon-shafts": "https://www.archerie.fr/fr/621-tubes-darcherie",
+      "points": "https://www.archerie.fr/fr/623-pointes-pour-futs-bois",
+      "nocks": "https://www.archerie.fr/fr/627-encoches-de-fleches",
+      "feathers": "https://www.archerie.fr/fr/626-plumes",
+      "fletching-jigs": "https://www.archerie.fr/fr/747-empenneuses-et-pinces",
+      "glue": "https://www.archerie.fr/fr/749-colle-fixation-bande",
+      "tools": "https://www.archerie.fr/fr/737-materiels-de-fabrication-fleches"
+    },
+    "notableBrands": ["Easton","Gold Tip","Carbon Express","Skylon","Cross-X","Black Eagle","Victory","Avalon","Trueflight","Gateway","Bohning"],
+    "desc": {
+      "es": "Gran tienda online francesa con más de 200 referencias de plumas (Trueflight, Gateway), puntas para fuste de madera y emplumadoras. Buena para comparar plumas naturales.",
+      "en": "Large French webshop with 200+ feather references (Trueflight, Gateway), points for wooden shafts and fletching jigs. Good for comparing natural feathers."
+    },
+    "verified": true
+  },
+  {
+    "id": "archerystyle",
+    "name": "ArcheryStyle",
+    "url": "https://www.archerystyle.it",
+    "country": "IT",
+    "languages": ["it"],
+    "shipsTo": "IT (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","wraps","fletching-jigs","taper-tools"],
+    "links": {
+      "wood-shafts": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/aste-e-frecce-in-legno/",
+      "carbon-shafts": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/aste-e-frecce-in-carbonio-e-alluminio/",
+      "points": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/punte-tradizionali/",
+      "nocks": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/cocche/",
+      "feathers": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/alette/",
+      "fletching-jigs": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/impennatori-ed-accessori/",
+      "glue": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/colle-nastri-wraps-adesivi-e-tagliatubi/",
+      "tools": "https://www.archerystyle.it/categoria-prodotto/frecce-aste-e-componenti/materiale-costruzione-frecce/"
+    },
+    "notableBrands": ["Easton","Gold Tip","Carbon Express","Cross-X","Black Eagle","Trueflight","Gateway","Bohning","Bitzenburger","Rose City","Top Hat"],
+    "desc": {
+      "es": "Tienda italiana con categoría propia de puntas tradicionales y vástagos de madera, además de emplumadoras, pegamentos, wraps y conificadores (temperini).",
+      "en": "Italian shop with its own categories for traditional points and wooden shafts, plus jigs, glues, wraps and taper tools (temperini)."
+    },
+    "verified": true
+  },
+  {
+    "id": "marco-archery",
+    "name": "M'Arco Archery",
+    "url": "https://www.marcoarchery.it",
+    "country": "IT",
+    "languages": ["it"],
+    "shipsTo": "IT (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","wraps"],
+    "links": {
+      "wood-shafts": "https://www.marcoarchery.it/frecce/aste/aste-in-legno/products.1.37.55.sp.uw",
+      "carbon-shafts": "https://www.marcoarchery.it/frecce/aste/aste-in-carbonio/products.1.37.53.sp.uw",
+      "points": "https://www.marcoarchery.it/frecce/componenti/punte-per-legno/products.1.37.62.sp.uw",
+      "nocks": "https://www.marcoarchery.it/frecce/cocche/products.1.37.145.sp.uw",
+      "feathers": "https://www.marcoarchery.it/frecce/alette/products.1.37.143.sp.uw",
+      "tools": "https://www.marcoarchery.it/attrezzature.1.38.uw"
+    },
+    "notableBrands": ["Easton","Gold Tip","Carbon Express","Skylon","Cross-X","Black Eagle","Victory","Avalon"],
+    "desc": {
+      "es": "Tienda de Las Marcas (Italia) con un catálogo amplio de tubos de carbono, puntas para madera, cocches de plástico y madera, alette y wraps.",
+      "en": "Shop in Le Marche (Italy) with a broad catalogue of carbon shafts, points for wood, plastic and wooden nocks, fletchings and wraps."
+    },
+    "verified": true
+  },
+  {
+    "id": "archerycentre",
+    "name": "ArcheryCentre.com",
+    "url": "https://www.archerycentre.com",
+    "country": "NL",
+    "languages": ["nl","en"],
+    "shipsTo": "Check site (free-shipping offer shown)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","nocks","feathers","vanes","fletching-jigs","taper-tools"],
+    "links": {
+      "carbon-shafts": "https://www.archerycentre.com/Shafts_Components/Arrow_Shafts",
+      "points": "https://www.archerycentre.com/Shafts_Components/Arrow_Points",
+      "nocks": "https://www.archerycentre.com/Shafts_Components/Nocks",
+      "feathers": "https://www.archerycentre.com/Shafts_Components/Feathers",
+      "taper-tools": "https://www.archerycentre.com/Tools/Tapertools",
+      "tools": "https://www.archerycentre.com/Tools"
+    },
+    "notableBrands": ["Rose City","Carbon Express","Black Eagle","Trueflight","Bearpaw","Easton","Gold Tip","Touchwood"],
+    "desc": {
+      "es": "Tienda neerlandesa especializada en 3D y tiro de campo, con vástagos, plumas naturales Trueflight y conificadores. Web en inglés y neerlandés.",
+      "en": "Dutch 3D and field-archery specialist with shafts, Trueflight natural feathers and taper tools. Site in English and Dutch."
+    },
+    "verified": true
+  },
+  {
+    "id": "pijlenboogkopen",
+    "name": "Pijlenboogkopen.com",
+    "url": "https://www.pijlenboogkopen.com",
+    "country": "NL",
+    "languages": ["nl","de","en"],
+    "shipsTo": "BeNeLux + DE (free over €100); check for other EU",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","wraps","glue","fletching-jigs","taper-tools","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Schachten/Houten-Schachten/",
+      "carbon-shafts": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Schachten/Carbon-Schachten/",
+      "aluminium-shafts": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Schachten/Aluminium-Schachten/",
+      "points": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Onderdelen/Pijlpunten/",
+      "nocks": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Onderdelen/Nokken/",
+      "feathers": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Onderdelen/Natuurveren/",
+      "wraps": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijl-Onderdelen/Wraps/",
+      "fletching-jigs": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijlenbouw-Gereedschap/Verenzetters/",
+      "glue": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijlenbouw-Gereedschap/Lijmen/",
+      "taper-tools": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijlenbouw-Gereedschap/Puntenslijpers/",
+      "tools": "https://www.pijlenboogkopen.com/Pijlen-Toebehoren/Pijlenbouw-Gereedschap/"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Bearpaw","Penthalon","Black Eagle","Victory","Bitzenburger","Gateway","Bohning","AAE"],
+    "desc": {
+      "es": "Tienda neerlandesa que espinea, revisa y endereza a mano sus vástagos de cedro, abeto y pino, y los corta a medida por unos céntimos. Catálogo de componentes muy completo.",
+      "en": "Dutch shop that hand-spines, inspects and straightens its cedar, spruce and pine shafts and cuts them to length for a few cents. Very complete component range."
+    },
+    "verified": true
+  },
+  {
+    "id": "archery-cz",
+    "name": "Archery.cz",
+    "url": "https://www.archery.cz",
+    "country": "CZ",
+    "languages": ["cs"],
+    "shipsTo": "CZ (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.archery.cz/drevene-driky-sipu/",
+      "carbon-shafts": "https://www.archery.cz/trubky-a-driky-sipu/",
+      "points": "https://www.archery.cz/komponenty-sipu/",
+      "nocks": "https://www.archery.cz/komponenty-sipu/",
+      "feathers": "https://www.archery.cz/komponenty-sipu/"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Black Eagle","Victory","Avalon","Trueflight","Bohning","Beiter","Top Hat"],
+    "desc": {
+      "es": "La tienda de arquería más grande y antigua de Chequia (Praga), con vástagos de cedro, tubos de carbono y plumas Trueflight sueltas.",
+      "en": "Czechia's largest and oldest archery shop (Prague), with cedar shafts, carbon tubes and loose Trueflight feathers."
+    },
+    "verified": true
+  },
+  {
+    "id": "luk-sk",
+    "name": "LUK.sk",
+    "url": "https://www.luk.sk",
+    "country": "SK",
+    "languages": ["sk","en"],
+    "shipsTo": "SK (check site for EU)",
+    "priceLevel": 1,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","wraps","glue","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.luk.sk/drevene-sipy/",
+      "carbon-shafts": "https://www.luk.sk/karbonove-sipy/",
+      "points": "https://www.luk.sk/hroty-na-drevene-sipy-a-historicke-hroty/",
+      "nocks": "https://www.luk.sk/konceky-na-sipy/",
+      "feathers": "https://www.luk.sk/letky-na-sipy--wrapy--pasky/",
+      "glue": "https://www.luk.sk/lepidla-na-upravu-a-vyrobu-sipov/",
+      "tools": "https://www.luk.sk/nastroje-na-pripravu-a-vyrobu-sipov/"
+    },
+    "notableBrands": ["Wild Mountain","Cross-X","Avalon","Bearpaw","Skylon","Bohning"],
+    "desc": {
+      "es": "Tienda eslovaca con buenos precios: vástagos de pino Wild Mountain, puntas históricas para madera, culatines, plumas, pegamentos y herramientas de fabricación.",
+      "en": "Slovak shop with good prices: Wild Mountain pine shafts, historical points for wood, nocks, feathers, glues and arrow-making tools."
+    },
+    "verified": true
+  },
+  {
+    "id": "arbow",
+    "name": "ARBOW",
+    "url": "https://arbow.pl",
+    "country": "PL",
+    "languages": ["pl"],
+    "shipsTo": "PL (check site for EU)",
+    "priceLevel": 2,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","carbon-shafts","points","nocks","feathers","vanes","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://arbow.pl/pl/c/Promienie-drewniane/380",
+      "carbon-shafts": "https://arbow.pl/pl/c/Promienie-karbonowe/422",
+      "points": "https://arbow.pl/pl/c/Groty/174",
+      "nocks": "https://arbow.pl/pl/c/Nasadki/114",
+      "feathers": "https://arbow.pl/pl/c/Piora/41"
+    },
+    "notableBrands": ["Bohning","Bearpaw","Skylon"],
+    "desc": {
+      "es": "Tienda polaca 100% tradicional: vástagos de abeto ordenados por spine en tramos de 5 lb, plumas por forma (shield, parabólica, largo completo) y nocks Bohning/Bearpaw.",
+      "en": "Fully traditional Polish shop: spruce shafts sorted by spine in 5 lb steps, feathers by shape (shield, parabolic, full length) and Bohning/Bearpaw nocks."
+    },
+    "verified": true
+  },
+  {
+    "id": "sklep-luczniczy",
+    "name": "Sklep Łuczniczy",
+    "url": "https://sklepluczniczy.pl",
+    "country": "PL",
+    "languages": ["pl"],
+    "shipsTo": "PL + most of Europe",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://sklepluczniczy.pl/33-promienie-drewniane-do-strzal",
+      "carbon-shafts": "https://sklepluczniczy.pl/34-promienie-strzal-karbonowe",
+      "aluminium-shafts": "https://sklepluczniczy.pl/35-promienie-strzal-aluminiowe",
+      "points": "https://sklepluczniczy.pl/68-groty-do-strzal-drewnianych",
+      "nocks": "https://sklepluczniczy.pl/868-nasadki-na-stozek",
+      "feathers": "https://sklepluczniczy.pl/64-piora-naturalne-do-strzal",
+      "glue": "https://sklepluczniczy.pl/105-kleje-woski-smary",
+      "tools": "https://sklepluczniczy.pl/106-narzedzia-i-akcesoria-do-strzal"
+    },
+    "notableBrands": ["Rose City","Easton","Gold Tip","Skylon","Victory","Avalon","Trueflight","Gateway"],
+    "desc": {
+      "es": "Probablemente la mayor tienda de arquería de Polonia, con vástagos de madera, carbono y aluminio, nocks de cono para madera y plumas Trueflight/Gateway.",
+      "en": "Probably Poland's largest archery shop, with wood, carbon and aluminium shafts, taper-fit nocks for wood and Trueflight/Gateway feathers."
+    },
+    "verified": true
+  },
+  {
+    "id": "webijasz",
+    "name": "Webíjász",
+    "url": "https://www.webijasz.hu",
+    "country": "HU",
+    "languages": ["hu"],
+    "shipsTo": "HU (check site)",
+    "priceLevel": 2,
+    "traditionalFocus": 1,
+    "categories": ["carbon-shafts","aluminium-shafts","points","inserts","nocks","feathers","vanes","glue"],
+    "links": {
+      "carbon-shafts": "https://www.webijasz.hu/tcslista/carbon-alu-carbon-vesszok-es-tartozekaik/carbon-vesszok",
+      "points": "https://www.webijasz.hu/tcslista/carbon-alu-carbon-vesszok-es-tartozekaik/cellovo-terep-es-vadaszhegyek",
+      "nocks": "https://www.webijasz.hu/tcslista/carbon-alu-carbon-vesszok-es-tartozekaik/nock/hagyomanyos-nock-favesszore",
+      "feathers": "https://www.webijasz.hu/tcslista/carbon-alu-carbon-vesszok-es-tartozekaik/muanyag-es-madartollak/madartollak",
+      "glue": "https://www.webijasz.hu/tcslista/taskak-tokok-ijtarto-allvany-ujjvedo-mellvedo-szerszamok/wax-ragaszto_233002"
+    },
+    "notableBrands": ["Skylon","Victory","Avalon"],
+    "desc": {
+      "es": "Tienda húngara centrada en carbono (Skylon, Victory) con puntas, insertos, nocks tradicionales para madera y plumas naturales. No vende vástagos de madera.",
+      "en": "Hungarian shop focused on carbon (Skylon, Victory) with points, inserts, traditional nocks for wood and natural feathers. No wooden shafts."
+    },
+    "verified": true
+  },
+  {
+    "id": "iversen-import",
+    "name": "Iversen Import (Pamhule)",
+    "url": "https://www.iversen-import.dk",
+    "country": "DK",
+    "languages": ["da"],
+    "shipsTo": "DK (check site for other countries)",
+    "priceLevel": 2,
+    "traditionalFocus": 2,
+    "categories": ["wood-shafts","carbon-shafts","points","inserts","nocks","feathers","vanes","wraps","glue","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://www.iversen-import.dk/buer-buegrej/pile-til-bue/traeskafter.html",
+      "carbon-shafts": "https://www.iversen-import.dk/buer-buegrej/pile-til-bue/carbonskafter.html",
+      "points": "https://www.iversen-import.dk/buer-buegrej/pilespidser/pilespidser-til-traepile.html",
+      "nocks": "https://www.iversen-import.dk/buer-buegrej/nocker/nocker-til-traepile.html",
+      "feathers": "https://www.iversen-import.dk/buer-buegrej/faner/naturfaner.html",
+      "wraps": "https://www.iversen-import.dk/buer-buegrej/faner/wraps-til-pile.html",
+      "glue": "https://www.iversen-import.dk/buer-buegrej/faner/vaerktoj-tape-og-lim.html",
+      "tools": "https://www.iversen-import.dk/buer-buegrej/pile-til-bue/vaerktoj.html"
+    },
+    "notableBrands": ["Easton","Gold Tip","Skylon","Penthalon","Black Eagle","Victory","Avalon","Bearpaw","Gateway","Bodnik"],
+    "desc": {
+      "es": "Tienda danesa con vástagos de pino y cedro Port Orford espineados de 20 a 90 lb, puntas históricas para madera, plumas naturales y wraps.",
+      "en": "Danish shop with pine and Port Orford cedar shafts spine-sorted from 20 to 90 lb, historical points for wood, natural feathers and wraps."
+    },
+    "verified": true
+  },
+  {
+    "id": "tiro-com-arco",
+    "name": "Tiro com Arco (Arco Besta & Caça)",
+    "url": "https://www.tirocomarco.pt",
+    "country": "PT",
+    "languages": ["pt","en","es","fr"],
+    "shipsTo": "PT + EU (5–15 business days estimated)",
+    "priceLevel": 2,
+    "traditionalFocus": 1,
+    "categories": ["wood-shafts","carbon-shafts","points","nocks","feathers","finished-arrows"],
+    "links": {
+      "carbon-shafts": "https://www.tirocomarco.pt/en/7045-hastes-e-componentes-tca",
+      "points": "https://www.tirocomarco.pt/en/7067-pontas-tca",
+      "tools": "https://www.tirocomarco.pt/en/400-building-arrows"
+    },
+    "notableBrands": ["Easton","Skylon","Cross-X","Rose City","Buck Trail"],
+    "desc": {
+      "es": "Tienda de Lisboa (también arcobesta.com) con vástagos económicos de abeto, flechas de cedro ABC, nocks de madera y Bohning, y plumas naturales. Web en portugués, inglés, español y francés.",
+      "en": "Lisbon shop (also arcobesta.com) with budget spruce shafts, ABC cedar arrows, wooden and Bohning nocks and natural feathers. Site in Portuguese, English, Spanish and French."
+    },
+    "verified": true
+  },
+  {
+    "id": "sarmat-archery",
+    "name": "Sarmat Archery",
+    "url": "https://sarmatarchery.com",
+    "country": "UA",
+    "languages": ["en"],
+    "shipsTo": "Worldwide",
+    "priceLevel": 1,
+    "traditionalFocus": 3,
+    "categories": ["wood-shafts","points","nocks","feathers","finished-arrows"],
+    "links": {
+      "wood-shafts": "https://sarmatarchery.com/product-category/accessories-for-the-arrows/arrow-shafts/",
+      "points": "https://sarmatarchery.com/product-category/accessories-for-the-arrows/arrow-points/",
+      "nocks": "https://sarmatarchery.com/product-category/accessories-for-the-arrows/nocks/",
+      "feathers": "https://sarmatarchery.com/product-category/accessories-for-the-arrows/feathers/",
+      "tools": "https://sarmatarchery.com/product-category/accessories-for-the-arrows/tools-for-arrow-making/"
+    },
+    "notableBrands": ["Sarmat"],
+    "desc": {
+      "es": "Taller ucraniano de arquería tradicional que fabrica sus propios vástagos, puntas, plumas y nocks. Precios bajos y envío a casi todo el mundo, aunque con plazos de 1–6 semanas y posibles aduanas fuera de la UE.",
+      "en": "Ukrainian traditional-archery workshop making its own shafts, points, feathers and nocks. Low prices and shipping to almost any country, but delivery takes 1–6 weeks and non-EU customs may apply."
+    },
+    "verified": true
+  }
+]

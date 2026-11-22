@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es" data-theme="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Saeta · Forja de flechas tradicionales</title>
+  <meta name="description" content="Saeta: guía interactiva para construir flechas de arquería tradicional. Elige componentes, calcula longitud, spine y pesos, mira tu flecha en 2D/3D y encuentra tiendas europeas.">
+  <meta name="theme-color" content="#f4ecd8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <meta property="og:title" content="Saeta · Forja de flechas tradicionales">
+  <meta property="og:description" content="Construye tus propias flechas de arquería tradicional paso a paso.">
+  <meta property="og:image" content="assets/icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700;900&family=Inter:wght@400;500;600;700&family=Pixelify+Sans:wght@400;600&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply saved theme/lang before paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('saeta.theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('saeta.lang');
+        if (l) document.documentElement.setAttribute('lang', l);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#builder" data-i18n="nav.skip">Saltar al constructor</a>
+
+  <header class="topbar" id="top">
+    <div class="topbar__inner">
+      <a class="brand" href="#home" aria-label="Saeta">
+        <img class="brand__logo pixel" src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="brand__name">Saeta</span>
+        <span class="brand__tag" data-i18n="brand.tag">Forja de flechas</span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <button class="nav__burger" id="navBurger" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span><span class="sr" data-i18n="nav.menu">Menú</span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#builder" data-i18n="nav.builder">Constructor</a></li>
+          <li><a href="#quiver" data-i18n="nav.quiver">Mi carcaj</a></li>
+          <li><a href="#guide" data-i18n="nav.guide">Guía</a></li>
+          <li><a href="#shops" data-i18n="nav.shops">Tiendas</a></li>
+          <li><a href="#glossary" data-i18n="nav.glossary">Glosario</a></li>
+          <li><a href="#about" data-i18n="nav.about">Acerca de</a></li>
+        </ul>
+      </nav>
+      <div class="toggles">
+        <div class="seg" role="group" aria-label="Idioma / Language">
+          <button class="seg__btn" data-lang="es" aria-pressed="true">ES</button>
+          <button class="seg__btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="iconbtn" id="themeBtn" aria-label="Cambiar tema" data-i18n-aria="nav.theme">
+          <svg class="ico ico--sun pixel" viewBox="0 0 16 16" aria-hidden="true"><path d="M7 0h2v3H7zM7 13h2v3H7zM0 7h3v2H0zM13 7h3v2h-3zM2 2h2v2H2zM12 2h2v2h-2zM2 12h2v2H2zM12 12h2v2h-2zM5 4h6v1h1v6h-1v1H5v-1H4V5h1z"/></svg>
+          <svg class="ico ico--moon pixel" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1h4v1H8v1H7v2H6v6h1v1h1v1h2v1h3v1h-1v1H6v-1H4v-1H3v-1H2v-2H1V5h1V3h1V2h3z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__sky" aria-hidden="true">
+        <svg class="hero__flight" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 100 Q 600 -40 1200 100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 10"/></svg>
+      </div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow pixfont" data-i18n="hero.eyebrow">Arquería tradicional · Hazlo tú mismo</p>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title1">Forja tu propia</span>
+            <em data-i18n="hero.title2">saeta</em>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">Elige el tipo de flecha, deja que calculemos longitud, spine y pesos a partir de tu arco y tu apertura, mírala tomar forma en 2D o 3D y descubre qué comprar y dónde, en tiendas europeas.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#builder" data-i18n="hero.cta">Empezar a construir</a>
+            <a class="btn btn--ghost" href="#guide" data-i18n="hero.cta2">Leer la guía</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong class="pixfont">5</strong> <span data-i18n="hero.f1">materiales</span></li>
+            <li><strong class="pixfont">8</strong> <span data-i18n="hero.f2">pasos guiados</span></li>
+            <li><strong class="pixfont" id="shopCount">25+</strong> <span data-i18n="hero.f3">tiendas europeas</span></li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__shield">
+            <img class="pixel hero__logo" src="assets/logo.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <ol class="howto">
+          <li class="howto__item"><span class="howto__n pixfont">I</span><h3 data-i18n="how.1t">Tu arco</h3><p data-i18n="how.1d">Tipo, potencia y apertura. ¿No los sabes? Los estimamos.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">II</span><h3 data-i18n="how.2t">Tus componentes</h3><p data-i18n="how.2d">Astil, punta, culatín y plumas compatibles entre sí.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">III</span><h3 data-i18n="how.3t">Tus cálculos</h3><p data-i18n="how.3d">Longitud de corte, spine, peso total, GPP y FOC.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">IV</span><h3 data-i18n="how.4t">Tu lista</h3><p data-i18n="how.4d">Qué comprar, dónde, y cómo montarlo paso a paso.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BUILDER ============ -->
+    <section class="builder" id="builder" aria-labelledby="builderTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="builder.eyebrow">El taller</p>
+          <h2 id="builderTitle" data-i18n="builder.title">Constructor de flechas</h2>
+          <p class="section-head__lead" data-i18n="builder.lead">Avanza por los pasos. La flecha y los números se actualizan al momento.</p>
+        </header>
+      </div>
+
+      <div class="bench" id="bench">
+        <div class="wrap bench__inner">
+          <div class="bench__stage">
+            <div class="bench__view" id="view2d" role="img" aria-label="Vista previa de la flecha"></div>
+            <div class="bench__view bench__view--3d" id="view3d" hidden></div>
+            <div class="bench__tools">
+              <div class="seg seg--sm" role="group" aria-label="Vista">
+                <button class="seg__btn" data-view="2d" aria-pressed="true">2D</button>
+                <button class="seg__btn" data-view="3d" aria-pressed="false">3D</button>
+              </div>
+              <button type="button" class="iconbtn iconbtn--sm" id="quickSave" data-i18n-aria="q.quick" title="★" aria-label="Guardar en mi carcaj">★</button>
+              <span class="bench__hint" id="viewHint" data-i18n="bench.hint2d">Pasa el ratón por las piezas</span>
+            </div>
+          </div>
+          <dl class="stats" id="stats" aria-live="polite"></dl>
+        </div>
+      </div>
+
+      <div class="wrap builder__body">
+        <nav class="stepper" aria-label="Pasos">
+          <ol id="stepper"></ol>
+        </nav>
+        <div class="steppanel" id="stepPanel" tabindex="-1"></div>
+        <div class="stepnav">
+          <button class="btn btn--ghost" id="prevStep" data-i18n="step.prev">← Anterior</button>
+          <button class="btn btn--ghost btn--sm" id="resetBtn" data-i18n="step.reset">Reiniciar</button>
+          <button class="btn btn--primary" id="nextStep" data-i18n="step.next">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUIVER ============ -->
+    <section class="quiver" id="quiver" aria-labelledby="quiverTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="q.eyebrow">La armería</p>
+          <h2 id="quiverTitle" data-i18n="q.title">Mi carcaj</h2>
+          <p class="section-head__lead" data-i18n="q.lead">Guarda tus flechas y tus preferencias en este navegador. Sin registrarte.</p>
+        </header>
+        <div class="quiver__bar">
+          <label class="field quiver__name"><span data-i18n="q.name">Nombre de la flecha</span><input type="text" id="quiverName" maxlength="120" autocomplete="off"></label>
+          <button type="button" class="btn btn--primary" id="quiverSave">Guardar</button>
+          <button type="button" class="btn btn--ghost" id="quiverSaveNew" data-i18n="q.saveNew" hidden>Guardar como nueva</button>
+          <span class="quiver__spacer"></span>
+          <button type="button" class="btn btn--ghost btn--sm" id="quiverExport" data-i18n="q.export">Exportar copia</button>
+          <label class="btn btn--ghost btn--sm"><span data-i18n="q.import">Importar copia</span><input type="file" id="quiverImport" accept="application/json,.json" hidden></label>
+        </div>
+        <p class="small muted" id="quiverCount"></p>
+        <div class="quivergrid" id="quiverGrid"></div>
+        <div class="panel prefs" id="prefsPanel"></div>
+        <p class="small muted" data-i18n="q.storageNote">Se guarda solo en este navegador y dispositivo. Usa «Exportar copia» para hacer una copia de seguridad o pasarla a otro dispositivo.</p>
+      </div>
+    </section>
+
+    <!-- ============ GUIDE ============ -->
+    <section class="guide" id="guide" aria-labelledby="guideTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="guide.eyebrow">El manual</p>
+          <h2 id="guideTitle" data-i18n="guide.title">Cómo se fabrica una flecha</h2>
+          <p class="section-head__lead" data-i18n="guide.lead">Herramientas, pasos y precauciones para cada material.</p>
+        </header>
+        <div class="tabs" role="tablist" id="guideTabs"></div>
+        <div id="guideBody"></div>
+        <div class="theory" id="theory"></div>
+      </div>
+    </section>
+
+    <!-- ============ SHOPS ============ -->
+    <section class="shops" id="shops" aria-labelledby="shopsTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="shops.eyebrow">El mercado</p>
+          <h2 id="shopsTitle" data-i18n="shops.title">Tiendas europeas</h2>
+          <p class="section-head__lead" data-i18n="shops.lead">Tiendas online con material para fabricar flechas. Filtra por país o por lo que necesitas.</p>
+        </header>
+        <div class="filters">
+          <label class="field field--inline">
+            <span data-i18n="shops.search">Buscar</span>
+            <input type="search" id="shopSearch" autocomplete="off">
+          </label>
+          <label class="field field--inline">
+            <span data-i18n="shops.country">País</span>
+            <select id="shopCountry"></select>
+          </label>
+          <label class="field field--inline">
+            <span data-i18n="shops.category">Categoría</span>
+            <select id="shopCat"></select>
+          </label>
+          <label class="check field--inline"><input type="checkbox" id="shopFav"> <span data-i18n="shops.onlyFav">Solo favoritas</span></label>
+        </div>
+        <p class="muted small" id="shopResultCount"></p>
+        <div class="shopgrid" id="shopGrid"></div>
+        <p class="muted small" data-i18n="shops.disclaimer">Saeta no tiene relación comercial con ninguna tienda. Comprueba precios, envíos y disponibilidad en cada web.</p>
+      </div>
+    </section>
+
+    <!-- ============ GLOSSARY ============ -->
+    <section class="glossary" id="glossary" aria-labelledby="glossTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="gloss.eyebrow">El códice</p>
+          <h2 id="glossTitle" data-i18n="gloss.title">Glosario</h2>
+        </header>
+        <label class="field field--inline">
+          <span data-i18n="shops.search">Buscar</span>
+          <input type="search" id="glossSearch" autocomplete="off">
+        </label>
+        <dl class="glosslist" id="glossList"></dl>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap about__grid">
+        <div>
+          <p class="eyebrow pixfont" data-i18n="about.eyebrow">El gremio</p>
+          <h2 id="aboutTitle" data-i18n="about.title">Sobre Saeta</h2>
+          <p data-i18n="about.p1">Saeta reúne en un solo lugar la información dispersa sobre fabricación de flechas tradicionales, pensada para quien empieza.</p>
+          <p data-i18n="about.p2">Los cálculos siguen las reglas del manual del Curso de Tecnificación Básica del Club Vall-Llobera Terra d’Arquers y tablas habituales de fabricantes. Son estimaciones: prueba siempre tus flechas (bare-shaft) antes de fabricar una docena.</p>
+        </div>
+        <aside class="warnbox">
+          <h3 data-i18n="about.safetyTitle">⚠ Seguridad ante todo</h3>
+          <ul>
+            <li data-i18n="about.s1">Nunca dispares una flecha con un spine o un peso muy diferente al recomendado para tu arco: riesgo de tiro en vacío o rotura.</li>
+            <li data-i18n="about.s2">Revisa las flechas que no han impactado en la diana: flexiónalas y escucha si crujen.</li>
+            <li data-i18n="about.s3">Sustituye cualquier culatín dañado, aunque el defecto parezca leve.</li>
+            <li data-i18n="about.s4">Usa siempre las protecciones adecuadas. Al cortar carbono o fibra de vidrio, usa mascarilla y guantes.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="brand brand--sm"><img class="pixel" src="assets/logo.svg" alt="" width="24" height="24"> Saeta</span>
+      <span class="muted small" data-i18n="footer.text">Hecho con plumas, cola y JavaScript. Sin cookies ni rastreo.</span>
+      <a class="small" href="#top" data-i18n="footer.top">↑ Volver arriba</a>
+    </div>
+  </footer>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data/bows.js"></script>
+  <script src="js/data/components.js"></script>
+  <script src="js/data/process.js"></script>
+  <script src="js/data/shops.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/viz2d.js"></script>
+  <script src="js/viz3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
