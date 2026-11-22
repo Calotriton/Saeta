@@ -414,6 +414,43 @@ tr.hl td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .iconbtn--sm { width: 30px; height: 30px; font-size: 1rem; color: var(--gold); box-shadow: 2px 2px 0 var(--shadow); }
 .shop__head .inrow { gap: 6px; }
 
+/* ---------- 3D tutorial ---------- */
+html.tut-open { overflow: hidden; }
+.tut { position: fixed; inset: 0; z-index: 120; background: rgba(10, 7, 4, .78); backdrop-filter: blur(4px); display: grid; place-items: center; padding: max(12px, env(safe-area-inset-top, 0px)) 12px max(12px, env(safe-area-inset-bottom, 0px)); }
+.tut[hidden] { display: none !important; }
+.tut__box { width: min(1180px, 100%); max-height: 100%; overflow: auto; background: var(--surface); border: 3px solid var(--ink); border-radius: var(--radius); box-shadow: 8px 8px 0 var(--accent); display: grid; gap: 10px; padding: 14px; }
+.tut__head { display: flex; align-items: center; gap: 12px; }
+.tut__head h3 { margin: 0; font-size: 1.25rem; }
+.tut__note { color: var(--ink-2); flex: 1; }
+.tut__stage { position: relative; aspect-ratio: 16 / 9; max-height: 62vh; width: 100%; border: 2px solid var(--ink); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-2); }
+.tut__stage canvas { width: 100%; height: 100%; display: block; cursor: grab; }
+.tut__stage canvas:active { cursor: grabbing; }
+.tut__labels { position: absolute; inset: 0; pointer-events: none; }
+.tut__label { position: absolute; left: 0; top: 0; white-space: nowrap; font: 400 1.05rem/1 var(--font-num); background: var(--ink); color: var(--bg); padding: 4px 8px; border-radius: 4px; box-shadow: 2px 2px 0 var(--accent); }
+.tut__label::after { content: ""; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); border: 6px solid transparent; border-bottom: 0; border-top-color: var(--ink); }
+.tut__badge { position: absolute; left: 10px; top: 10px; font: 400 1.15rem var(--font-num); background: var(--accent); color: var(--accent-ink); padding: 3px 9px; border-radius: 4px; border: 2px solid var(--ink); }
+.tut__hint { position: absolute; right: 10px; bottom: 8px; color: #f3e9d2; text-shadow: 0 1px 2px #000; opacity: .85; }
+.tut__loading { position: absolute; inset: 0; display: grid; place-items: center; font: 400 1.4rem var(--font-num); color: var(--ink-2); background: var(--bg-2); }
+.tut__loading[hidden] { display: none; }
+.tut__progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; --p: 0; }
+.tut__progress-fill { height: 100%; width: calc(var(--p) * 100%); background: var(--accent); }
+.tut__progress .tut__progress-fill { width: calc(var(--p) * 100%); }
+.tut__bar { display: flex; gap: 4px; flex-wrap: wrap; }
+.tut__bar button { flex: 1 1 28px; min-width: 28px; height: 30px; border: 2px solid var(--line-2); background: var(--bg); border-radius: 4px; cursor: pointer; font: 400 1.05rem var(--font-num); color: var(--ink-2); }
+.tut__bar button.done { background: var(--accent-2); border-color: var(--accent-2); color: var(--surface); }
+.tut__bar button[aria-current="step"] { background: var(--accent); border-color: var(--ink); color: var(--accent-ink); }
+.tut__controls { display: flex; gap: 8px; justify-content: center; }
+.tut__controls .btn { min-width: 52px; font-size: 1.1rem; }
+.tut__text h4 { margin: 0 0 4px; font-size: 1.15rem; }
+.tut__text p { margin: 0 0 4px; color: var(--ink-2); }
+.tut__text .tip { color: var(--accent-2); font-size: .92rem; }
+.tut__text .tip::before { content: "✦ "; }
+@media (max-width: 640px) { .tut__hint { display: none; } .tut__box { padding: 10px; } .tut__stage { aspect-ratio: 4 / 3; } .tut__head { flex-wrap: wrap; } .tut__head h3 { flex: 1; font-size: 1.05rem; } .tut__note { order: 3; flex-basis: 100%; } }
+.tutcta { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 14px 16px; margin-bottom: 14px; border: 2px solid var(--ink); border-radius: var(--radius); background: var(--surface-2); box-shadow: var(--px) var(--px) 0 var(--accent); }
+.tutcta p { margin: 2px 0 0; }
+.tutstep { margin-left: 8px; vertical-align: middle; border: 1px solid var(--line-2); background: var(--surface); border-radius: 999px; padding: 1px 8px; font: 400 .95rem var(--font-num); color: var(--accent); cursor: pointer; }
+.tutstep:hover { border-color: var(--ink); }
+
 /* ---------- Guide ---------- */
 .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .tab { cursor: pointer; padding: 8px 14px; border: 2px solid var(--line-2); border-radius: var(--radius-sm); background: var(--surface); font: 700 .88rem var(--font-display); letter-spacing: .05em; color: var(--ink-2); }

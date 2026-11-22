@@ -853,6 +853,7 @@
       ${proc ? `
       <h4 class="sub">${t('s8.howto', { mat: esc(L(mat().name)) })}</h4>
       <p class="small muted">${esc(L(proc.summary))} · ${t('guide.time')}: ${esc(L(proc.time))}</p>
+      ${S.material === 'wood' && window.Tutorial3D ? `<div class="tutcta"><div><b>${t('tut.ctaTitle')}</b><p class="small muted">${t('tut.ctaText')}</p></div><button type="button" class="btn btn--primary" data-action="tutorial" data-start="0">▶ ${t('tut.open')}</button></div>` : ''}
       <ol class="steps-list">${proc.steps.map(s => `<li><h4>${esc(L(s.title))}</h4><p>${esc(L(s.text))}</p>${s.tip ? `<p class="tip">${esc(L(s.tip))}</p>` : ''}</li>`).join('')}</ol>
       <p style="margin-top:14px"><a href="#guide" data-action="guide">${t('s8.fullGuide')}</a></p>` : ''}
       ${rulesFor().length ? `<h4 class="sub">${t('s8.rules')}</h4><ul>${rulesFor().map(r => `<li class="small">${esc(L(r))}</li>`).join('')}</ul>` : ''}
@@ -1017,6 +1018,7 @@
   }
 
   function handleAction(a, el, e) {
+    if (a === 'tutorial') openTutorial(+el.dataset.start || 0);
     if (a === 'quiver-save') saveArrow(false);
     if (a === 'save-defaults') saveDefaults();
     if (a === 'crest-add') { S.deco.cresting.push({ color: CAT.crestColors[S.deco.cresting.length % CAT.crestColors.length], widthIn: 0.125 }); render(); }
@@ -1243,6 +1245,29 @@
       <div class="actions"><button type="button" class="btn btn--ghost btn--sm" data-pref="wipe">${t('p.wipe')}</button></div>`;
   }
 
+  // ---------------- 3D tutorial ----------------
+  const TUT_TOOLS = ['magnifier', 'scale', 'spine', 'heat', 'ruler', 'pencil', 'saw', 'sand', 'taper', 'dip', 'glue', 'jig'];
+  function tutLabels() {
+    const tools = {};
+    TUT_TOOLS.forEach(k => { tools[k] = t('tut.t.' + k); });
+    return {
+      title: t('tut.title'), yourArrow: t('tut.yourArrow'), defaultArrow: t('tut.defaultArrow'), hint: t('tut.hint'), loading: t('tut.loading'), fail: t('tut.fail'),
+      prev: t('tut.prev'), next: t('tut.next'), replay: t('tut.replay'), close: t('tut.close'), play: t('tut.play'), pause: t('tut.pause'), stepOf: t('tut.stepOf'), tools,
+    };
+  }
+  const tutSteps = () => ((PROC.materials.wood || {}).steps || []).map(s => ({ title: L(s.title), text: L(s.text), tip: L(s.tip) }));
+  function openTutorial(start) {
+    if (!window.Tutorial3D) return;
+    const own = S.material === 'wood';
+    const st = clone(S);
+    if (!own) { st.material = 'wood'; st.shaft.color = CAT.shaftColors.wood[0]; st.shaft.autoDia = true; st.point.auto = true; }
+    const data = withState(st, () => ({
+      spec: arrowSpec(),
+      numbers: { shaftRaw: D.build.gpi * (D.arrowIn + 2.5), point: S.point.weight, spine: D.spine.wood ? D.spine.wood.label.replace(' #', '#') : '' },
+    }));
+    window.Tutorial3D.open(Object.assign(data, { own, start: start || 0, lang, steps: tutSteps(), labels: tutLabels() }));
+  }
+
   // ---------------- guide section ----------------
   let guideTab = 'wood';
   function renderGuide() {
@@ -1272,7 +1297,8 @@
             ${glue ? `<div class="panel"><h3>${t('guide.glue')}</h3><ul class="toollist">${glue}</ul></div>` : ''}
           </div>
           <div>
-            <ol class="steps-list">${m.steps.map(s => `<li><h4>${esc(L(s.title))}</h4><p>${esc(L(s.text))}</p>${s.tip ? `<p class="tip">${esc(L(s.tip))}</p>` : ''}</li>`).join('')}</ol>
+            ${guideTab === 'wood' && window.Tutorial3D ? `<div class="tutcta"><div><b>${t('tut.ctaTitle')}</b><p class="small muted">${t('tut.ctaText')}</p></div><button type="button" class="btn btn--primary" data-action="tutorial" data-start="0">▶ ${t('tut.open')}</button></div>` : ''}
+            <ol class="steps-list">${m.steps.map((s, i) => `<li><h4>${esc(L(s.title))}${guideTab === 'wood' && window.Tutorial3D ? ` <button type="button" class="tutstep" data-action="tutorial" data-start="${i}" aria-label="${esc(t('tut.fromStep'))}">▶ 3D</button>` : ''}</h4><p>${esc(L(s.text))}</p>${s.tip ? `<p class="tip">${esc(L(s.tip))}</p>` : ''}</li>`).join('')}</ol>
             <div class="warnbox" style="margin-top:18px"><h3>⚠ ${t('guide.safety')}</h3><ul>${m.safety.map(s => `<li>${esc(L(s))}</li>`).join('')}</ul></div>
             ${m.finishing && m.finishing.length ? `<h4 class="sub">${t('guide.finishing')}</h4><div class="cards cards--wide">${m.finishing.map(x => `<div class="opt" style="cursor:default"><span class="opt__title">${esc(L(x.name))}</span><span class="opt__desc">${esc(L(x.text))}</span></div>`).join('')}</div>` : ''}
           </div>
@@ -1282,6 +1308,7 @@
   }
   function bindGuide() {
     $('#guideTabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) { guideTab = b.dataset.tab; renderGuide(); } });
+    $('#guideBody').addEventListener('click', e => { const b = e.target.closest('[data-action="tutorial"]'); if (b) openTutorial(+b.dataset.start || 0); });
   }
 
   // ---------------- shops section ----------------
@@ -1356,6 +1383,7 @@
     renderShops();
     renderGlossary();
     renderQuiver();
+    if (window.Tutorial3D && window.Tutorial3D.isOpen()) window.Tutorial3D.update({ steps: tutSteps(), labels: tutLabels(), lang });
     $('#viewHint').textContent = t(view === '2d' ? 'bench.hint2d' : 'bench.hint3d');
   }
   function currentTheme() {

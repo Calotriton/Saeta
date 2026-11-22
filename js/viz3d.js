@@ -398,5 +398,5 @@
     ctx.scene.add(ctx.group);
   }
 
-  window.Viz3D = { render, load: loadThree };
+  window.Viz3D = { render, load: loadThree, parts: { shaftTexture, featherTexture, featherShape, pointMesh, nockMesh, lathe } };
 })();
