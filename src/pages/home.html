@@ -1,0 +1,64 @@
+    <script>
+      // Old single-page links (#builder, #guide… and shared arrows #a=…) now live on their own pages.
+      (function () {
+        var h = location.hash, map = { '#builder': 'constructor.html', '#quiver': 'carcaj.html', '#guide': 'guia.html', '#shops': 'tiendas.html', '#glossary': 'glosario.html', '#about': 'acerca.html' };
+        if (/^#a=/.test(h)) location.replace('constructor.html' + h);
+        else if (map[h]) location.replace(map[h]);
+      })();
+    </script>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__sky" aria-hidden="true">
+        <svg class="hero__flight" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0 100 Q 600 -40 1200 100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="2 10"/></svg>
+      </div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow pixfont" data-i18n="hero.eyebrow">Arquería tradicional · Hazlo tú mismo</p>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title1">Forja tu propia</span>
+            <em data-i18n="hero.title2">saeta</em>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">Elige el tipo de flecha, deja que calculemos longitud, spine y pesos a partir de tu arco y tu apertura, mírala tomar forma en 2D o 3D y descubre qué comprar y dónde, en tiendas europeas.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="constructor.html" data-i18n="hero.cta">Empezar a construir</a>
+            <a class="btn btn--ghost" href="guia.html" data-i18n="hero.cta2">Leer la guía</a>
+          </div>
+          <ul class="hero__facts">
+            <li><strong class="pixfont">5</strong> <span data-i18n="hero.f1">materiales</span></li>
+            <li><strong class="pixfont">8</strong> <span data-i18n="hero.f2">pasos guiados</span></li>
+            <li><strong class="pixfont" id="shopCount">25+</strong> <span data-i18n="hero.f3">tiendas europeas</span></li>
+          </ul>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__shield">
+            <img class="pixel hero__logo" src="assets/logo.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <ol class="howto">
+          <li class="howto__item"><span class="howto__n pixfont">I</span><h3 data-i18n="how.1t">Tu arco</h3><p data-i18n="how.1d">Tipo, potencia y apertura. ¿No los sabes? Los estimamos.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">II</span><h3 data-i18n="how.2t">Tus componentes</h3><p data-i18n="how.2d">Astil, punta, culatín y plumas compatibles entre sí.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">III</span><h3 data-i18n="how.3t">Tus cálculos</h3><p data-i18n="how.3d">Longitud de corte, spine, peso total, GPP y FOC.</p></li>
+          <li class="howto__item"><span class="howto__n pixfont">IV</span><h3 data-i18n="how.4t">Tu lista</h3><p data-i18n="how.4d">Qué comprar, dónde, y cómo montarlo paso a paso.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EXPLORE ============ -->
+    <section class="explore" aria-labelledby="exploreTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="home.exploreEyebrow">El mapa</p>
+          <h2 id="exploreTitle" data-i18n="home.exploreTitle">Explora Saeta</h2>
+        </header>
+        <div class="explore__grid">
+          <a class="explore__card" href="constructor.html"><span class="explore__ico" aria-hidden="true">⚒</span><h3 data-i18n="page.builder">Constructor</h3><p data-i18n="home.e.builder">Diseña tu flecha paso a paso y obtén los cálculos y la lista de la compra.</p></a>
+          <a class="explore__card" href="carcaj.html"><span class="explore__ico" aria-hidden="true">★</span><h3 data-i18n="page.quiver">Mi carcaj</h3><p data-i18n="home.e.quiver">Tus flechas guardadas, tiendas favoritas y preferencias.</p></a>
+          <a class="explore__card" href="guia.html"><span class="explore__ico" aria-hidden="true">✎</span><h3 data-i18n="page.guide">Guía</h3><p data-i18n="home.e.guide">Cómo se fabrica cada tipo de flecha, con tutorial 3D para la de madera.</p></a>
+          <a class="explore__card" href="tiendas.html"><span class="explore__ico" aria-hidden="true">⚑</span><h3 data-i18n="page.shops">Tiendas</h3><p data-i18n="home.e.shops">Tiendas europeas verificadas con material para fabricar flechas.</p></a>
+          <a class="explore__card" href="glosario.html"><span class="explore__ico" aria-hidden="true">❦</span><h3 data-i18n="page.glossary">Glosario</h3><p data-i18n="home.e.glossary">Spine, FOC, GPP, culatín, timonera… todos los términos explicados.</p></a>
+          <a class="explore__card" href="acerca.html"><span class="explore__ico" aria-hidden="true">⚜</span><h3 data-i18n="page.about">Acerca de</h3><p data-i18n="home.e.about">Quién está detrás de Saeta y consejos de seguridad.</p></a>
+        </div>
+      </div>
+    </section>

@@ -6,6 +6,9 @@
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
   const CAT = window.CATALOG;
+  const has = id => !!document.getElementById(id);
+  const PAGE = document.body.dataset.page || 'home';
+  const pageUrl = file => new URL(file, location.href).href.split('#')[0];
   const CALC = window.CALC;
   const PROC = window.SAETA_PROCESS || { materials: {}, glossary: [] };
   const COMP = window.SAETA_COMPONENTS || {};
@@ -76,7 +79,7 @@
   const save = () => store.set('state', JSON.stringify(S));
   const shareUrl = () => {
     const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(S)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-    return location.href.split('#')[0] + '#a=' + b64;
+    return pageUrl('constructor.html') + '#a=' + b64;
   };
   function setPath(path, val) {
     const ks = path.split('.');
@@ -283,6 +286,7 @@
   // ---------------- bench ----------------
   let view = '2d';
   function renderBench() {
+    if (!has('view2d')) return;
     const spec = arrowSpec();
     if (view === '2d') window.Viz2D.render($('#view2d'), spec);
     else window.Viz3D.render($('#view3d'), spec).catch(() => { toast(t('bench.3dfail')); setView('2d'); });
@@ -323,6 +327,7 @@
     }
   }
   function bindTooltip() {
+    if (!has('view2d')) return;
     const tip = $('#tooltip');
     const v = $('#view2d');
     v.addEventListener('pointermove', e => {
@@ -855,7 +860,7 @@
       <p class="small muted">${esc(L(proc.summary))} · ${t('guide.time')}: ${esc(L(proc.time))}</p>
       ${S.material === 'wood' && window.Tutorial3D ? `<div class="tutcta"><div><b>${t('tut.ctaTitle')}</b><p class="small muted">${t('tut.ctaText')}</p></div><button type="button" class="btn btn--primary" data-action="tutorial" data-start="0">▶ ${t('tut.open')}</button></div>` : ''}
       <ol class="steps-list">${proc.steps.map(s => `<li><h4>${esc(L(s.title))}</h4><p>${esc(L(s.text))}</p>${s.tip ? `<p class="tip">${esc(L(s.tip))}</p>` : ''}</li>`).join('')}</ol>
-      <p style="margin-top:14px"><a href="#guide" data-action="guide">${t('s8.fullGuide')}</a></p>` : ''}
+      <p style="margin-top:14px"><a href="guia.html?m=${S.material}" data-action="guide">${t('s8.fullGuide')}</a></p>` : ''}
       ${rulesFor().length ? `<h4 class="sub">${t('s8.rules')}</h4><ul>${rulesFor().map(r => `<li class="small">${esc(L(r))}</li>`).join('')}</ul>` : ''}
     `;
   }
@@ -904,6 +909,7 @@
   }
   function render(keepFocus) {
     derive();
+    if (!has('stepPanel')) return;
     let focusBind = null, selStart = null;
     if (keepFocus && document.activeElement && document.activeElement.dataset) {
       focusBind = document.activeElement.dataset.bind || (document.activeElement.dataset.bindCm && 'cm:' + document.activeElement.dataset.bindCm);
@@ -974,6 +980,8 @@
   }
 
   function bindWizard() {
+    if (!has('stepPanel')) return;
+    $('#quickSave').addEventListener('click', () => saveArrow(false));
     const panel = $('#stepPanel');
     panel.addEventListener('click', e => {
       const btn = e.target.closest('[data-set]');
@@ -1009,7 +1017,7 @@
     $('#prevStep').addEventListener('click', () => goStep(S.step - 1));
     $('#nextStep').addEventListener('click', () => (S.step === STEPS.length - 1 ? goStep(0) : goStep(S.step + 1)));
     $('#resetBtn').addEventListener('click', () => {
-      if ($('#resetBtn').dataset.confirm) { currentId = null; renderQuiver(); S = DEFAULT(); history.replaceState(null, '', location.pathname); render(); toast(t('toast.reset')); delete $('#resetBtn').dataset.confirm; $('#resetBtn').textContent = t('step.reset'); return; }
+      if ($('#resetBtn').dataset.confirm) { currentId = null; store.set('current', ''); renderQuiver(); S = DEFAULT(); history.replaceState(null, '', location.pathname); render(); toast(t('toast.reset')); delete $('#resetBtn').dataset.confirm; $('#resetBtn').textContent = t('step.reset'); return; }
       $('#resetBtn').dataset.confirm = '1';
       $('#resetBtn').textContent = t('step.resetConfirm');
       setTimeout(() => { delete $('#resetBtn').dataset.confirm; $('#resetBtn').textContent = t('step.reset'); }, 3000);
@@ -1038,12 +1046,12 @@
       a2.click();
       setTimeout(() => URL.revokeObjectURL(a2.href), 2000);
     }
-    if (a === 'guide') { e.preventDefault(); guideTab = S.material; renderGuide(); location.hash = 'guide'; }
+    if (a === 'guide') { e.preventDefault(); location.href = 'guia.html?m=' + encodeURIComponent(S.material); }
   }
 
   // ---------------- quiver (saved arrows gallery) ----------------
   const QKEY = 'quiver';
-  let currentId = null;
+  let currentId = store.get('current') || null;
   const qList = () => { try { const l = JSON.parse(store.get(QKEY) || '[]'); return Array.isArray(l) ? l : []; } catch (e) { return []; } };
   const qSave = l => store.set(QKEY, JSON.stringify(l));
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
@@ -1066,6 +1074,7 @@
     const existing = !asNew && currentId && list.find(x => x.id === currentId);
     if (existing) { existing.name = name; existing.state = state; existing.updated = now; }
     else { currentId = uid(); list.unshift({ id: currentId, name, created: now, updated: now, state }); }
+    store.set('current', currentId);
     qSave(list);
     renderQuiver();
     toast(t(existing ? 'q.updated' : 'q.saved', { name }));
@@ -1076,12 +1085,14 @@
     S = merge(DEFAULT(), clone(it.state));
     currentId = id;
     S.step = STEPS.length - 1;
+    save();
+    store.set('current', id);
+    if (!has('stepPanel')) { location.href = 'constructor.html'; return; }
     render();
-    renderQuiver();
-    document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
     toast(t('q.loaded', { name: it.name }));
   }
   function renderQuiver() {
+    if (!has('quiverGrid')) return;
     const list = qList();
     const cur = list.find(x => x.id === currentId);
     if (!cur) currentId = null;
@@ -1155,9 +1166,9 @@
     r.readAsText(file);
   }
   function bindQuiver() {
+    if (!has('quiverGrid')) return;
     $('#quiverSave').addEventListener('click', () => saveArrow(false));
     $('#quiverSaveNew').addEventListener('click', () => saveArrow(true));
-    $('#quickSave').addEventListener('click', () => saveArrow(false));
     $('#quiverExport').addEventListener('click', exportQuiver);
     $('#quiverImport').addEventListener('change', e => { if (e.target.files[0]) importQuiver(e.target.files[0]); e.target.value = ''; });
     $('#quiverName').addEventListener('keydown', e => { if (e.key === 'Enter') saveArrow(false); });
@@ -1271,6 +1282,7 @@
   // ---------------- guide section ----------------
   let guideTab = 'wood';
   function renderGuide() {
+    if (!has('guideTabs')) return;
     const mats = Object.keys(PROC.materials || {});
     if (!mats.length) return;
     const tabs = mats.map(m => ({ id: m, label: L(PROC.materials[m].name) })).concat(PROC.tuning ? [{ id: 'tuning', label: t('guide.tuning') }] : []);
@@ -1307,6 +1319,7 @@
     $('#theory').innerHTML = ['spine', 'paradox', 'fistmele', 'gpp', 'foc', 'units'].map(k => `<div class="panel"><h3>${t('th.' + k + 'T')}</h3><p class="small">${t('th.' + k)}</p></div>`).join('');
   }
   function bindGuide() {
+    if (!has('guideTabs')) return;
     $('#guideTabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) { guideTab = b.dataset.tab; renderGuide(); } });
     $('#guideBody').addEventListener('click', e => { const b = e.target.closest('[data-action="tutorial"]'); if (b) openTutorial(+b.dataset.start || 0); });
   }
@@ -1314,6 +1327,7 @@
   // ---------------- shops section ----------------
   const CATS = ['wood-shafts', 'carbon-shafts', 'fiberglass-shafts', 'aluminium-shafts', 'bamboo-shafts', 'points', 'nocks', 'inserts', 'feathers', 'vanes', 'glue', 'fletching-jigs', 'taper-tools', 'cresting', 'wraps', 'spine-tester', 'scales', 'kits', 'finished-arrows'];
   function renderShopFilters() {
+    if (!has('shopGrid')) return;
     const countries = [...new Set(SHOPS.map(s => s.country))].sort();
     const cSel = $('#shopCountry'), kSel = $('#shopCat');
     const cv = cSel.value, kv = kSel.value;
@@ -1322,6 +1336,7 @@
     cSel.value = cv; kSel.value = kv;
   }
   function renderShops() {
+    if (!has('shopGrid')) return;
     const q = $('#shopSearch').value.trim().toLowerCase();
     const c = $('#shopCountry').value, k = $('#shopCat').value, onlyFav = $('#shopFav').checked;
     const list = SHOPS.filter(s => (!onlyFav || P.favShops.includes(s.id)) && (!c || s.country === c) && (!k || (s.categories || []).includes(k)) &&
@@ -1341,6 +1356,7 @@
       </article>`).join('') || `<p class="muted">${t('shops.none')}</p>`;
   }
   function bindShops() {
+    if (!has('shopGrid')) return;
     ['#shopSearch', '#shopCountry', '#shopCat', '#shopFav'].forEach(s => $(s).addEventListener('input', renderShops));
     $('#shopGrid').addEventListener('click', e => {
       const b = e.target.closest('[data-fav]');
@@ -1356,6 +1372,7 @@
 
   // ---------------- glossary ----------------
   function renderGlossary() {
+    if (!has('glossList')) return;
     const q = ($('#glossSearch').value || '').trim().toLowerCase();
     const other = lang === 'es' ? 'en' : 'es';
     const list = (PROC.glossary || []).filter(g => !q || (L(g.term) + ' ' + g.term[other] + ' ' + L(g.def)).toLowerCase().includes(q))
@@ -1369,8 +1386,8 @@
     $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
     $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
     $$('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
-    document.title = t('meta.title');
-    $('#shopCount').textContent = SHOPS.length ? String(SHOPS.length) : '25+';
+    document.title = PAGE === 'home' ? t('meta.title') : t('page.' + PAGE) + ' · Saeta';
+    if (has('shopCount')) $('#shopCount').textContent = SHOPS.length ? String(SHOPS.length) : '25+';
   }
   function setLang(l) {
     lang = l;
@@ -1384,7 +1401,7 @@
     renderGlossary();
     renderQuiver();
     if (window.Tutorial3D && window.Tutorial3D.isOpen()) window.Tutorial3D.update({ steps: tutSteps(), labels: tutLabels(), lang });
-    $('#viewHint').textContent = t(view === '2d' ? 'bench.hint2d' : 'bench.hint3d');
+    if (has('viewHint')) $('#viewHint').textContent = t(view === '2d' ? 'bench.hint2d' : 'bench.hint3d');
   }
   function currentTheme() {
     const a = document.documentElement.getAttribute('data-theme');
@@ -1412,7 +1429,8 @@
     bindTooltip();
     bindGuide();
     bindShops();
-    guideTab = S.material in (PROC.materials || {}) ? S.material : 'wood';
+    const qm = new URLSearchParams(location.search).get('m');
+    guideTab = qm && (qm in (PROC.materials || {}) || qm === 'tuning') ? qm : S.material in (PROC.materials || {}) ? S.material : 'wood';
     render();
     renderGuide();
     renderShopFilters();
@@ -1420,7 +1438,7 @@
     renderGlossary();
     bindQuiver();
     renderQuiver();
-    $('#glossSearch').addEventListener('input', renderGlossary);
+    if (has('glossSearch')) $('#glossSearch').addEventListener('input', renderGlossary);
     $$('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
     $('#themeBtn').addEventListener('click', toggleTheme);
     const burger = $('#navBurger');
@@ -1432,7 +1450,7 @@
     $$('#navLinks a').forEach(a => a.addEventListener('click', () => { $('#navLinks').classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }));
     let rz;
     window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => view === '2d' && renderBench(), 120); });
-    if (/#a=/.test(location.hash)) setTimeout(() => document.getElementById('builder').scrollIntoView(), 50);
+    if (/#a=/.test(location.hash)) { save(); history.replaceState(null, '', location.pathname + location.search); }
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

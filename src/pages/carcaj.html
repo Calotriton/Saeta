@@ -1,0 +1,22 @@
+    <!-- ============ QUIVER ============ -->
+    <section class="quiver" id="quiver" aria-labelledby="quiverTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="q.eyebrow">La armería</p>
+          <h2 id="quiverTitle" data-i18n="q.title">Mi carcaj</h2>
+          <p class="section-head__lead" data-i18n="q.lead">Guarda tus flechas y tus preferencias en este navegador. Sin registrarte.</p>
+        </header>
+        <div class="quiver__bar">
+          <label class="field quiver__name"><span data-i18n="q.name">Nombre de la flecha</span><input type="text" id="quiverName" maxlength="120" autocomplete="off"></label>
+          <button type="button" class="btn btn--primary" id="quiverSave">Guardar</button>
+          <button type="button" class="btn btn--ghost" id="quiverSaveNew" data-i18n="q.saveNew" hidden>Guardar como nueva</button>
+          <span class="quiver__spacer"></span>
+          <button type="button" class="btn btn--ghost btn--sm" id="quiverExport" data-i18n="q.export">Exportar copia</button>
+          <label class="btn btn--ghost btn--sm"><span data-i18n="q.import">Importar copia</span><input type="file" id="quiverImport" accept="application/json,.json" hidden></label>
+        </div>
+        <p class="small muted" id="quiverCount"></p>
+        <div class="quivergrid" id="quiverGrid"></div>
+        <div class="panel prefs" id="prefsPanel"></div>
+        <p class="small muted" data-i18n="q.storageNote">Se guarda solo en este navegador y dispositivo. Usa «Exportar copia» para hacer una copia de seguridad o pasarla a otro dispositivo.</p>
+      </div>
+    </section>

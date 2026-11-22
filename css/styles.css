@@ -215,6 +215,17 @@ section + section::before {
 }
 @media (max-width: 480px) { .howto { grid-template-columns: 1fr; } }
 
+/* ---------- Home: explore grid ---------- */
+.explore__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.explore__card { display: grid; gap: 6px; align-content: start; text-decoration: none; color: var(--ink); background: var(--surface); border: 2px solid var(--ink); border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--px) var(--px) 0 var(--shadow); transition: transform .1s, box-shadow .1s; }
+.explore__card:hover { transform: translate(-2px, -2px); box-shadow: calc(var(--px) + 2px) calc(var(--px) + 2px) 0 var(--accent); }
+.explore__card h3 { margin: 0; }
+.explore__card p { margin: 0; color: var(--ink-2); font-size: .94rem; }
+.explore__ico { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 6px; background: var(--surface-2); border: 2px solid var(--ink); color: var(--accent); font-size: 1.35rem; }
+
+/* current page in the navigation */
+.nav__links a[aria-current="page"] { background: var(--ink); color: var(--bg); }
+
 /* ---------- Builder bench (sticky arrow) ---------- */
 .builder { padding-bottom: 64px; }
 .bench {

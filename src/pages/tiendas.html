@@ -1,0 +1,28 @@
+    <!-- ============ SHOPS ============ -->
+    <section class="shops" id="shops" aria-labelledby="shopsTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="shops.eyebrow">El mercado</p>
+          <h2 id="shopsTitle" data-i18n="shops.title">Tiendas europeas</h2>
+          <p class="section-head__lead" data-i18n="shops.lead">Tiendas online con material para fabricar flechas. Filtra por país o por lo que necesitas.</p>
+        </header>
+        <div class="filters">
+          <label class="field field--inline">
+            <span data-i18n="shops.search">Buscar</span>
+            <input type="search" id="shopSearch" autocomplete="off">
+          </label>
+          <label class="field field--inline">
+            <span data-i18n="shops.country">País</span>
+            <select id="shopCountry"></select>
+          </label>
+          <label class="field field--inline">
+            <span data-i18n="shops.category">Categoría</span>
+            <select id="shopCat"></select>
+          </label>
+          <label class="check field--inline"><input type="checkbox" id="shopFav"> <span data-i18n="shops.onlyFav">Solo favoritas</span></label>
+        </div>
+        <p class="muted small" id="shopResultCount"></p>
+        <div class="shopgrid" id="shopGrid"></div>
+        <p class="muted small" data-i18n="shops.disclaimer">Saeta no tiene relación comercial con ninguna tienda. Comprueba precios, envíos y disponibilidad en cada web.</p>
+      </div>
+    </section>

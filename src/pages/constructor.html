@@ -1,0 +1,40 @@
+    <!-- ============ BUILDER ============ -->
+    <section class="builder" id="builder" aria-labelledby="builderTitle">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow pixfont" data-i18n="builder.eyebrow">El taller</p>
+          <h2 id="builderTitle" data-i18n="builder.title">Constructor de flechas</h2>
+          <p class="section-head__lead" data-i18n="builder.lead">Avanza por los pasos. La flecha y los números se actualizan al momento.</p>
+        </header>
+      </div>
+
+      <div class="bench" id="bench">
+        <div class="wrap bench__inner">
+          <div class="bench__stage">
+            <div class="bench__view" id="view2d" role="img" aria-label="Vista previa de la flecha"></div>
+            <div class="bench__view bench__view--3d" id="view3d" hidden></div>
+            <div class="bench__tools">
+              <div class="seg seg--sm" role="group" aria-label="Vista">
+                <button class="seg__btn" data-view="2d" aria-pressed="true">2D</button>
+                <button class="seg__btn" data-view="3d" aria-pressed="false">3D</button>
+              </div>
+              <button type="button" class="iconbtn iconbtn--sm" id="quickSave" data-i18n-aria="q.quick" title="★" aria-label="Guardar en mi carcaj">★</button>
+              <span class="bench__hint" id="viewHint" data-i18n="bench.hint2d">Pasa el ratón por las piezas</span>
+            </div>
+          </div>
+          <dl class="stats" id="stats" aria-live="polite"></dl>
+        </div>
+      </div>
+
+      <div class="wrap builder__body">
+        <nav class="stepper" aria-label="Pasos">
+          <ol id="stepper"></ol>
+        </nav>
+        <div class="steppanel" id="stepPanel" tabindex="-1"></div>
+        <div class="stepnav">
+          <button class="btn btn--ghost" id="prevStep" data-i18n="step.prev">← Anterior</button>
+          <button class="btn btn--ghost btn--sm" id="resetBtn" data-i18n="step.reset">Reiniciar</button>
+          <button class="btn btn--primary" id="nextStep" data-i18n="step.next">Siguiente →</button>
+        </div>
+      </div>
+    </section>

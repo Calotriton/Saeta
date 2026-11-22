@@ -20,7 +20,17 @@ No hace falta compilar nada: es HTML, CSS y JavaScript plano. También funciona 
 ## Estructura
 
 ```
-index.html            página única
+index.html            portada (generada)
+constructor.html      constructor (generada)
+carcaj.html           mi carcaj (generada)
+guia.html             guía + tutorial 3D (generada)
+tiendas.html          tiendas (generada)
+glosario.html         glosario (generada)
+acerca.html           acerca de (generada)
+src/layout.html       plantilla común: cabecera, menú, pie, scripts
+src/pages/*.html      contenido de cada página
+tools/build-pages.js  genera las páginas HTML desde src/
+js/tutorial3d.js      tutorial 3D paso a paso (madera)
 css/styles.css        estilos (tokens de tema día/noche)
 js/i18n.js            textos de la interfaz ES/EN
 js/catalog.js         catálogo curado de componentes y compatibilidades
@@ -34,6 +44,14 @@ assets/               logo pixel art y favicons
 tools/build-data.js   regenera js/data/*.js desde research/*.json
 tools/logo.py         genera el logo pixel art (requiere Pillow)
 Documentos/           manual del club (solo en local; excluido del repo por .gitignore)
+```
+
+### Editar páginas
+
+Las páginas `*.html` de la raíz se generan: edita `src/layout.html` (común) o `src/pages/*.html` y ejecuta:
+
+```bash
+node tools/build-pages.js
 ```
 
 ### Actualizar datos
